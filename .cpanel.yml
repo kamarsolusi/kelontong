@@ -1,5 +1,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/pasj9714/public_html/kelontong
+    - export DEPLOYPATH=/home/pasj9714/public_html/kelontong/
     - /bin cp -R $DEPLOYPATH
