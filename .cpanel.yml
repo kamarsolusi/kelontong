@@ -4,6 +4,6 @@ deployment:
     - export DEPLOYPATH=/home/pasj9714/public_html/kelontong/
     - /public/cp index.php $DEPLOYPATH
     - /public/cp .htaccess $DEPLOYPATH
-    - /public/cp /src/* $DEPLOYPATH
-    - /public/cp /themes/* $DEPLOYPATH
-    - /public/cp /img/* $DEPLOYPATH
+    - /public/cp -R src $DEPLOYPATH
+    - /public/cp -R themes $DEPLOYPATH
+    - /public/cp -R img $DEPLOYPATH
