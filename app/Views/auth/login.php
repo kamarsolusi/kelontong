@@ -5,7 +5,7 @@
     <div class="row align-items-center">
       <div class="col-lg-6">
         <a href="<?= base_url() ?>">
-          <img src="<?= base_url('img/logo.png') ?>" alt="" class="bg-login-logo">
+          <img src="<?= base_url('img/logo.png') ?>" alt="" class="bg-login">
         </a>
       </div>
       <div class="col-lg-6 col-md-12 col-sm-12">
