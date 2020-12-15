@@ -2,8 +2,8 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/pasj9714/public_html/kelontong/
-    - /public/cp index.php $DEPLOYPATH
-    - /public/cp .htaccess $DEPLOYPATH
-    - /public/cp -R src $DEPLOYPATH
-    - /public/cp -R themes $DEPLOYPATH
-    - /public/cp -R img $DEPLOYPATH
+    - /bin/cp /public/index.php $DEPLOYPATH
+    - /bin/cp /public/.htaccess $DEPLOYPATH
+    - /bin/cp -R /public/src $DEPLOYPATH
+    - /bin/cp -R /public/themes $DEPLOYPATH
+    - /bin/cp -R /public/img $DEPLOYPATH
