@@ -1,0 +1,9 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/user/public_html/kelontong/
+    - /public/cp index.php $DEPLOYPATH
+    - /public/cp .htaccess $DEPLOYPATH
+    - /public/cp /src/* $DEPLOYPATH
+    - /public/cp /themes/* $DEPLOYPATH
+    - /public/cp /img/* $DEPLOYPATH
