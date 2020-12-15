@@ -1,111 +1,64 @@
-<?= view('themes/head') ?>
-<body class="hold-transition login-page">
-<body class="hold-transition register-page">
-<div class="register-box">
-  <div class="card">
-    <div class="card-body register-card-body">
-    <div class="register-logo">
-        <a href="<?= base_url() ?>">
-          <img width="40%" src="<?= base_url('img/LogoKelontong.png') ?>" alt="">
-        </a>
+<?= view('themes/auth/head') ?>
+
+<body>
+  <div class="container mt-5">
+    <div class="row align-items-center">
+      <div class="col-lg-5">
+        <img src="<?= base_url('img/logo.png') ?>" alt="" class="bg-register">
       </div>
-      <div class="text-center">
-        <h4 class="text-success" style="font-weight: 500;"> Kelontong</h4>
-        <p class="text-primary" style="font-weight: 100; margin-top: -3%;">BEST PRICE GOOD DEALS</p>
+      <div class="col-lg-7 col-md-12 col-sm-12">
+        <div class="card-register">
+          <h2 class="h3 text-center text-gray-900 mb-4 font-weight-bold">Register a new membership!</h2>
+          <?= view('Myth\Auth\Views\_message_block') ?>
+          <form action="<?= route_to('register') ?>" method="post" class="user">
+            <?= csrf_field() ?>
+            <div class="row">
+              <!-- First Name -->
+              <div class="form-group col-lg-6 col-md-6 col-sm-6">
+                <input type="text" class="form-control form-control-user <?php if (session('errors.firstname')) : ?>is-invalid<?php endif ?>" placeholder="<?= lang('Auth.firstname') ?>" name="firstname" value="<?= old('firstname') ?>">
+              </div>
+              <!-- Last Name -->
+              <div class="form-group col-lg-6 col-md-6 col-sm-6">
+                <input type="text" class="form-control form-control-user <?php if (session('errors.lastname')) : ?>is-invalid<?php endif ?>" placeholder="<?= lang('Auth.lastname') ?>" name="lastname" value="<?= old('lastname') ?>">
+              </div>
+            </div>
+            <!-- Username -->
+            <div class="form-group">
+              <input type="text" class="form-control form-control-user <?php if (session('errors.username')) : ?>is-invalid<?php endif ?>" placeholder="<?= lang('Auth.username') ?>" name="username" value="<?= old('username') ?>">
+            </div>
+            <!-- Email -->
+            <div class="form-group">
+              <input type="email" class="form-control form-control-user <?php if (session('errors.email')) : ?>is-invalid<?php endif ?>" placeholder="<?= lang('Auth.email') ?>" name="email" value="<?= old('email') ?>">
+            </div>
+            <div class="row">
+              <!-- Password -->
+              <div class="form-group col-lg-6 col-md-6 col-sm-6">
+                <input type="password" class="form-control form-control-user <?php if (session('errors.password')) : ?>is-invalid<?php endif ?>" placeholder="<?= lang('Auth.password') ?>" name="password" autocomplete="off">
+              </div>
+              <!-- Password Confirmation -->
+              <div class="form-group col-lg-6 col-md-6 col-sm-6">
+                <input type="password" class="form-control form-control-user <?php if (session('errors.pass_confirm')) : ?>is-invalid<?php endif ?>" placeholder="<?= lang('Auth.repeatPassword') ?>" name="pass_confirm" autocomplete="off">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="custom-control custom-checkbox small">
+                <!-- Agree -->
+                <input type="checkbox" class="custom-control-input" id="agreeTerms" name="terms" value="agree">
+                <label class="custom-control-label" for="agreeTerms">I agree to the <a href="#" class="link-primary font-weight-bold">terms</a></label>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-login btn-user btn-block mt-3">
+              <?= lang('Auth.register') ?>
+            </button>
+          </form>
+          <div class="text-center mt-4">
+            <span class="small">Already have a Kelontong account? </span>
+            <label><a href="<?= route_to('login') ?>" class="link-primary font-weight-bold small"><?= lang('Auth.signIn') ?></a></label>
+          </div>
+        </div>
       </div>
-
-      <p class="login-box-msg">Register a new membership</p>
-      <?= view('Myth\Auth\Views\_message_block') ?>
-
-      <form action="<?= route_to('register') ?>" method="post">
-          <?= csrf_field() ?>
-
-          <!-- First Name -->
-        <div class="input-group mb-3">
-          <input type="text" class="form-control <?php if(session('errors.firstname')) : ?>is-invalid<?php endif ?>" placeholder="<?=lang('Auth.firstname')?>" name="firstname" value="<?= old('firstname') ?>">
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-user"></span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Last Name -->
-        <div class="input-group mb-3">
-          <input type="text" class="form-control <?php if(session('errors.lastname')) : ?>is-invalid<?php endif ?>" placeholder="<?=lang('Auth.lastname')?>" name="lastname" value="<?= old('lastname') ?>">
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-user"></span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Username -->
-        <div class="input-group mb-3">
-          <input type="text" class="form-control <?php if(session('errors.username')) : ?>is-invalid<?php endif ?>" placeholder="<?=lang('Auth.username')?>" name="username" value="<?= old('username') ?>">
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-user"></span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Email -->
-        <div class="input-group mb-3">
-          <input type="email" class="form-control <?php if(session('errors.email')) : ?>is-invalid<?php endif ?>" placeholder="<?=lang('Auth.email')?>" name="email" value="<?= old('email') ?>">
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-envelope"></span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Password -->
-        <div class="input-group mb-3">
-          <input type="password" class="form-control <?php if(session('errors.password')) : ?>is-invalid<?php endif ?>" placeholder="<?=lang('Auth.password')?>" name="password" autocomplete="off">
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-lock"></span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Password Confirm -->
-        <div class="input-group mb-3">
-          <input type="password" class="form-control <?php if(session('errors.pass_confirm')) : ?>is-invalid<?php endif ?>" placeholder="<?=lang('Auth.repeatPassword')?>" name="pass_confirm" autocomplete="off">
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-lock"></span>
-            </div>
-          </div>
-        </div>
-
-
-        <div class="row">
-          <div class="col-8">
-            <div class="icheck-primary">
-              <input type="checkbox" id="agreeTerms" name="terms" value="agree">
-              <label for="agreeTerms">
-               I agree to the <a href="#">terms</a>
-              </label>
-            </div>
-          </div>
-          <!-- /.col -->
-          <div class="col-4">
-            <button type="submit" class="btn btn-primary btn-block"><?=lang('Auth.register')?></button>
-          </div>
-          <!-- /.col -->
-        </div>
-      </form>
-
-      <hr>
-
-      <a href="<?= route_to('login') ?>" class="text-center"><?=lang('Auth.alreadyRegistered')?> <?=lang('Auth.signIn')?></a>
     </div>
-    <!-- /.form-box -->
-  </div><!-- /.card -->
-</div>
-<!-- /.register-box -->
-<?= $this->section('custom_js') ?>
-<?= $this->endSection() ?>
-<?= view('themes/footer') ?>
+  </div>
+</body>
+
+</html>
