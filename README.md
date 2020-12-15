@@ -14,6 +14,6 @@ The database config that used in this hosting :
 Email that used in this project :
 - Host      : kelontong.pasarjatinom.com
 - Username  : admin@kelontong.pasarjatinom.com
-- Password  : *5lOqm)h+agz
+- Password  : ![0_X=Rt%5-J
 - PORT      : 465
 - Protocol  : SMTP

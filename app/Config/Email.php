@@ -48,7 +48,7 @@ class Email extends BaseConfig
 	 *
 	 * @var string
 	 */
-	public $SMTPHost = 'ssl://kelontong.pasarjatinom.com';
+	public $SMTPHost = 'kelontong.pasarjatinom.com';
 
 	/**
 	 * SMTP Username
@@ -62,7 +62,7 @@ class Email extends BaseConfig
 	 *
 	 * @var string
 	 */
-	public $SMTPPass = '*5lOqm)h+agz';
+	public $SMTPPass = '![0_X=Rt%5-J';
 
 	/**
 	 * SMTP Port
