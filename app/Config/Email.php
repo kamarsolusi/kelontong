@@ -10,7 +10,7 @@ class Email extends BaseConfig
 	/**
 	 * @var string
 	 */
-	public $fromEmail = "admin@kelontong.pasarjatinom.com";
+	public $fromEmail = "admin@lab-belajar.xyz";
 
 	/**
 	 * @var string
@@ -48,21 +48,21 @@ class Email extends BaseConfig
 	 *
 	 * @var string
 	 */
-	public $SMTPHost = 'kelontong.pasarjatinom.com';
+	public $SMTPHost = 'smtp.zoho.com';
 
 	/**
 	 * SMTP Username
 	 *
 	 * @var string
 	 */
-	public $SMTPUser = 'admin@kelontong.pasarjatinom.com';
+	public $SMTPUser = 'admin@lab-belajar.xyz';
 
 	/**
 	 * SMTP Password
 	 *
 	 * @var string
 	 */
-	public $SMTPPass = '![0_X=Rt%5-J';
+	public $SMTPPass = 'K0d3K0d3';
 
 	/**
 	 * SMTP Port
