@@ -48,7 +48,7 @@ class Email extends BaseConfig
 	 *
 	 * @var string
 	 */
-	public $SMTPHost = 'kelontong.pasarjatinom.com';
+	public $SMTPHost = 'ssl://kelontong.pasarjatinom.com';
 
 	/**
 	 * SMTP Username
