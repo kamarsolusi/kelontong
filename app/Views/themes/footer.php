@@ -1,5 +1,5 @@
 <!-- jQuery UI 1.11.4 -->
-<script src="<?= base_url() ?>/themes/plugins/jquery-ui/jquery-ui.min.js"></script>
+<!-- <script src="<?= base_url() ?>/themes/plugins/jquery-ui/jquery-ui.min.js"></script> -->
 <!-- jQuery -->
 <script src="<?= base_url('themes') ?>/plugins/jquery/jquery.min.js"></script>
 <!-- SweetAlert2 -->
