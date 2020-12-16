@@ -11,7 +11,7 @@
 
     <link href="<?= base_url() ?>/themes/assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?= base_url() ?>/themes/assets/css/fontawesome-all.min.css" rel="stylesheet">
-    <link href="<?= base_url() ?>/themes/assets/css/style.css" rel="stylesheet">
+    <link href="<?= base_url() ?>/themes/assets/css/style.min.css" rel="stylesheet">
 
     <?= $this->renderSection('custom_css') ?>
 </head>
