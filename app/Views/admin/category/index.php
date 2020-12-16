@@ -96,9 +96,9 @@
 <?= $this->section('custom_js') ?>
 <!-- Categories JS -->
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-<script>
+<!-- <script>
     $.widget.bridge('uibutton', $.ui.button)
-</script>
+</script> -->
 <!-- daterangepicker -->
 <script src="<?= base_url() ?>/themes/plugins/moment/moment.min.js"></script>
 <script src="<?= base_url() ?>/themes/plugins/daterangepicker/daterangepicker.min.js"></script>
@@ -109,8 +109,8 @@
 <!-- overlayScrollbars -->
 <script src="<?= base_url() ?>/themes/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 <!-- DataTables  & Plugins -->
-<script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
+<script src="<?= base_url() ?>/themes/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="<?= base_url() ?>/themes/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
 
 <?= $this->endSection() ?>
 <?= view('themes/footer') ?>
