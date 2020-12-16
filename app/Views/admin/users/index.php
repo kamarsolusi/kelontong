@@ -1,26 +1,11 @@
-<?= $this->section('custom_css') ?>
-    <!-- overlayScrollbars -->
-    <link rel="stylesheet" href="<?= base_url() ?>/themes/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
-    <!-- Daterange picker -->
-    <link rel="stylesheet" href="<?= base_url() ?>/themes/plugins/daterangepicker/daterangepicker.css">
-    <!-- summernote -->
-    <link rel="stylesheet" href="<?= base_url() ?>/themes/plugins/summernote/summernote-bs4.min.css">
-    <!-- SweetAlert2 -->
-    <link rel="stylesheet" href="<?= base_url() ?>/themes/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
-    <!-- JQUERY -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>  
-    <!-- DataTables -->
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css">
-
-<?= $this->endSection() ?>
-<?= view('themes/head') ?>
+<?= view('themes/admin/head') ?>
 <?= $this->section('content') ?>
 <div class="row">
     <div class="col-12">
         <div class="card">
             <div class="card-header">
-                <h1 class="card-title">Manage Category</h1>
-                <div class="card-tools form-inline">
+                <h1 class="card-title">Manage Users</h1>
+                <!-- <div class="card-tools form-inline">
                     <div class="mr-3">
                         <button type="button" data-toggle="modal" data-target="#myModal" id="tambah-data" onclick="submit('tambah')" class="btn btn-primary disabled">
                             <i class="fas fa-plus-circle mr-2"></i>
@@ -28,7 +13,7 @@
                         </button>
                     </div>
                     
-                </div>
+                </div> -->
             </div>
             <!-- /.card-header -->
             <div class="card-body table-responsive p-16" style="width: 100%;">
@@ -67,17 +52,35 @@
             </div>
             <form>
                 <div class="modal-body">
-                    <input type="hidden" name="category_id" id="category_id">
-                    <div class="form-group">
-                        <label for="category_name">Category Name</label>
-                        <input type="text" class="form-control" id="category_name" name="category_name" placeholder="Category Name">
+                    <input type="hidden" name="id" id="id">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                            <div class="form-group">
+                                <label for="username">First Name</label>
+                                <input type="text" class="form-control" id="firstname" placeholder="First Name">
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <div class="form-group">
+                                <label for="username">Last Name</label>
+                                <input type="text" class="form-control" id="lastname" placeholder="Last Name">
+                            </div>
+                        </div>
                     </div>
                     <div class="form-group">
-                        <label for="category_status">Category Status</label>
-                        <select name="category_status" class="form-control" id="category_status">
+                        <label for="username">Full Name</label>
+                        <input type="text" class="form-control" disabled id="fullname" name="fullname" placeholder="Full Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" class="form-control" id="username" name="username" placeholder="User Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="status">User Status</label>
+                        <select name="status" class="form-control" id="status">
                             <option value="">Pilih Status</option>
-                            <option value="ACTIVE">ACTIVE</option>
-                            <option value="INACTIVE">INACTIVE</option>
+                            <option value="1">ACTIVE</option>
+                            <option value="0">INACTIVE</option>
                         </select>
                     </div>
 
@@ -156,70 +159,51 @@
                     render: function(data, type, row){
                         return `
                         <a class="btn btn-sm btn-danger disabled" onclick="detailData(`+data+`)"><i class="fas fa-search mr-2"></i>Detail</a>
-                        <a data-toggle="modal" onclick="submit(`+data+`)" class="btn btn-sm btn-success disabled" data-target="#myModal" ><i class="fas fa-edit mr-2"></i>Edit</a> 
-                        <a class="btn btn-sm btn-danger disabled" onclick="deleteData(`+data+`)"><i class="fas fa-trash-alt mr-2"></i>Hapus</a>
+                        <a data-toggle="modal" onclick="submit(`+data+`)" class="btn btn-sm btn-success" data-target="#myModal" ><i class="fas fa-edit mr-2"></i>Edit</a> 
+                        <a class="btn btn-sm btn-danger" onclick="deleteData(`+data+`)"><i class="fas fa-trash-alt mr-2"></i>Hapus</a>
                         `
                     },
                     
                 }
             ],
         });
+
+        $('#firstname').on('input', function(){
+            $('#fullname').val($('#firstname').val() + ' ' + $('#lastname').val());
+        })
+
+        $('#lastname').on('input', function(){
+            $('#fullname').val($('#firstname').val() + ' ' + $('#lastname').val());
+        })
     });
 
     function submit(id) {
-        $('#product_id').val('');
-        $('#sku').val('');
-        $('#name').val('');
-        $('#category_id').val('');
-        $('#category_id').empty();
-        $('#harga').val('');
-        $('#stok').val('');
+        $('#id').val('');
+        $('#firstname').val('');
+        $('#lastname').val('');
+        $('#username').val('');
+        $('#fullname').val('');
         $('#status').val('');
 
 
-        if (id == 'tambah') {
-            $('#myModalTitle').text('Tambah Data');
-            $('#btn-tambah').show();
-            $('#btn-ubah').hide();
-            $.ajax({
-                url: '../admin/categories/active',
-                type: 'get',
-                dataType: 'json',
-                success: function(data){
-                    $.each(data['results'],function(key,value){
-                        $('#category_id').append(`
-                        <option value='`+value['category_id']+`'>`+value['category_name']+`</option>
-                    `);
-                    });
-                    
-                }
-            })
-        } else {
+        if (id != 'tambah') {
             $('#myModalTitle').text('Ubah Data');
             $('#btn-tambah').hide();
             $('#btn-ubah').show();
 
             $.ajax({
-                url: "../admin/products/" + id,
+                url: "../admin/users/" + id,
                 type: 'get',
                 dataType: 'json',
                 success: function(data) {
-                    $.each(data['category'], function(key, value){
-                        $('#category_id').append(
-                            `
-                            <option value='`+value['category_id']+`'>`+value['category_name']+`</option>
-                            `
-                        );
-                    })
-                    $.each(data['product'], function(key, value){
-                        $('#product_id').val(value['product_id']);
-                        $('#sku').val(value['sku']);
-                        $('#name').val(value['name']);
-                        $('#category_id').val(value['category_id']);
-                        $('#harga').val(value['harga']);
-                        $('#stok').val(value['stok']);
-                        $('#status').val(value['product_status']);
-                    });
+                    // console.log(data['results']['active']);
+                    var status = data['results']['active'];
+                    $('#id').val(data['results']['id']);
+                    $('#firstname').val(data['results']['firstname']);
+                    $('#lastname').val(data['results']['lastname']);
+                    $('#username').val(data['results']['username']);
+                    $('#fullname').val(data['results']['firstname'] + ' ' + data['results']['lastname']);
+                    $('#status').val(status);
                 },
                 error: function(error){
                     console.log(error);
@@ -229,31 +213,43 @@
     }
 
     function updateData() {
-        var id = $('#product_id').val();
-        var sku = $('#sku').val();
-        var name = $('#name').val();
-        var category_id = $('#category_id').val();
-        var harga = $('#harga').val();
-        var stok = $('#stok').val();
+        var id = $('#id').val();
+        var firstname = $('#firstname').val();
+        var lastname = $('#lastname').val();
+        var username = $('#username').val();
         var status = $('#status').val();
-
+        
         $.ajax({
-            url: '../admin/products/update/' + id,
-            type: 'post',
-            data: 'sku=' + sku +'&name='+name+'&category_id='+category_id+'&harga='+harga+'&stok='+stok+'&status='+status,
+            url: '../admin/users/' + id,
+            type: 'put',
+            data: 'firstname='+firstname+'&lastname='+lastname+'&username='+username+'&active='+status,
             dataType: 'json',
             success: function(data) {
                 $('#myModal').modal('hide');
-                table.ajax.reload();
 
-                Swal.fire({
-                    toast: true,
-                    position: 'top-end',
-                    showConfirmButton: false,
-                    timer: 3000,
-                    icon: 'success',
-                    title: 'Update Data Successfully',
-                })
+                if(data['status'] == 200){
+
+                    table.ajax.reload();
+
+                    Swal.fire({
+                        toast: true,
+                        position: 'top-end',
+                        showConfirmButton: false,
+                        timer: 3000,
+                        icon: 'success',
+                        title: data['message'],
+                    })
+                }else {
+                    table.ajax.reload();
+                    Swal.fire({
+                        toast:true,
+                        position: 'top-end',
+                        showConfirmButton:false,
+                        timer: 3000,
+                        icon: 'error',
+                        title: data['message']
+                    })
+                }
             },
             error: function(error){
                 console.log(error);
@@ -307,8 +303,9 @@
             /* Read more about isConfirmed, isDenied below */
             if (result.isConfirmed) {
                 $.ajax({
-                    url: '../admin/products/' + id,
+                    url: '../admin/users/' + id,
                     type: 'delete',
+                    dataType: 'json',
                     error: function(data) {
                         Swal.fire({
                             title: 'Someting is wrong',
@@ -317,16 +314,28 @@
                         })
                     },
                     success: function(data) {
-                        table.ajax.reload();
+                        if(data['status']=='200'){
+                            table.ajax.reload();
+                            Swal.fire({
+                                toast: true,
+                                position: 'top-end',
+                                showConfirmButton: false,
+                                timer: 3000,
+                                icon: 'success',
+                                title: data['message'],
+                            })
+                        }else{
+                            table.ajax.reload();
+                            Swal.fire({
+                                toast: true,
+                                position: 'top-end',
+                                showConfirmButton: false,
+                                timer: 3000,
+                                icon: 'error',
+                                title: data['message']
+                            })
+                        }
 
-                        Swal.fire({
-                            toast: true,
-                            position: 'top-end',
-                            showConfirmButton: false,
-                            timer: 3000,
-                            icon: 'success',
-                            title: "Data Deleted Successfully",
-                        })
                     }
                 })
             } else {
@@ -343,24 +352,4 @@
         })
     }
 </script>
-<?= $this->section('custom_js') ?>
-<!-- Categories JS -->
-<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-<script>
-    $.widget.bridge('uibutton', $.ui.button)
-</script>
-<!-- daterangepicker -->
-<script src="<?= base_url() ?>/themes/plugins/moment/moment.min.js"></script>
-<script src="<?= base_url() ?>/themes/plugins/daterangepicker/daterangepicker.js"></script>
-<!-- Tempusdominus Bootstrap 4 -->
-<script src="<?= base_url() ?>/themes/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
-<!-- Summernote -->
-<script src="<?= base_url() ?>/themes/plugins/summernote/summernote-bs4.min.js"></script>
-<!-- overlayScrollbars -->
-<script src="<?= base_url() ?>/themes/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
-<!-- DataTables  & Plugins -->
-<script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
-
-<?= $this->endSection() ?>
-<?= view('themes/footer') ?>
+<?= view('themes/admin/footer') ?>

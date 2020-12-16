@@ -68,6 +68,10 @@ $routes->delete('/admin/products/(:num)', 'Admin\Products::delete/$1');
 $routes->post('/admin/products/add', 'Admin\Products::add');
 $routes->post('/admin/products/update/(:num)', 'Admin\Products::update/$1');
 
+// Users
+$routes->get('/admin/users/(:num)', 'Admin\Users::detail/$1');
+$routes->put('/admin/users/(:num)', 'Admin\Users::update/$1');
+$routes->delete('/admin/users/(:num)', 'Admin\Users::delete/$1');
 /**
  * --------------------------------------------------------------------
  * Additional Routing
