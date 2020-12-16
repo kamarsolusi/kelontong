@@ -1,20 +1,4 @@
-<?= $this->section('custom_css') ?>
-    <!-- overlayScrollbars -->
-    <link rel="stylesheet" href="<?= base_url() ?>/themes/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
-    <!-- Daterange picker -->
-    <link rel="stylesheet" href="<?= base_url() ?>/themes/plugins/daterangepicker/daterangepicker.min.css">
-    <!-- summernote -->
-    <link rel="stylesheet" href="<?= base_url() ?>/themes/plugins/summernote/summernote-bs4.min.css">
-    <!-- SweetAlert2 -->
-    <link rel="stylesheet" href="<?= base_url() ?>/themes/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
-    <!-- JQUERY -->
-    <script src="<?= base_url() ?>/themes/plugins/jquery/jquery.min.js"></script>  
-    <!-- DataTables -->
-    <!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css"> -->
-    <link rel="stylesheet" href="<?= base_url() ?>/themes/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
-
-<?= $this->endSection() ?>
-<?= view('themes/head') ?>
+<?= view('themes/admin/head') ?>
 <?= $this->section('content') ?>
 <div class="row">
     <div class="col-12">
@@ -92,25 +76,4 @@
 <?= $this->endSection() ?>
 <?= view('themes/body') ?>
 <script src="<?= base_url() ?>/src/js/categories.js"></script>
-
-<?= $this->section('custom_js') ?>
-<!-- Categories JS -->
-<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-<!-- <script>
-    $.widget.bridge('uibutton', $.ui.button)
-</script> -->
-<!-- daterangepicker -->
-<script src="<?= base_url() ?>/themes/plugins/moment/moment.min.js"></script>
-<script src="<?= base_url() ?>/themes/plugins/daterangepicker/daterangepicker.min.js"></script>
-<!-- Tempusdominus Bootstrap 4 -->
-<script src="<?= base_url() ?>/themes/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
-<!-- Summernote -->
-<script src="<?= base_url() ?>/themes/plugins/summernote/summernote-bs4.min.js"></script>
-<!-- overlayScrollbars -->
-<script src="<?= base_url() ?>/themes/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
-<!-- DataTables  & Plugins -->
-<script src="<?= base_url() ?>/themes/plugins/datatables/jquery.dataTables.min.js"></script>
-<script src="<?= base_url() ?>/themes/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
-
-<?= $this->endSection() ?>
-<?= view('themes/footer') ?>
+<?= view('themes/admin/footer') ?>
