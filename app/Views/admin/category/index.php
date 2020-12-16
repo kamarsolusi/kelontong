@@ -2,15 +2,16 @@
     <!-- overlayScrollbars -->
     <link rel="stylesheet" href="<?= base_url() ?>/themes/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
     <!-- Daterange picker -->
-    <link rel="stylesheet" href="<?= base_url() ?>/themes/plugins/daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" href="<?= base_url() ?>/themes/plugins/daterangepicker/daterangepicker.min.css">
     <!-- summernote -->
     <link rel="stylesheet" href="<?= base_url() ?>/themes/plugins/summernote/summernote-bs4.min.css">
     <!-- SweetAlert2 -->
     <link rel="stylesheet" href="<?= base_url() ?>/themes/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
     <!-- JQUERY -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>  
+    <script src="<?= base_url() ?>/themes/plugins/jquery/jquery.min.js"></script>  
     <!-- DataTables -->
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css">
+    <!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css"> -->
+    <link rel="stylesheet" href="<?= base_url() ?>/themes/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
 
 <?= $this->endSection() ?>
 <?= view('themes/head') ?>
@@ -100,7 +101,7 @@
 </script>
 <!-- daterangepicker -->
 <script src="<?= base_url() ?>/themes/plugins/moment/moment.min.js"></script>
-<script src="<?= base_url() ?>/themes/plugins/daterangepicker/daterangepicker.js"></script>
+<script src="<?= base_url() ?>/themes/plugins/daterangepicker/daterangepicker.min.js"></script>
 <!-- Tempusdominus Bootstrap 4 -->
 <script src="<?= base_url() ?>/themes/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
 <!-- Summernote -->
