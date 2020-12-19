@@ -9,9 +9,11 @@ use App\Models\Products_model;
 
 class Products extends BaseController
 {
+    protected $product_model;
     public function __construct()
     {
         helper(['form']);
+        $this->product_model = new Products_model();
     }
     public function index()
     {

@@ -31,7 +31,12 @@
     <link rel="stylesheet" href="<?= base_url() ?>/themes/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
     <!-- JQUERY -->
     <script src="<?= base_url() ?>/themes/plugins/jquery/jquery.min.js"></script>  
+    <script type="text/javascript" src="<?= base_url('themes/dist/js') ?>/image-uploader.min.js"></script>
+
     <!-- DataTables -->
     <link rel="stylesheet" href="<?= base_url() ?>/themes/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+
+    <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link type="text/css" rel="stylesheet" href="<?= base_url('themes/dist/css') ?>/image-uploader.min.css">
 
 </head>

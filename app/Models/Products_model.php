@@ -13,7 +13,7 @@ class Products_model extends Model
         if ($id === false) {
             return $this->findAll();
         } else {
-            return $this->getWhere(['product_id' => $id])->getRowArray();
+            return $this->getWhere(['sku' => $id])->getRowArray();
         }
     }
 
@@ -37,7 +37,7 @@ class Products_model extends Model
 
     public function deleteProduct($id)
     {
-        return $this->db->table($this->table)->delete(['product_id' => $id]);
+        return $this->db->table($this->table)->delete(['sku' => $id]);
     }
 
     

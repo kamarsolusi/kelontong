@@ -47,11 +47,15 @@ $routes->group('admin', ['filter' => 'role:admin'], function($routes){
 	// Products
 	$routes->get('products', 'Admin\Products::index');
 	$routes->get('products/index', 'Admin\Products::index');
+	$routes->get('products/images/(:any)', 'Admin\Pictures::index/$1');
+	$routes->post('images/uploads/(:any)', 'Admin\Pictures::upload/$1');
 
 	// Users
 	$routes->get('users', 'Admin\Users::index');
 	$routes->get('users/index', 'Admin\Users::index');
+	$routes->get('profile/(:segment)', 'Users::profile/$1');
 });
+
 // $routes->get('/admin/categories', 'Admin\Categories::index', ['filter' => 'role:admin']);
 $routes->delete('/admin/categories/(:num)', 'Admin\Categories::delete/$1');
 $routes->get('/admin/categories/(:num)', 'Admin\Categories::edit/$1');

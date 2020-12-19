@@ -13,7 +13,7 @@ $totalSegments = $request->uri->getTotalSegments() ?>
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1 class="m-0"><?= $request->uri->getSegment(1) ?></h1>
+              <h1 class="m-0" id="page-title"><?= $request->uri->getSegment(1) ?></h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">

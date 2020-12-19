@@ -16,7 +16,7 @@ $uri = $request->uri->getSegment(2) ?>
                 <img src="<?= base_url() ?>/img/<?= user()->profile_picture ?>" class="img-circle elevation-2" alt="<?= user()->profile_picture ?>">
             </div>
             <div class="info">
-                <a href="#" class="d-block"><?= user()->firstname .' '. user()->lastname ?></a>
+                <a href="<?= base_url().'/admin/profile/'.user()->username ?>" class="d-block"><?= user()->firstname .' '. user()->lastname ?></a>
             </div>
         </div>
 

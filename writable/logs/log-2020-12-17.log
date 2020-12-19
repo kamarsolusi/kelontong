@@ -1,0 +1,10 @@
+CRITICAL - 2020-12-17 00:02:37 --> Object of class CodeIgniter\HTTP\RedirectResponse could not be converted to string
+#0 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/View/View.php(246): include()
+#1 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Common.php(1119): CodeIgniter\View\View->render('admin/pictures/...', Array, true)
+#2 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Controllers/Admin/Pictures.php(35): view('admin/pictures/...', Array)
+#3 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Admin\Pictures->index('8992933231113')
+#4 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Pictures))
+#5 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/patriot/...')
+#8 {main}
