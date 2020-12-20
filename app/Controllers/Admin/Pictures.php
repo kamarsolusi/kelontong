@@ -101,11 +101,9 @@ class Pictures extends BaseController
 
     public function delete($token){
         $nameFile = $this->pictureModel->select('picture_id, picture_name')->where('token',$token)->get()->getRowArray();
-        var_dump($nameFile);
         if(file_exists(FCPATH . 'upload/products/' . $nameFile['picture_name'])){
             unlink(FCPATH . 'upload/products/' . $nameFile['picture_name']);
             $delete = $this->pictureModel->delete($nameFile['picture_id']);
-            var_dump($delete);
         }else{
             $delete = $this->pictureModel->delete($nameFile['picture_id']);
         }
