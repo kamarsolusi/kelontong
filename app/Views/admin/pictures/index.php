@@ -129,12 +129,7 @@
                 $('.dz-remove').addClass('btn btn-danger mt-2 my-3');
             });
             myDropzone.on('error', function(file, message) {
-                Swal.fire({
-                    icon: 'error',
-                    title: message,
-                    showConfirmButton: false,
-                    showCloseButton: true,
-                })
+                alert(message);
                 myDropzone.removeFile(file);
             });
             myDropzone.on('dragend', function(file){
