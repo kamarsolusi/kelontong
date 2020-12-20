@@ -14,5 +14,9 @@ class Pictures_model extends Model{
             return $this->getWhere(['picture_id' => $id])->getRowArray();
         }
     }
+
+    public function insertPictures($data){
+        return $this->db->table($this->table)->insert($data);
+    }
 }
 ?>

@@ -49,7 +49,10 @@ $routes->group('admin', ['filter' => 'role:admin'], function($routes){
 	$routes->get('products/index', 'Admin\Products::index');
 	$routes->get('products/images/(:any)', 'Admin\Pictures::index/$1');
 	$routes->post('images/uploads/(:any)', 'Admin\Pictures::upload/$1');
-
+	
+	// Pictures
+	$routes->delete('images/(:any)', 'Admin\Pictures::delete/$1');
+	
 	// Users
 	$routes->get('users', 'Admin\Users::index');
 	$routes->get('users/index', 'Admin\Users::index');
