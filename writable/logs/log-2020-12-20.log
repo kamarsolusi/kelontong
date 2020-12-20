@@ -87,3 +87,38 @@ CRITICAL - 2020-12-20 13:01:30 --> preg_match(): Allocation of JIT memory failed
 #6 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/public/index.php(45): CodeIgniter\CodeIgniter->run()
 #7 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/patriot/...')
 #8 {main}
+CRITICAL - 2020-12-20 14:02:15 --> Column 'product_id' in order clause is ambiguous
+#0 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(331): mysqli->query('SELECT *\nFROM `...')
+#1 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Database/BaseConnection.php(741): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Database/BaseConnection.php(669): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1860): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Model.php(462): CodeIgniter\Database\BaseBuilder->get()
+#5 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Controllers/Home.php(20): CodeIgniter\Model->findAll()
+#6 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Home->index()
+#7 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#10 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/patriot/...')
+#11 {main}
+CRITICAL - 2020-12-20 14:13:11 --> Undefined index: product_name
+#0 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Views/home/index.php(299): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', '/Users/patriot/...', 299, Array)
+#1 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/View/View.php(246): include('/Users/patriot/...')
+#2 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Common.php(1119): CodeIgniter\View\View->render('home/index', Array, true)
+#3 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Controllers/Home.php(23): view('home/index', Array)
+#4 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Home->index()
+#5 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/patriot/...')
+#9 {main}
+CRITICAL - 2020-12-20 14:13:41 --> Undefined index: product_name
+#0 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Views/home/index.php(299): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', '/Users/patriot/...', 299, Array)
+#1 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/View/View.php(246): include('/Users/patriot/...')
+#2 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Common.php(1119): CodeIgniter\View\View->render('home/index', Array, true)
+#3 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Controllers/Home.php(24): view('home/index', Array)
+#4 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Home->index()
+#5 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/patriot/...')
+#9 {main}

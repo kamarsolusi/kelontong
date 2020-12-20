@@ -16,7 +16,7 @@ class Products extends ResourceController{
     }
 
     public function index(){
-        $product = $this->product_model->join('pictures', 'pictures.product_id = products.product_id', 'left')->groupBy('products.name')->findAll();
+        $product = $this->product_model->join('pictures', 'pictures.product_id = products.product_id', 'left')->groupBy('products.name')->findAll(16,0);
 
         $data['product'] = $product;
         return $this->respond($data, 200);
@@ -32,5 +32,6 @@ class Products extends ResourceController{
         ];
         return $this->respond($data, 200);
     }
+
 }
 ?>
