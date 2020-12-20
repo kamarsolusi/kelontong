@@ -1,10 +1,10 @@
 <?php 
-namespace App\Controllers;
+namespace App\Controllers\Api;
 use CodeIgniter\RESTful\ResourceController;
 use App\Models\Pictures_model;
 use App\Models\Products_model;
 
-class ApiProducts extends ResourceController{
+class Products extends ResourceController{
     protected $format = "json";
     protected $product_model;
     protected $picture_model;
