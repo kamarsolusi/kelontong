@@ -3,6 +3,7 @@ use CodeIgniter\Model;
 
 class Pictures_model extends Model{
     protected $table = 'pictures';
+    protected $primaryKey = 'picture_id';
     // protected $allowedField = [
     //     'firstname', 'lastname', 'profile_picture', 'username', 'active', 'created_at', 'updated_at', 'deleted_at',
     // ];
