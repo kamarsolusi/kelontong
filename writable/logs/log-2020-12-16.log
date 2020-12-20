@@ -1,0 +1,475 @@
+CRITICAL - 2020-12-16 00:53:37 --> Allowed fields must be specified for model: App\Models\Users_model
+#0 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Model.php(1265): CodeIgniter\Database\Exceptions\DataException::forInvalidAllowedFields('App\\Models\\User...')
+#1 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Model.php(870): CodeIgniter\Model->doProtectFields(Array)
+#2 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Controllers/Admin/Users.php(65): CodeIgniter\Model->update(Array, Array)
+#3 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Admin\Users->update('81')
+#4 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Users))
+#5 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/patriot/...')
+#8 {main}
+CRITICAL - 2020-12-16 00:56:00 --> Allowed fields must be specified for model: App\Models\Users_model
+#0 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Model.php(1265): CodeIgniter\Database\Exceptions\DataException::forInvalidAllowedFields('App\\Models\\User...')
+#1 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Model.php(870): CodeIgniter\Model->doProtectFields(Array)
+#2 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Controllers/Admin/Users.php(65): CodeIgniter\Model->update(Array, Array)
+#3 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Admin\Users->update('81')
+#4 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Users))
+#5 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/patriot/...')
+#8 {main}
+CRITICAL - 2020-12-16 00:56:06 --> Allowed fields must be specified for model: App\Models\Users_model
+#0 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Model.php(1265): CodeIgniter\Database\Exceptions\DataException::forInvalidAllowedFields('App\\Models\\User...')
+#1 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Model.php(870): CodeIgniter\Model->doProtectFields(Array)
+#2 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Controllers/Admin/Users.php(65): CodeIgniter\Model->update(Array, Array)
+#3 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Admin\Users->update('81')
+#4 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Users))
+#5 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/patriot/...')
+#8 {main}
+CRITICAL - 2020-12-16 00:56:16 --> Allowed fields must be specified for model: App\Models\Users_model
+#0 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Model.php(1265): CodeIgniter\Database\Exceptions\DataException::forInvalidAllowedFields('App\\Models\\User...')
+#1 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Model.php(870): CodeIgniter\Model->doProtectFields(Array)
+#2 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Controllers/Admin/Users.php(65): CodeIgniter\Model->update(Array, Array)
+#3 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Admin\Users->update('81')
+#4 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Users))
+#5 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/patriot/...')
+#8 {main}
+CRITICAL - 2020-12-16 00:57:02 --> Allowed fields must be specified for model: App\Models\Users_model
+#0 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Model.php(1265): CodeIgniter\Database\Exceptions\DataException::forInvalidAllowedFields('App\\Models\\User...')
+#1 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Model.php(870): CodeIgniter\Model->doProtectFields(Array)
+#2 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Controllers/Admin/Users.php(65): CodeIgniter\Model->update(Array, Array)
+#3 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Admin\Users->update('81')
+#4 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Users))
+#5 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/patriot/...')
+#8 {main}
+CRITICAL - 2020-12-16 00:57:20 --> Allowed fields must be specified for model: App\Models\Users_model
+#0 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Model.php(1265): CodeIgniter\Database\Exceptions\DataException::forInvalidAllowedFields('App\\Models\\User...')
+#1 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Model.php(870): CodeIgniter\Model->doProtectFields(Array)
+#2 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Controllers/Admin/Users.php(65): CodeIgniter\Model->update(Array, Array)
+#3 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Admin\Users->update('81')
+#4 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Users))
+#5 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/patriot/...')
+#8 {main}
+CRITICAL - 2020-12-16 00:58:12 --> Allowed fields must be specified for model: App\Models\Users_model
+#0 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Model.php(1265): CodeIgniter\Database\Exceptions\DataException::forInvalidAllowedFields('App\\Models\\User...')
+#1 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Model.php(870): CodeIgniter\Model->doProtectFields(Array)
+#2 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Controllers/Admin/Users.php(67): CodeIgniter\Model->update(Array, Array)
+#3 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Admin\Users->update('81')
+#4 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Users))
+#5 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/patriot/...')
+#8 {main}
+CRITICAL - 2020-12-16 00:58:33 --> Allowed fields must be specified for model: App\Models\Users_model
+#0 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Model.php(1265): CodeIgniter\Database\Exceptions\DataException::forInvalidAllowedFields('App\\Models\\User...')
+#1 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Model.php(870): CodeIgniter\Model->doProtectFields(Array)
+#2 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Controllers/Admin/Users.php(67): CodeIgniter\Model->update(Array, Array)
+#3 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Admin\Users->update('81')
+#4 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Users))
+#5 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/patriot/...')
+#8 {main}
+CRITICAL - 2020-12-16 00:58:33 --> Allowed fields must be specified for model: App\Models\Users_model
+#0 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Model.php(1265): CodeIgniter\Database\Exceptions\DataException::forInvalidAllowedFields('App\\Models\\User...')
+#1 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Model.php(870): CodeIgniter\Model->doProtectFields(Array)
+#2 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Controllers/Admin/Users.php(67): CodeIgniter\Model->update(Array, Array)
+#3 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Admin\Users->update('81')
+#4 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Users))
+#5 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/patriot/...')
+#8 {main}
+CRITICAL - 2020-12-16 00:58:34 --> Allowed fields must be specified for model: App\Models\Users_model
+#0 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Model.php(1265): CodeIgniter\Database\Exceptions\DataException::forInvalidAllowedFields('App\\Models\\User...')
+#1 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Model.php(870): CodeIgniter\Model->doProtectFields(Array)
+#2 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Controllers/Admin/Users.php(67): CodeIgniter\Model->update(Array, Array)
+#3 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Admin\Users->update('81')
+#4 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Users))
+#5 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/patriot/...')
+#8 {main}
+CRITICAL - 2020-12-16 00:58:34 --> Allowed fields must be specified for model: App\Models\Users_model
+#0 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Model.php(1265): CodeIgniter\Database\Exceptions\DataException::forInvalidAllowedFields('App\\Models\\User...')
+#1 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Model.php(870): CodeIgniter\Model->doProtectFields(Array)
+#2 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Controllers/Admin/Users.php(67): CodeIgniter\Model->update(Array, Array)
+#3 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Admin\Users->update('81')
+#4 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Users))
+#5 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/patriot/...')
+#8 {main}
+CRITICAL - 2020-12-16 00:58:35 --> Allowed fields must be specified for model: App\Models\Users_model
+#0 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Model.php(1265): CodeIgniter\Database\Exceptions\DataException::forInvalidAllowedFields('App\\Models\\User...')
+#1 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Model.php(870): CodeIgniter\Model->doProtectFields(Array)
+#2 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Controllers/Admin/Users.php(67): CodeIgniter\Model->update(Array, Array)
+#3 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Admin\Users->update('81')
+#4 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Users))
+#5 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/patriot/...')
+#8 {main}
+CRITICAL - 2020-12-16 00:58:35 --> Allowed fields must be specified for model: App\Models\Users_model
+#0 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Model.php(1265): CodeIgniter\Database\Exceptions\DataException::forInvalidAllowedFields('App\\Models\\User...')
+#1 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Model.php(870): CodeIgniter\Model->doProtectFields(Array)
+#2 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Controllers/Admin/Users.php(67): CodeIgniter\Model->update(Array, Array)
+#3 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Admin\Users->update('81')
+#4 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Users))
+#5 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/patriot/...')
+#8 {main}
+CRITICAL - 2020-12-16 00:58:55 --> Allowed fields must be specified for model: App\Models\Users_model
+#0 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Model.php(1265): CodeIgniter\Database\Exceptions\DataException::forInvalidAllowedFields('App\\Models\\User...')
+#1 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Model.php(870): CodeIgniter\Model->doProtectFields(Array)
+#2 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Controllers/Admin/Users.php(67): CodeIgniter\Model->update(Array, Array)
+#3 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Admin\Users->update('81')
+#4 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Users))
+#5 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/patriot/...')
+#8 {main}
+CRITICAL - 2020-12-16 00:58:56 --> Allowed fields must be specified for model: App\Models\Users_model
+#0 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Model.php(1265): CodeIgniter\Database\Exceptions\DataException::forInvalidAllowedFields('App\\Models\\User...')
+#1 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Model.php(870): CodeIgniter\Model->doProtectFields(Array)
+#2 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Controllers/Admin/Users.php(67): CodeIgniter\Model->update(Array, Array)
+#3 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Admin\Users->update('81')
+#4 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Users))
+#5 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/patriot/...')
+#8 {main}
+CRITICAL - 2020-12-16 00:58:57 --> Allowed fields must be specified for model: App\Models\Users_model
+#0 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Model.php(1265): CodeIgniter\Database\Exceptions\DataException::forInvalidAllowedFields('App\\Models\\User...')
+#1 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Model.php(870): CodeIgniter\Model->doProtectFields(Array)
+#2 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Controllers/Admin/Users.php(67): CodeIgniter\Model->update(Array, Array)
+#3 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Admin\Users->update('81')
+#4 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Users))
+#5 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/patriot/...')
+#8 {main}
+CRITICAL - 2020-12-16 00:59:34 --> Allowed fields must be specified for model: App\Models\Users_model
+#0 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Model.php(1265): CodeIgniter\Database\Exceptions\DataException::forInvalidAllowedFields('App\\Models\\User...')
+#1 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Model.php(870): CodeIgniter\Model->doProtectFields(Array)
+#2 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Controllers/Admin/Users.php(67): CodeIgniter\Model->update(Array, Array)
+#3 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Admin\Users->update('81')
+#4 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Users))
+#5 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/patriot/...')
+#8 {main}
+CRITICAL - 2020-12-16 01:01:31 --> Allowed fields must be specified for model: App\Models\Users_model
+#0 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Model.php(1265): CodeIgniter\Database\Exceptions\DataException::forInvalidAllowedFields('App\\Models\\User...')
+#1 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Model.php(870): CodeIgniter\Model->doProtectFields(Array)
+#2 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Controllers/Admin/Users.php(67): CodeIgniter\Model->update(Array, Array)
+#3 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Admin\Users->update('81')
+#4 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Users))
+#5 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/patriot/...')
+#8 {main}
+CRITICAL - 2020-12-16 01:02:43 --> Allowed fields must be specified for model: App\Models\Users_model
+#0 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Model.php(1265): CodeIgniter\Database\Exceptions\DataException::forInvalidAllowedFields('App\\Models\\User...')
+#1 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Model.php(870): CodeIgniter\Model->doProtectFields(Array)
+#2 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Controllers/Admin/Users.php(67): CodeIgniter\Model->update(Array, Array)
+#3 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Admin\Users->update('81')
+#4 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Users))
+#5 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/patriot/...')
+#8 {main}
+CRITICAL - 2020-12-16 01:07:05 --> Allowed fields must be specified for model: App\Models\Users_model
+#0 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Model.php(1265): CodeIgniter\Database\Exceptions\DataException::forInvalidAllowedFields('App\\Models\\User...')
+#1 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Model.php(870): CodeIgniter\Model->doProtectFields(Array)
+#2 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Controllers/Admin/Users.php(66): CodeIgniter\Model->update(Array, Array)
+#3 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Admin\Users->update('81')
+#4 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Users))
+#5 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/patriot/...')
+#8 {main}
+CRITICAL - 2020-12-16 01:07:37 --> Allowed fields must be specified for model: App\Models\Users_model
+#0 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Model.php(1265): CodeIgniter\Database\Exceptions\DataException::forInvalidAllowedFields('App\\Models\\User...')
+#1 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Model.php(870): CodeIgniter\Model->doProtectFields(Array)
+#2 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Controllers/Admin/Users.php(66): CodeIgniter\Model->update(Array, Array)
+#3 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Admin\Users->update('81')
+#4 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Users))
+#5 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/patriot/...')
+#8 {main}
+CRITICAL - 2020-12-16 01:07:38 --> Allowed fields must be specified for model: App\Models\Users_model
+#0 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Model.php(1265): CodeIgniter\Database\Exceptions\DataException::forInvalidAllowedFields('App\\Models\\User...')
+#1 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Model.php(870): CodeIgniter\Model->doProtectFields(Array)
+#2 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Controllers/Admin/Users.php(66): CodeIgniter\Model->update(Array, Array)
+#3 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Admin\Users->update('81')
+#4 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Users))
+#5 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/patriot/...')
+#8 {main}
+CRITICAL - 2020-12-16 01:07:38 --> Allowed fields must be specified for model: App\Models\Users_model
+#0 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Model.php(1265): CodeIgniter\Database\Exceptions\DataException::forInvalidAllowedFields('App\\Models\\User...')
+#1 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Model.php(870): CodeIgniter\Model->doProtectFields(Array)
+#2 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Controllers/Admin/Users.php(66): CodeIgniter\Model->update(Array, Array)
+#3 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Admin\Users->update('81')
+#4 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Users))
+#5 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/patriot/...')
+#8 {main}
+CRITICAL - 2020-12-16 01:07:39 --> Allowed fields must be specified for model: App\Models\Users_model
+#0 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Model.php(1265): CodeIgniter\Database\Exceptions\DataException::forInvalidAllowedFields('App\\Models\\User...')
+#1 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Model.php(870): CodeIgniter\Model->doProtectFields(Array)
+#2 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Controllers/Admin/Users.php(66): CodeIgniter\Model->update(Array, Array)
+#3 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Admin\Users->update('81')
+#4 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Users))
+#5 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/patriot/...')
+#8 {main}
+CRITICAL - 2020-12-16 01:07:39 --> Allowed fields must be specified for model: App\Models\Users_model
+#0 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Model.php(1265): CodeIgniter\Database\Exceptions\DataException::forInvalidAllowedFields('App\\Models\\User...')
+#1 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Model.php(870): CodeIgniter\Model->doProtectFields(Array)
+#2 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Controllers/Admin/Users.php(66): CodeIgniter\Model->update(Array, Array)
+#3 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Admin\Users->update('81')
+#4 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Users))
+#5 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/patriot/...')
+#8 {main}
+CRITICAL - 2020-12-16 01:07:40 --> Allowed fields must be specified for model: App\Models\Users_model
+#0 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Model.php(1265): CodeIgniter\Database\Exceptions\DataException::forInvalidAllowedFields('App\\Models\\User...')
+#1 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Model.php(870): CodeIgniter\Model->doProtectFields(Array)
+#2 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Controllers/Admin/Users.php(66): CodeIgniter\Model->update(Array, Array)
+#3 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Admin\Users->update('81')
+#4 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Users))
+#5 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/patriot/...')
+#8 {main}
+CRITICAL - 2020-12-16 01:07:41 --> Allowed fields must be specified for model: App\Models\Users_model
+#0 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Model.php(1265): CodeIgniter\Database\Exceptions\DataException::forInvalidAllowedFields('App\\Models\\User...')
+#1 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Model.php(870): CodeIgniter\Model->doProtectFields(Array)
+#2 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Controllers/Admin/Users.php(66): CodeIgniter\Model->update(Array, Array)
+#3 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Admin\Users->update('81')
+#4 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Users))
+#5 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/patriot/...')
+#8 {main}
+CRITICAL - 2020-12-16 01:11:31 --> Allowed fields must be specified for model: App\Models\Users_model
+#0 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Model.php(1265): CodeIgniter\Database\Exceptions\DataException::forInvalidAllowedFields('App\\Models\\User...')
+#1 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Model.php(870): CodeIgniter\Model->doProtectFields(Array)
+#2 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Controllers/Admin/Users.php(68): CodeIgniter\Model->update(Array, Array)
+#3 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Admin\Users->update('81')
+#4 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Users))
+#5 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/patriot/...')
+#8 {main}
+CRITICAL - 2020-12-16 01:38:15 --> Undefined index: firstname
+#0 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Controllers/Admin/Users.php(62): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', '/Users/patriot/...', 62, Array)
+#1 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Admin\Users->update('81')
+#2 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Users))
+#3 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/patriot/...')
+#6 {main}
+CRITICAL - 2020-12-16 10:41:46 --> Call to undefined method App\Models\Users_model::getResultArray
+#0 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Controllers/Users.php(21): CodeIgniter\Model->__call('getResultArray', Array)
+#1 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Users->profile('patriotkusuma')
+#2 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+#3 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/patriot/...')
+#6 {main}
+CRITICAL - 2020-12-16 10:42:01 --> Invalid file: users/profile.php
+#0 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/View/View.php(228): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('users/profile.p...')
+#1 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Common.php(1119): CodeIgniter\View\View->render('users/profile', Array, true)
+#2 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Controllers/Users.php(24): view('users/profile', Array)
+#3 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Users->profile('patriotkusuma')
+#4 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+#5 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#7 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/patriot/...')
+#8 {main}
+CRITICAL - 2020-12-16 11:29:31 --> Undefined index: id
+#0 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Views/admin/users/profile.php(27): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', '/Users/patriot/...', 27, Array)
+#1 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/View/View.php(246): include('/Users/patriot/...')
+#2 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Common.php(1119): CodeIgniter\View\View->render('/admin/users/pr...', Array, true)
+#3 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Controllers/Users.php(24): view('/admin/users/pr...', Array)
+#4 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Users->profile('patriotkusuma')
+#5 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+#6 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/patriot/...')
+#9 {main}
+CRITICAL - 2020-12-16 11:30:06 --> Trying to get property 'id' of non-object
+#0 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Views/admin/users/profile.php(27): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/Users/patriot/...', 27, Array)
+#1 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/View/View.php(246): include('/Users/patriot/...')
+#2 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Common.php(1119): CodeIgniter\View\View->render('/admin/users/pr...', Array, true)
+#3 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Controllers/Users.php(24): view('/admin/users/pr...', Array)
+#4 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Users->profile('patriotkusuma')
+#5 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+#6 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/patriot/...')
+#9 {main}
+CRITICAL - 2020-12-16 11:30:30 --> Trying to get property 'id' of non-object
+#0 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Views/admin/users/profile.php(27): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/Users/patriot/...', 27, Array)
+#1 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/View/View.php(246): include('/Users/patriot/...')
+#2 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Common.php(1119): CodeIgniter\View\View->render('/admin/users/pr...', Array, true)
+#3 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Controllers/Users.php(24): view('/admin/users/pr...', Array)
+#4 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Users->profile('patriotkusuma')
+#5 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+#6 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/patriot/...')
+#9 {main}
+CRITICAL - 2020-12-16 11:30:50 --> Trying to get property 'id' of non-object
+#0 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Views/admin/users/profile.php(28): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', '/Users/patriot/...', 28, Array)
+#1 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/View/View.php(246): include('/Users/patriot/...')
+#2 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Common.php(1119): CodeIgniter\View\View->render('/admin/users/pr...', Array, true)
+#3 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Controllers/Users.php(24): view('/admin/users/pr...', Array)
+#4 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Users->profile('patriotkusuma')
+#5 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+#6 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/patriot/...')
+#9 {main}
+CRITICAL - 2020-12-16 11:31:28 --> Call to undefined method App\Models\Users_model::getResult
+#0 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Controllers/Users.php(21): CodeIgniter\Model->__call('getResult', Array)
+#1 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Users->profile('patriotkusuma')
+#2 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+#3 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/patriot/...')
+#6 {main}
+CRITICAL - 2020-12-16 11:32:23 --> Array to string conversion
+#0 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Views/admin/users/profile.php(27): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Array to string...', '/Users/patriot/...', 27, Array)
+#1 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/View/View.php(246): include('/Users/patriot/...')
+#2 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Common.php(1119): CodeIgniter\View\View->render('/admin/users/pr...', Array, true)
+#3 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Controllers/Users.php(24): view('/admin/users/pr...', Array)
+#4 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Users->profile('patriotkusuma')
+#5 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+#6 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/patriot/...')
+#9 {main}
+CRITICAL - 2020-12-16 23:08:12 --> Call to undefined method App\Models\Products_model::getRowArray
+#0 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Controllers/Admin/Pictures.php(24): CodeIgniter\Model->__call('getRowArray', Array)
+#1 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Admin\Pictures->index('8992933231113')
+#2 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Pictures))
+#3 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/patriot/...')
+#6 {main}
+CRITICAL - 2020-12-16 23:08:33 --> Unknown column 'sku' in 'where clause'
+#0 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(331): mysqli->query('SELECT *\nFROM `...')
+#1 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Database/BaseConnection.php(741): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Database/BaseConnection.php(669): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(2019): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Model.php(1818): CodeIgniter\Database\BaseBuilder->getWhere(Array)
+#5 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Models/Pictures_model.php(14): CodeIgniter\Model->__call('getWhere', Array)
+#6 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Controllers/Admin/Pictures.php(25): App\Models\Pictures_model->getPictures('641')
+#7 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Admin\Pictures->index('8992933231113')
+#8 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Pictures))
+#9 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#11 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/patriot/...')
+#12 {main}
+CRITICAL - 2020-12-16 23:10:20 --> Undefined index: product_id
+#0 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Controllers/Admin/Pictures.php(25): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', '/Users/patriot/...', 25, Array)
+#1 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Admin\Pictures->index('8992933231113')
+#2 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Pictures))
+#3 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/patriot/...')
+#6 {main}
+CRITICAL - 2020-12-16 23:10:37 --> Undefined index: product_id
+#0 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Controllers/Admin/Pictures.php(26): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', '/Users/patriot/...', 26, Array)
+#1 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Admin\Pictures->index('8992933231113')
+#2 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Pictures))
+#3 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/patriot/...')
+#6 {main}
+CRITICAL - 2020-12-16 23:11:24 --> Unknown column 'product_name' in 'field list'
+#0 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(331): mysqli->query('SELECT `product...')
+#1 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Database/BaseConnection.php(741): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `product...')
+#2 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Database/BaseConnection.php(669): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `product...')
+#3 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1860): CodeIgniter\Database\BaseConnection->query('SELECT `product...', Array, false)
+#4 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Model.php(462): CodeIgniter\Database\BaseBuilder->get()
+#5 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Controllers/Admin/Pictures.php(24): CodeIgniter\Model->findAll()
+#6 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Admin\Pictures->index('8992933231113')
+#7 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Pictures))
+#8 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#10 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/patriot/...')
+#11 {main}
+CRITICAL - 2020-12-16 23:12:01 --> Undefined index: product_id
+#0 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Controllers/Admin/Pictures.php(25): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', '/Users/patriot/...', 25, Array)
+#1 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Admin\Pictures->index('8992933231113')
+#2 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Pictures))
+#3 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/patriot/...')
+#6 {main}
+CRITICAL - 2020-12-16 23:12:08 --> Cannot use [] for reading
+#0 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Admin\Pictures->index('8992933231113')
+#1 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Pictures))
+#2 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/patriot/...')
+#5 {main}
+CRITICAL - 2020-12-16 23:12:36 --> Undefined offset: 0
+#0 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Controllers/Admin/Pictures.php(25): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', '/Users/patriot/...', 25, Array)
+#1 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Admin\Pictures->index('8992933231113')
+#2 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Pictures))
+#3 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/patriot/...')
+#6 {main}
+CRITICAL - 2020-12-16 23:12:55 --> Unknown column 'sku' in 'where clause'
+#0 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(331): mysqli->query('SELECT *\nFROM `...')
+#1 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Database/BaseConnection.php(741): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Database/BaseConnection.php(669): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(2019): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Model.php(1818): CodeIgniter\Database\BaseBuilder->getWhere(Array)
+#5 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Models/Pictures_model.php(14): CodeIgniter\Model->__call('getWhere', Array)
+#6 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Controllers/Admin/Pictures.php(26): App\Models\Pictures_model->getPictures('641')
+#7 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Admin\Pictures->index('8992933231113')
+#8 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Pictures))
+#9 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#11 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/patriot/...')
+#12 {main}
+CRITICAL - 2020-12-16 23:14:02 --> Call to a member function findAll() on null
+#0 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Admin\Pictures->index('8992933231113')
+#1 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Pictures))
+#2 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/patriot/...')
+#5 {main}
+CRITICAL - 2020-12-16 23:14:38 --> Undefined variable: totalProduct
+#0 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Views/admin/dashboard.php(11): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', '/Users/patriot/...', 11, Array)
+#1 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/View/View.php(246): include('/Users/patriot/...')
+#2 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Common.php(1119): CodeIgniter\View\View->render('admin/dashboard', Array, true)
+#3 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Controllers/Admin/Pictures.php(36): view('admin/dashboard', Array)
+#4 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Admin\Pictures->index('8992933231113')
+#5 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Pictures))
+#6 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/patriot/...')
+#9 {main}

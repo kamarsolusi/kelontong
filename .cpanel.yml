@@ -1,0 +1,6 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/pasj9714/public_html/kelontong.xyz/
+    - /bin/cp env $DEPLOYPATH
+    - /bin/cp -R public $DEPLOYPATH
