@@ -38,7 +38,7 @@ class Pictures extends BaseController
     public function load(){
         $sku = $this->request->getGet('sku');
         $productId = $this->productModel->select('product_id')->where('sku', $sku)->get()->getRowArray();
-        $path = ROOTPATH. 'public/upload/products/';
+        $path = FCPATH . 'upload/products/';
         $file_list = array();
         $pictures = $this->pictureModel->where('product_id', $productId['product_id'])->orderBy('picture_name', 'asc')->findAll();
         
@@ -84,7 +84,7 @@ class Pictures extends BaseController
                     'picture_name'  => $newName,
                     'token'         => $token,
                 ];
-                $value->move(ROOTPATH. 'public/upload/products/', $newName);
+                $value->move(FCPATH. 'upload/products/', $newName);
                 $save = $this->pictureModel->insertPictures($data);
             }
 
@@ -102,8 +102,8 @@ class Pictures extends BaseController
     public function delete($token){
         $nameFile = $this->pictureModel->select('picture_id, picture_name')->where('token',$token)->get()->getRowArray();
         
-        if(file_exists(ROOTPATH . 'public/upload/products/' . $nameFile['picture_name'])){
-            unlink(ROOTPATH . 'public/upload/products/' . $nameFile['picture_name']);
+        if(file_exists(FCPATH . 'upload/products/' . $nameFile['picture_name'])){
+            unlink(FCPATH . 'upload/products/' . $nameFile['picture_name']);
             $delete = $this->pictureModel->delete($nameFile['picture_id']);
         }else{
             $delete = $this->pictureModel->delete($nameFile['picture_id']);
