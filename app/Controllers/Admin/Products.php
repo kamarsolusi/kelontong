@@ -6,14 +6,17 @@ use CodeIgniter\Controller;
 use App\Controllers\BaseController;
 use App\Models\Categories_model;
 use App\Models\Products_model;
+use App\Models\Pictures_model;
 
 class Products extends BaseController
 {
     protected $product_model;
+    protected $picture_model;
     public function __construct()
     {
         helper(['form']);
         $this->product_model = new Products_model();
+        $this->picture_model = new Pictures_model();
     }
     public function index()
     {

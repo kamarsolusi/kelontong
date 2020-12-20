@@ -79,6 +79,10 @@ $routes->post('/admin/products/update/(:num)', 'Admin\Products::update/$1');
 $routes->get('/admin/users/(:num)', 'Admin\Users::detail/$1');
 $routes->put('/admin/users/(:num)', 'Admin\Users::update/$1');
 $routes->delete('/admin/users/(:num)', 'Admin\Users::delete/$1');
+
+// Api // Product
+$routes->resource('apiproducts');
+$routes->resource('api/categories', ['controller' => 'Api\Categories']);
 /**
  * --------------------------------------------------------------------
  * Additional Routing
