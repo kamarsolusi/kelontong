@@ -324,7 +324,7 @@
   <!-- Produk Terbaru -->
   <div class="container mt-5">
     <div class="row">
-      <?php foreach($produckBaru as $key => $value): ?>
+      <?php foreach($produkBaru as $key => $value): ?>
       <div class="col-12 col-sm-6 col-md-3 mt-5">
         <div class="card">
           <span class="diskon">
