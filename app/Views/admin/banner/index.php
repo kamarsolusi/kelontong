@@ -204,9 +204,9 @@
 
     $('.dz-filename').on('click', function(){
         $('#preview-image').modal('show');
-        console.log($(this).data('id'));
+        var base_url = window.location.origin;
         $('#img-body').append(`
-            <img src='http://localhost:8080/upload/banner/``' />
+            <img src='`+base_url+`/upload/banner/``' />
         `);
     })
 
