@@ -138,11 +138,11 @@
 
                 file.previewElement.addEventListener("click", function(e) {
                     var src = this.querySelectorAll('.dz-image > img')[0].alt;
-                    console.log(src);
+                    var base_url = window.location.origin;
                     $('#preview-image').modal('show');
                     $('#img-body').empty();
                     $('#img-body').append(`
-                        <img class='w-100' src='http://localhost:8080/upload/banner/`+src+`'/>
+                        <img class='w-100' src='`+base_url+`/upload/banner/`+src+`'/>
                     `);
                 });
             });
@@ -202,13 +202,7 @@
         thumbnailHeight: 250,
     });
 
-    $('.dz-filename').on('click', function(){
-        $('#preview-image').modal('show');
-        var base_url = window.location.origin;
-        $('#img-body').append(`
-            <img src='https://kelontong.xyz/upload/banner/``' />
-        `);
-    })
+
 
     $('#cancel').on('click', function(){
         window.close()
