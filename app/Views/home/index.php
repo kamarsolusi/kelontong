@@ -12,21 +12,13 @@
   <div class="container-fluid space-carousel">
     <div class="row">
       <div class="owl-carousel owl-theme" id="owl-carousel">
-        <div class="item item-header">
-          <img src="<?= base_url() ?>/img/banner/banner1.jpg" class="img-slider" alt="">
-        </div>
-        <div class="item item-header">
-          <img src="<?= base_url() ?>/img/banner/banner2.jpg" class="img-slider" alt="">
-        </div>
-        <div class="item item-header">
-          <img src="<?= base_url() ?>/img/banner/banner3.jpg" class="img-slider" alt="">
-        </div>
-        <div class="item item-header">
-          <img src="<?= base_url() ?>/img/banner/banner4.jpg" class="img-slider" alt="">
-        </div>
-        <div class="item item-header">
-          <img src="<?= base_url() ?>/img/banner/banner5.jpg" class="img-slider" alt="">
-        </div>
+        <?php if(!empty($banner)) : ?>
+          <?php foreach($banner as $key => $value): ?>
+            <div class="item item-header">
+              <img src="<?= base_url('/upload/banner/') . '/' . $value['banner_name'] ?>" class="img-slider" alt="<?= $value['banner_name']; ?>">
+            </div>
+          <?php endforeach; ?>
+        <?php endif; ?>
       </div>
     </div>
   </div>

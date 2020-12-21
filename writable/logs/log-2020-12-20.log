@@ -149,3 +149,10 @@ CRITICAL - 2020-12-20 21:39:57 --> Undefined index: harga_baru
 #4 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/public/index.php(45): CodeIgniter\CodeIgniter->run()
 #5 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/patriot/...')
 #6 {main}
+CRITICAL - 2020-12-20 23:59:37 --> Too few arguments to function App\Controllers\Admin\Banner::index(), 0 passed in /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php on line 918 and exactly 1 expected
+#0 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Admin\Banner->index()
+#1 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Banner))
+#2 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/patriot/...')
+#5 {main}

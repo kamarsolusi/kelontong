@@ -54,6 +54,14 @@ $uri = $request->uri->getSegment(2) ?>
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a href="<?= base_url('admin/banner') ?>" class="nav-link <?= $uri == 'banner' ? 'active' : '' ?>">
+                        <i class="nav-icon fas fa-images"></i>
+                        <p>
+                            Banner
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="<?= base_url('/admin/categories') ?>" class="nav-link <?= $uri == 'categories' ? 'active' : '' ?>">
                         <i class="nav-icon fas fa-list-alt"></i>
                         <p>

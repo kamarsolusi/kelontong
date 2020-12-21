@@ -1,0 +1,215 @@
+CRITICAL - 2020-12-21 00:00:41 --> Too few arguments to function App\Controllers\Admin\Banner::index(), 0 passed in /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php on line 918 and exactly 1 expected
+#0 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Admin\Banner->index()
+#1 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Banner))
+#2 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#4 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/patriot/...')
+#5 {main}
+CRITICAL - 2020-12-21 00:03:12 --> Trying to access array offset on value of type null
+#0 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Controllers/Admin/Pictures.php(83): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', '/Users/patriot/...', 83, Array)
+#1 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Admin\Pictures->process_upload()
+#2 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Pictures))
+#3 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/patriot/...')
+#6 {main}
+CRITICAL - 2020-12-21 00:03:15 --> Trying to access array offset on value of type null
+#0 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Controllers/Admin/Banner.php(86): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', '/Users/patriot/...', 86, Array)
+#1 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Admin\Banner->delete('0.0521697062286...')
+#2 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Banner))
+#3 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/patriot/...')
+#6 {main}
+CRITICAL - 2020-12-21 00:03:53 --> Trying to access array offset on value of type null
+#0 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Controllers/Admin/Pictures.php(83): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', '/Users/patriot/...', 83, Array)
+#1 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Admin\Pictures->process_upload()
+#2 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Pictures))
+#3 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/patriot/...')
+#6 {main}
+CRITICAL - 2020-12-21 00:03:57 --> Trying to access array offset on value of type null
+#0 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Controllers/Admin/Banner.php(87): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', '/Users/patriot/...', 87, Array)
+#1 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Admin\Banner->delete('0.9970445288182...')
+#2 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Banner))
+#3 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/patriot/...')
+#6 {main}
+CRITICAL - 2020-12-21 00:10:44 --> Trying to access array offset on value of type null
+#0 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Controllers/Admin/Banner.php(85): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', '/Users/patriot/...', 85, Array)
+#1 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Admin\Banner->delete('undefined')
+#2 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Banner))
+#3 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/patriot/...')
+#6 {main}
+CRITICAL - 2020-12-21 00:11:04 --> Undefined index: banner_name
+#0 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Views/home/index.php(18): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', '/Users/patriot/...', 18, Array)
+#1 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/View/View.php(246): include('/Users/patriot/...')
+#2 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Common.php(1119): CodeIgniter\View\View->render('home/index', Array, true)
+#3 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Controllers/Home.php(33): view('home/index', Array)
+#4 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Home->index()
+#5 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/patriot/...')
+#9 {main}
+CRITICAL - 2020-12-21 00:11:52 --> Undefined index: banner_name
+#0 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Views/home/index.php(19): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', '/Users/patriot/...', 19, Array)
+#1 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/View/View.php(246): include('/Users/patriot/...')
+#2 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Common.php(1119): CodeIgniter\View\View->render('home/index', Array, true)
+#3 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Controllers/Home.php(33): view('home/index', Array)
+#4 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Home->index()
+#5 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/patriot/...')
+#9 {main}
+CRITICAL - 2020-12-21 00:12:45 --> Undefined index: banner_name
+#0 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Views/home/index.php(18): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', '/Users/patriot/...', 18, Array)
+#1 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/View/View.php(246): include('/Users/patriot/...')
+#2 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Common.php(1119): CodeIgniter\View\View->render('home/index', Array, true)
+#3 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Controllers/Home.php(33): view('home/index', Array)
+#4 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Home->index()
+#5 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/patriot/...')
+#9 {main}
+CRITICAL - 2020-12-21 00:13:03 --> Undefined index: banner_name
+#0 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Views/home/index.php(18): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', '/Users/patriot/...', 18, Array)
+#1 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/View/View.php(246): include('/Users/patriot/...')
+#2 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Common.php(1119): CodeIgniter\View\View->render('home/index', Array, true)
+#3 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Controllers/Home.php(33): view('home/index', Array)
+#4 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Home->index()
+#5 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/patriot/...')
+#9 {main}
+CRITICAL - 2020-12-21 00:13:26 --> Undefined index: banner_name
+#0 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Views/home/index.php(18): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', '/Users/patriot/...', 18, Array)
+#1 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/View/View.php(246): include('/Users/patriot/...')
+#2 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Common.php(1119): CodeIgniter\View\View->render('home/index', Array, true)
+#3 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Controllers/Home.php(33): view('home/index', Array)
+#4 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Home->index()
+#5 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#8 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/patriot/...')
+#9 {main}
+CRITICAL - 2020-12-21 01:32:25 --> Undefined variable: save
+#0 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Controllers/Admin/Banner.php(72): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', '/Users/patriot/...', 72, Array)
+#1 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Admin\Banner->process_upload()
+#2 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Banner))
+#3 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/patriot/...')
+#6 {main}
+CRITICAL - 2020-12-21 01:32:30 --> Trying to access array offset on value of type null
+#0 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Controllers/Admin/Banner.php(85): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', '/Users/patriot/...', 85, Array)
+#1 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Admin\Banner->delete('0.6581291571755...')
+#2 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Banner))
+#3 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/patriot/...')
+#6 {main}
+CRITICAL - 2020-12-21 01:32:38 --> Undefined variable: save
+#0 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Controllers/Admin/Banner.php(72): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', '/Users/patriot/...', 72, Array)
+#1 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Admin\Banner->process_upload()
+#2 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Banner))
+#3 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/patriot/...')
+#6 {main}
+CRITICAL - 2020-12-21 01:32:48 --> Trying to access array offset on value of type null
+#0 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Controllers/Admin/Banner.php(85): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', '/Users/patriot/...', 85, Array)
+#1 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Admin\Banner->delete('0.1255910697701...')
+#2 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Banner))
+#3 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/patriot/...')
+#6 {main}
+CRITICAL - 2020-12-21 01:33:05 --> Undefined variable: save
+#0 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Controllers/Admin/Banner.php(72): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', '/Users/patriot/...', 72, Array)
+#1 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Admin\Banner->process_upload()
+#2 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Banner))
+#3 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/patriot/...')
+#6 {main}
+CRITICAL - 2020-12-21 01:33:10 --> Trying to access array offset on value of type null
+#0 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Controllers/Admin/Banner.php(85): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', '/Users/patriot/...', 85, Array)
+#1 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Admin\Banner->delete('0.8630456542573...')
+#2 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Banner))
+#3 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/patriot/...')
+#6 {main}
+CRITICAL - 2020-12-21 01:35:41 --> Undefined variable: save
+#0 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Controllers/Admin/Banner.php(72): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', '/Users/patriot/...', 72, Array)
+#1 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Admin\Banner->process_upload()
+#2 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Banner))
+#3 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/patriot/...')
+#6 {main}
+CRITICAL - 2020-12-21 01:35:46 --> Trying to access array offset on value of type null
+#0 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Controllers/Admin/Banner.php(85): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', '/Users/patriot/...', 85, Array)
+#1 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Admin\Banner->delete('0.4600229382113...')
+#2 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Banner))
+#3 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/patriot/...')
+#6 {main}
+CRITICAL - 2020-12-21 01:36:51 --> Trying to access array offset on value of type null
+#0 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Controllers/Admin/Banner.php(87): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', '/Users/patriot/...', 87, Array)
+#1 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Admin\Banner->delete('0.6546385671876...')
+#2 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Banner))
+#3 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/patriot/...')
+#6 {main}
+CRITICAL - 2020-12-21 01:37:23 --> Trying to access array offset on value of type null
+#0 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Controllers/Admin/Banner.php(86): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', '/Users/patriot/...', 86, Array)
+#1 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Admin\Banner->delete('0.8756716653831...')
+#2 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Banner))
+#3 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/patriot/...')
+#6 {main}
+CRITICAL - 2020-12-21 01:37:26 --> The original file is not a valid file.
+#0 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/HTTP/Files/UploadedFile.php(172): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidFile()
+#1 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Controllers/Admin/Banner.php(69): CodeIgniter\HTTP\Files\UploadedFile->move('/Users/patriot/...', '1608536246_d32e...')
+#2 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Admin\Banner->process_upload()
+#3 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Banner))
+#4 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#6 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/patriot/...')
+#7 {main}
+CRITICAL - 2020-12-21 01:37:30 --> Trying to access array offset on value of type null
+#0 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Controllers/Admin/Banner.php(86): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', '/Users/patriot/...', 86, Array)
+#1 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Admin\Banner->delete('0.8769442551500...')
+#2 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Banner))
+#3 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/patriot/...')
+#6 {main}
+CRITICAL - 2020-12-21 01:38:01 --> Undefined variable: save
+#0 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Controllers/Admin/Banner.php(73): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', '/Users/patriot/...', 73, Array)
+#1 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Admin\Banner->process_upload()
+#2 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Banner))
+#3 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/patriot/...')
+#6 {main}
+CRITICAL - 2020-12-21 01:38:05 --> Trying to access array offset on value of type null
+#0 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/app/Controllers/Admin/Banner.php(86): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', '/Users/patriot/...', 86, Array)
+#1 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(918): App\Controllers\Admin\Banner->delete('0.3985603184728...')
+#2 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Banner))
+#3 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/public/index.php(45): CodeIgniter\CodeIgniter->run()
+#5 /Users/patriot/Documents/Codeigniter/final project/BE/kelontong/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(34): require_once('/Users/patriot/...')
+#6 {main}
