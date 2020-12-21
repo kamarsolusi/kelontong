@@ -24,7 +24,7 @@ $(document).ready(function () {
             { data: "sku" },
             { data: "name" },
             { data: "category_name" },
-            { data: "harga", render: $.fn.dataTable.render.number(",", ".", 2, "Rp ") },
+            { data: "harga_baru", render: $.fn.dataTable.render.number(",", ".", 2, "Rp ") },
             { data: "stok" },
             {
                 data: "product_status",
@@ -98,7 +98,7 @@ function submit(a) {
                           );
                       }),
                           $.each(a.product, function (a, b) {
-                              $("#product_id").val(b.product_id), $("#sku").val(b.sku), $("#name").val(b.name), $("#category_id").val(b.category_id), $("#harga").val(b.harga), $("#stok").val(b.stok), $("#status").val(b.product_status);
+                              $("#product_id").val(b.product_id), $("#sku").val(b.sku), $("#name").val(b.name), $("#category_id").val(b.category_id), $("#harga").val(b.harga_baru), $("#stok").val(b.stok), $("#status").val(b.product_status);
                           });
                   },
                   error: function (a) {

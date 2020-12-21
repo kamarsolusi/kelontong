@@ -17,8 +17,8 @@ class Home extends BaseController
 	}
 	public function index()
 	{
-		$produkLaris = $this->product_model->join('pictures', 'pictures.product_id = products.product_id')->groupBy('products.name')->orderBy('products.product_id', 'RANDOM')->findAll(16,0);
-		$produkBaru = $this->product_model->join('pictures', 'pictures.product_id = products.product_id')->groupBy('products.name')->orderBy('products.product_id', 'DESC')->findAll(8,0);
+		$produkLaris = $this->product_model->join('pictures', 'pictures.product_id = products.product_id', 'left')->where('product_status', 'ACTIVE')->groupBy('products.name')->orderBy('products.product_id', 'RANDOM')->findAll(16,0);
+		$produkBaru = $this->product_model->join('pictures', 'pictures.product_id = products.product_id')->where('product_status', 'ACTIVE')->groupBy('products.name')->orderBy('products.product_id', 'DESC')->findAll(4,0);
 		
 		$data['title'] = 'Selamat Datang di Website Kelontongku';
 		$data = [

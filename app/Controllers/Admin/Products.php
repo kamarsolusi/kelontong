@@ -49,6 +49,7 @@ class Products extends BaseController
             'product_slug'  => $productSlug,
             'category_id'   => $categoryId,
             'harga'         => $harga,
+            'harga_baru'    => $harga,
             'stok'          => $stok,
             'product_status'        => $status,
         ];
@@ -86,11 +87,12 @@ class Products extends BaseController
     public function update($id = null){
         $model = new Products_model();
 
+        $hargaLama = $model->select('harga_baru')->where('product_id', $id)->get()->getRowArray();
         $sku = $this->request->getPost('sku');
         $name = $this->request->getPost('name');
         $productSlug = str_replace(' ', '-', $name);
         $categoryId = $this->request->getPost('category_id');
-        $harga = $this->request->getPost('harga');
+        $hargaBaru = $this->request->getPost('harga');
         $stok = $this->request->getPost('stok');
         $status = $this->request->getPost('status');
 
@@ -99,7 +101,8 @@ class Products extends BaseController
             'name'          => $name,
             'product_slug'  => $productSlug,
             'category_id'   => $categoryId,
-            'harga'         => $harga,
+            'harga'         => $hargaLama['harga_baru'],
+            'harga_baru'    => $hargaBaru,
             'stok'          => $stok,
             'product_status'        => $status,
         ];

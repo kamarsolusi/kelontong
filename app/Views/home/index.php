@@ -281,24 +281,30 @@
         <?php foreach($produkLaris as $key=> $value): ?>
           <div class="col-12 col-sm-6 col-md-3 mt-5">
             <div class="card">
-              <span class="diskon">
-                <div class="label-diskon bg-danger">
-                  -25%
-                </div>
-              </span>
+              <?php if($value['harga_baru'] < $value['harga']): ?>
+                <span class="diskon">
+                  <div class="label-diskon bg-danger">
+                    <?= number_format(($value['harga_baru'] - $value['harga']) / $value['harga_baru'] * 100, '0'); ?> %
+                  </div>
+                </span>
+              <?php endif; ?>
               <span class="like">
                 <div class="label-like">
                   <i class="far fa-heart"></i>
                 </div>
               </span>
               <div class="img-wrap">
-                <img class="card-img" src="<?= base_url('/upload/products/').'/'.$value['picture_name'] ?>" alt="<?= $value['picture_name'] ?>">
+                <img class="card-img" src="<?= $value['picture_name'] == NULL? base_url('upload/products/no_image.png') : base_url('upload/products/'.$value['picture_name']) ?>" alt="<?= $value['picture_name'] ?>">
               </div>
               <a href="#" class="link-product">
                 <div class="card-body">
                   <h4 class="card-title"><?= $value['name'] ?></h4>
-                  <h4 class="card-price"><?= 'Rp '. number_format($value['harga'],2,',','.') ?></h4>
-                  <h4 class="card-real-price"><?= 'Rp '. number_format($value['harga'] + 50000,2,',','.') ?></h4>
+                  <?php if($value['harga'] == $value['harga_baru']): ?>
+                    <h4 class="card-price"><?= 'Rp '. number_format($value['harga_baru'],2,',','.') ?></h4>
+                  <?php else: ?>
+                    <h4 class="card-price"><?= 'Rp '. number_format($value['harga_baru'],2,',','.') ?></h4>
+                    <h4 class="card-real-price"><?= 'Rp '. number_format($value['harga'],2,',','.') ?></h4>
+                  <?php endif; ?>
                   <div class="buy d-flex justify-content-between align-items-center">
                     <div class="rating-product mt-2">
                       <i class="far fa-star"></i>
@@ -326,37 +332,46 @@
     <div class="row">
       <?php foreach($produkBaru as $key => $value): ?>
       <div class="col-12 col-sm-6 col-md-3 mt-5">
-        <div class="card">
-          <span class="diskon">
-            <div class="label-diskon bg-danger">
-              -25%
-            </div>
-          </span>
-          <span class="like">
-            <div class="label-like">
-              <i class="far fa-heart"></i>
-            </div>
-          </span>
-          <div class="img-wrap">
-            <img class="card-img" src="<?= base_url('upload/products/'.$value['picture_name']) ?>" alt="<?= $value['picture_name'] ?>">
-          </div>
-          <a href="#" class="link-product">
-            <div class="card-body">
-              <h4 class="card-title"><?= $value['name'] ?></h4>
-              <h4 class="card-price"><?= 'Rp '. number_format($value['harga'],2,',','.') ?></h4>
-              <h4 class="card-real-price"><?= 'Rp '. number_format($value['harga'] + 50000,2,',','.') ?></h4>
-              <div class="buy d-flex justify-content-between align-items-center">
-                <div class="rating-product mt-2">
-                  <i class="far fa-star"></i>
-                  4.5
+        <!-- <div class="item"> -->
+          <div class="card">
+            <?php if($value['harga_baru'] < $value['harga']): ?>
+              <span class="diskon">
+                <div class="label-diskon bg-danger">
+                  <?= number_format(($value['harga_baru'] - $value['harga']) / $value['harga_baru'] * 100, '0'); ?> %
                 </div>
-                <a href="#" class="btn btn-sm btn-buy mt-2"><i class="fas fa-shopping-cart"></i> Beli</a>
+              </span>
+            <?php endif; ?>
+            <span class="like">
+              <div class="label-like">
+                <i class="far fa-heart"></i>
               </div>
+            </span>
+            <div class="img-wrap">
+              <img class="card-img" src="<?= $value['picture_name'] == NULL? base_url('upload/products/no_image.png') : base_url('upload/products/'.$value['picture_name']) ?>" alt="<?= $value['picture_name'] ?>">
             </div>
-          </a>
-        </div>
+            <a href="#" class="link-product">
+              <div class="card-body">
+                <h4 class="card-title"><?= $value['name'] ?></h4>
+                <?php if($value['harga'] == $value['harga_baru']): ?>
+                    <h4 class="card-price"><?= 'Rp '. number_format($value['harga_baru'],2,',','.') ?></h4>
+                  <?php else: ?>
+                    <h4 class="card-price"><?= 'Rp '. number_format($value['harga_baru'],2,',','.') ?></h4>
+                    <h4 class="card-real-price"><?= 'Rp '. number_format($value['harga'],2,',','.') ?></h4>
+                  <?php endif; ?>
+                <div class="buy d-flex justify-content-between align-items-center">
+                  <div class="rating-product mt-2">
+                    <i class="far fa-star"></i>
+                    4.5
+                  </div>
+                  <a href="#" class="btn btn-sm btn-buy mt-2"><i class="fas fa-shopping-cart"></i> Beli</a>
+                </div>
+              </div>
+            </a>
+          </div>
+        <!-- </div> -->
       </div>
-      <?php endforeach; ?>
+        <?php endforeach; ?>
+
     </div>
   </div>
 

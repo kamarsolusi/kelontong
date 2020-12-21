@@ -156,9 +156,40 @@ function likeProduct() {
 //   x.classList.toggle("fas fa-heart");
 }
 
+function carouselTerbaru(){
+    $('#owl-carousel-terbaru').owlCarousel({
+        loop: false,
+        margin: 20,
+        autoplay: false,
+        nav: false,
+        lazyLoad: true,
+        dots: false,
+        responsive: {
+            0: {
+                items: 4,
+                dots: false,
+            },
+            600: {
+                items: 4,
+                stagePadding: 65
+            },
+            1000: {
+                items: 8
+            },
+            1200: {
+                items: 8
+            },
+            1400: {
+                items: 8
+            }
+        }
+    })
+}
+
 $(document).ready(function(){
     carouselBanner();
     carouselKategori();
+    carouselTerbaru();
     countdownSale();
     limitTitle();
     likeProduct();
