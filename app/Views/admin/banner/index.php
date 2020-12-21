@@ -206,7 +206,7 @@
         $('#preview-image').modal('show');
         var base_url = window.location.origin;
         $('#img-body').append(`
-            <img src='`+base_url+`/upload/banner/``' />
+            <img src='https://kelontong.xyz/upload/banner/``' />
         `);
     })
 
