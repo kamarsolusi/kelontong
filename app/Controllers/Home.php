@@ -21,12 +21,14 @@ class Home extends BaseController
 		$this->picture_model = new Pictures_model();
 		$this->category_model = new Categories_model();
 	}
+
 	public function index()
 	{
 		$banner = $this->banner_model->findAll();
 		$produkLaris = $this->product_model->select('products.product_id, products.sku, products.name, products.product_slug, products.category_id, products.harga, products.harga_baru, products.stok, products.product_status, pictures.picture_id, pictures.picture_name, pictures.token')->join('pictures', 'pictures.product_id = products.product_id', 'left')->where('product_status', 'ACTIVE')->groupBy('products.name')->orderBy('products.product_id', 'RANDOM')->findAll(16,0);
 		$produkBaru = $this->product_model->join('pictures', 'pictures.product_id = products.product_id')->where('product_status', 'ACTIVE')->groupBy('products.name')->orderBy('products.product_id', 'DESC')->findAll(4,0);
 		$categories = $this->category_model->where('category_status', 'ACTIVE')->findAll();
+		$flashsale = $this->product_model->join('pictures', 'pictures.product_id = products.product_id','left')->where('harga_baru < harga')->where('product_status', 'ACTIVE')->groupBy('products.name')->orderBy('products.product_id', 'DESC')->findAll();
 
 		$data = [
 			'title'			=> 'Selamat Datang di Website Kelontongku',
@@ -34,9 +36,27 @@ class Home extends BaseController
 			'produkLaris'	=> $produkLaris,
 			'produkBaru'	=> $produkBaru,
 			'categories'	=> $categories,
+			'flashsale'		=> $flashsale,
 		];
 
 		return view('home/index', $data);
+	}
+
+	public function detail($product_slug){
+		$product = $this->product_model->join('categories', 'categories.category_id = products.category_id')->where('product_slug', $product_slug)->where('product_status', 'ACTIVE')->get()->getRowArray();
+		if(empty($product)){
+			return redirect()->to(base_url());
+		}
+		$productTerkait = $this->product_model->join('pictures', 'pictures.product_id = products.product_id')->where('category_id', $product['category_id'])->where('product_status', 'ACTIVE')->groupBy('products.name')->findAll();
+		$picture = $this->picture_model->where('pictures.product_id', $product['product_id'])->findAll();
+
+		$data = [
+			'pictures'	=> $picture,
+			'product'	=> $product,
+			'productTerkait'	=> $productTerkait
+		];
+		return view('frontend/detail', $data);
+
 	}
 
 	//--------------------------------------------------------------------

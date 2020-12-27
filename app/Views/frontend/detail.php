@@ -15,8 +15,8 @@
                 <nav aria-label="breadcrumb" style="margin-top: 1.5rem;">
                     <ol class="breadcrumb bg-transparent">
                         <li class="breadcrumb-item"><a href="#" class="link-breadcrumb">Kelontong</a></li>
-                        <li class="breadcrumb-item"><a href="#" class="link-breadcrumb">Buah</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Buah Anggur 1 Kg</li>
+                        <li class="breadcrumb-item"><a href="#" class="link-breadcrumb"><?= $product['category_name'] ?></a></li>
+                        <li class="breadcrumb-item active" aria-current="page"><?= $product['name'] ?></li>
                     </ol>
                 </nav>
             </div>
@@ -25,26 +25,22 @@
             <div class="col-sm-12 col-md-5">
                 <div class="clearfix">
                     <ul id="image-gallery" class="gallery list-unstyled cS-hidden">
-                        <li data-thumb="<?= base_url() ?>/img/produk/anggur.jpg">
-                            <img src="<?= base_url() ?>/img/produk/anggur.jpg" class="img-gallery" />
-                        </li>
-                        <li data-thumb="<?= base_url() ?>/img/produk/apel.jpg">
-                            <img src="<?= base_url() ?>/img/produk/apel.jpg" class="img-gallery" />
-                        </li>
-                        <li data-thumb="<?= base_url() ?>/img/produk/kedondong.jpg">
-                            <img src="<?= base_url() ?>/img/produk/kedondong.jpg" class="img-gallery" />
-                        </li>
-                        <li data-thumb="<?= base_url() ?>/img/produk/pisang.jpg">
-                            <img src="<?= base_url() ?>/img/produk/pisang.jpg" class="img-gallery" />
-                        </li>
-                        <li data-thumb="<?= base_url() ?>/img/produk/wortel.jpg">
-                            <img src="<?= base_url() ?>/img/produk/wortel.jpg" class="img-gallery" />
-                        </li>
+                        <?php if(!empty($pictures)) :?>
+                            <?php foreach($pictures as $key => $value) : ?>
+                                <li data-thumb="<?= base_url('upload/products/'.$value['picture_name']) ?>">
+                                    <img src="<?= base_url('upload/products/'.$value['picture_name']) ?>" class="img-gallery" />
+                                </li>
+                            <?php endforeach; ?>
+                        <?php else: ?>
+                            <li data-thumb="<?= base_url('upload/products/no_image.png') ?>">
+                                <img src="<?= base_url('upload/products/no_image.png') ?>" class="img-gallery" />
+                            </li>
+                        <?php endif; ?>
                     </ul>
                 </div>
             </div>
             <div class="col-sm-12 col-md-7">
-                <h2 class="h2 product-name">Buah Anggur 1 Kg</h2>
+                <h2 class="h2 product-name"><?= $product['name'] ?></h2>
                 <div class="buy d-flex align-items-center">
                     <div class="rating-product mt-2">
                         <i class="far fa-star"></i>
@@ -64,9 +60,11 @@
                     </div>
                 </div>
                 <div class="mt-4">
-                    <p class="detail-price-real">Rp 100.000</p>
-                    <h1 class="h1 detail-price">Rp 80.000</h1>
-                    <span class="detail-sale">Hemat 20%</span>
+                    <p class="detail-price-real"><?= 'Rp . ' . number_format($product['harga'],'2',',','.') ?></p>
+                    <h1 class="h1 detail-price"><?= 'Rp . ' . number_format($product['harga_baru'],'2',',','.') ?></h1>
+                    <?php if($product['harga_baru'] < $product['harga']) : ?>
+                        <span class="detail-sale">Hemat <?= number_format(($product['harga_baru'] - $product['harga']) / $product['harga_baru'] * 100, '0') ?> %</span>
+                    <?php endif; ?>
                     <div class="row mt-4">
                         <div class="col-3 title-opsi">Kondisi</div>
                         <div class="col-9"><span class="detail-kondisi">Baru</span></div>
@@ -93,7 +91,7 @@
                     <hr>
                 </div>
                 <div class="space-hr-info">
-                    <button class="btn btn-keranjang mr-2"><i class="fas fa-cart-plus"></i> Masukkan Keranjang</button>
+                    <button class="btn btn-keranjang mr-2" onclick="addCart(<?= $product['sku'] ?>)"><i class="fas fa-cart-plus"></i> Masukkan Keranjang</button>
                     <button class="btn btn-beli">Beli Sekarang</button>
                 </div>
             </div>
@@ -115,8 +113,8 @@
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb bg-transparent" style="padding: 0;">
                                 <li class="breadcrumb-item"><a href="#" class="link-breadcrumb">Kelontong</a></li>
-                                <li class="breadcrumb-item"><a href="#" class="link-breadcrumb">Buah</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Buah Anggur 1 Kg</li>
+                                <li class="breadcrumb-item"><a href="#" class="link-breadcrumb"><?= $product['category_name'] ?></a></li>
+                                <li class="breadcrumb-item active" aria-current="page"><?= $product['name'] ?></li>
                             </ol>
                         </nav>
                     </p>
@@ -124,7 +122,7 @@
                 <div class="mb-4">
                     <h5 class="title-info-detail">Deskripsi Produk</h5>
                     <p class="text-info-detail">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto possimus molestias repudiandae qui dicta porro, non quia tempore? Quam, doloremque. Error esse voluptas minima ut deserunt necessitatibus aperiam magnam. Nesciunt!</p>
-                    <img src="<?= base_url() ?>/img/produk/anggur.jpg" alt="" class="img-info-detail">
+                    <img src="<?= empty($pictures)? base_url('upload/products/no_image.png') : base_url('upload/products/'.$pictures[0]['picture_name']) ?>" alt="" class="img-info-detail">
                     <p class="text-info-detail">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto possimus molestias repudiandae qui dicta porro, non quia tempore? Quam, doloremque. Error esse voluptas minima ut deserunt necessitatibus aperiam magnam. Nesciunt!</p>
                     <p class="text-info-detail">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto possimus molestias repudiandae qui dicta porro, non quia tempore? Quam, doloremque. Error esse voluptas minima ut deserunt necessitatibus aperiam magnam. Nesciunt!</p>
                     <p class="text-info-detail">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto possimus molestias repudiandae qui dicta porro, non quia tempore? Quam, doloremque. Error esse voluptas minima ut deserunt necessitatibus aperiam magnam. Nesciunt!</p>
@@ -259,6 +257,7 @@
         </div>
     </div>
 
+    <?php if(!empty($productTerkait)): ?>
     <!-- Produk Terkait -->
     <div class="container mt-5">
         <div class="row">
@@ -267,139 +266,56 @@
                     Produk Terkait
                 </h2>
                 <div class="row">
-                    <div class="col-12 col-sm-6 col-md-3 mt-5">
-                        <div class="card">
-                            <span class="diskon">
-                                <div class="label-diskon bg-danger">
-                                    -25%
-                                </div>
-                            </span>
-                            <span class="like">
-                                <div class="label-like">
-                                    <i class="far fa-heart"></i>
-                                </div>
-                            </span>
-                            <div class="img-wrap">
-                                <img class="card-img" src="<?= base_url() ?>/img/produk/anggur.jpg" alt="Vans">
-                            </div>
-                            <a href="#" class="link-product">
-                                <div class="card-body">
-                                    <h4 class="card-title">Buah Anggur 1 Kg</h4>
-                                    <h4 class="card-price">Rp 60.000</h4>
-                                    <h4 class="card-real-price">Rp 100.000</h4>
-                                    <div class="buy d-flex justify-content-between align-items-center">
-                                        <div class="rating-product mt-2">
-                                            <i class="far fa-star"></i>
-                                            4.5
+                        <?php foreach($productTerkait as $key => $value): ?>
+                            <div class="col-12 col-sm-6 col-md-3 mt-5">
+                                <div class="card">
+                                    <?php if($value['harga_baru'] < $value['harga']): ?>
+                                        <span class="diskon">
+                                            <div class="label-diskon bg-danger">
+                                            <?= number_format(($value['harga_baru'] - $value['harga']) / $value['harga_baru'] * 100, '0'); ?> %
+                                            </div>
+                                        </span>
+                                    <?php endif; ?>
+                                    <span class="like" onclick="addCart(<?= $value['sku']?>)">
+                                        <div class="label-like">
+                                            <i class="far fa-heart"></i>
                                         </div>
-                                        <a href="#" class="btn btn-sm btn-buy mt-2"><i class="fas fa-shopping-cart"></i> Beli</a>
+                                    </span>
+                                    <div class="img-wrap">
+                                        <img class="card-img" src="<?= $value['picture_name'] == NULL? base_url('upload/products/no_image.png') : base_url('upload/products/'.$value['picture_name']) ?>" alt="<?= $value['picture_name'] ?>">
                                     </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-12 col-sm-6 col-md-3 mt-5">
-                        <div class="card">
-                            <span class="diskon">
-                                <div class="label-diskon bg-danger">
-                                    -35%
-                                </div>
-                            </span>
-                            <span class="like">
-                                <div class="label-like">
-                                    <i class="far fa-heart"></i>
-                                </div>
-                            </span>
-                            <div class="img-wrap">
-                                <img class="card-img" src="<?= base_url() ?>/img/produk/pisang.jpg" alt="Vans">
-                            </div>
-                            <a href="#" class="link-product">
-                                <div class="card-body">
-                                    <h4 class="card-title">Buah Pisang 1 Kg</h4>
-                                    <h4 class="card-price">Rp 70.000</h4>
-                                    <h4 class="card-real-price">Rp 120.000</h4>
-                                    <div class="buy d-flex justify-content-between align-items-center">
-                                        <div class="rating-product mt-2">
-                                            <i class="far fa-star"></i>
-                                            4.5
+                                    <a href="<?= base_url('detail/'.$value['product_slug']) ?>" class="link-product">
+                                        <div class="card-body">
+                                            <h4 class="card-title"><?= $value['name'] ?></h4>
+                                            <?php if($value['harga'] == $value['harga_baru']): ?>
+                                                <h4 class="card-price"><?= 'Rp '. number_format($value['harga_baru'],2,',','.') ?></h4>
+                                            <?php else: ?>
+                                                <h4 class="card-price"><?= 'Rp '. number_format($value['harga_baru'],2,',','.') ?></h4>
+                                                <h4 class="card-real-price"><?= 'Rp '. number_format($value['harga'],2,',','.') ?></h4>
+                                            <?php endif; ?>
+                                            <div class="buy d-flex justify-content-between align-items-center">
+                                            <div class="rating-product mt-2">
+                                                <i class="far fa-star"></i>
+                                                4.5
+                                            </div>
+                                            <a href="#" class="btn btn-sm btn-buy mt-2"><i class="fas fa-shopping-cart"></i> Beli</a>
+                                            </div>
                                         </div>
-                                        <a href="#" class="btn btn-sm btn-buy mt-2"><i class="fas fa-shopping-cart"></i> Beli</a>
-                                    </div>
+                                    </a>
                                 </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-12 col-sm-6 col-md-3 mt-5">
-                        <div class="card">
-                            <span class="diskon">
-                                <div class="label-diskon bg-danger">
-                                    -15%
-                                </div>
-                            </span>
-                            <span class="like">
-                                <div class="label-like">
-                                    <i class="far fa-heart"></i>
-                                </div>
-                            </span>
-                            <div class="img-wrap">
-                                <img class="card-img" src="<?= base_url() ?>/img/produk/kedondong.jpg" alt="Vans">
                             </div>
-                            <a href="#" class="link-product">
-                                <div class="card-body">
-                                    <h4 class="card-title">Buah kedondong 1 Kg</h4>
-                                    <h4 class="card-price">Rp 50.000</h4>
-                                    <h4 class="card-real-price">Rp 100.000</h4>
-                                    <div class="buy d-flex justify-content-between align-items-center">
-                                        <div class="rating-product mt-2">
-                                            <i class="far fa-star"></i>
-                                            4.5
-                                        </div>
-                                        <a href="#" class="btn btn-sm btn-buy mt-2"><i class="fas fa-shopping-cart"></i> Beli</a>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-12 col-sm-6 col-md-3 mt-5">
-                        <div class="card">
-                            <span class="diskon">
-                                <div class="label-diskon bg-danger">
-                                    -25%
-                                </div>
-                            </span>
-                            <span class="like">
-                                <div class="label-like">
-                                    <i class="far fa-heart"></i>
-                                </div>
-                            </span>
-                            <div class="img-wrap">
-                                <img class="card-img" src="<?= base_url() ?>/img/produk/apel.jpg" alt="Vans">
-                            </div>
-                            <a href="#" class="link-product">
-                                <div class="card-body">
-                                    <h4 class="card-title">Buah Apel 1 Kg</h4>
-                                    <h4 class="card-price">Rp 80.000</h4>
-                                    <h4 class="card-real-price">Rp 100.000</h4>
-                                    <div class="buy d-flex justify-content-between align-items-center">
-                                        <div class="rating-product mt-2">
-                                            <i class="far fa-star"></i>
-                                            4.5
-                                        </div>
-                                        <a href="#" class="btn btn-sm btn-buy mt-2"><i class="fas fa-shopping-cart"></i> Beli</a>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
+                        <?php endforeach; ?>
                 </div>
                 <div class="text-center">
-                    <a href="#" class="btn btn-view btn-user mt-4">
+                    <a href="<?= base_url() ?>" class="btn btn-view btn-user mt-4">
                         Lihat Semua
                     </a>
                 </div>
             </div>
         </div>
     </div>
+    <?php endif; ?>
+
 
     <?= view('themes/front/footer') ?>
 
