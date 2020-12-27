@@ -2,6 +2,7 @@ var qty = 0;
 var subtotal = 0;
 var grandTotal = 0;
 var idCart =0;
+var tax = 0;
 
 function totalBeli(){
     grandTotal = 0;
@@ -14,6 +15,7 @@ function totalBeli(){
         }
     })
     $('#grand-total').text('Rp. ' + Intl.NumberFormat('id').format(grandTotal));
+    pajak();
 }
 $(document).ready(function(){
     table = $("#cart-body").DataTable({
@@ -118,6 +120,17 @@ function plus(id){
             totalBeli();
         }
     })
+}
+
+function pajak(){
+    tax = grandTotal * (10/100);
+    $('#tax').text('Rp. ' + Intl.NumberFormat('id').format(tax));
+    totalBayar();
+}
+
+function totalBayar(){
+    var totalBayar = grandTotal + tax;
+    $('#total-bayar').text('Rp. ' + Intl.NumberFormat('id').format(totalBayar));
 }
 
 function deleteData(id){
