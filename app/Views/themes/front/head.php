@@ -19,7 +19,10 @@
     <script src="<?= base_url() ?>/themes/assets/js/owl.carousel.js" rel="stylesheet"></script>
     <script src="<?= base_url() ?>/themes/assets/js/owl.carousel.min.js" rel="stylesheet"></script>
     <script src="<?= base_url() ?>/themes/assets/js/style.js" rel="stylesheet"></script>
+    <link rel="stylesheet" href="<?= base_url() ?>/themes/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
+    <script src="<?= base_url() ?>/themes/plugins/sweetalert2/sweetalert2.min.js"></script>
     
+
     <?php if($request->uri->getSegment(1) == 'carts'): ?>
         <!-- DataTables -->
     <link rel="stylesheet" href="<?= base_url() ?>/themes/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">

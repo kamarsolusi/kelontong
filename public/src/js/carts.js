@@ -50,7 +50,7 @@ $(document).ready(function(){
             { 
                 data: "harga_baru",
                 mRender: function(data, type, row, meta){
-                    return `<p id='harga-`+row.cart_id+`'>`+row.harga_baru+`</p>`
+                    return `<p id='harga-`+row.cart_id+`'>Rp. `+meta.settings.fnFormatNumber(row.harga_baru)+`</p>`
                 }
             },
             { 
@@ -83,6 +83,7 @@ function minus(id){
     qty= $('#qty-'+id).text();
     idCart = id;
     var harga = $('#harga-'+id).text();
+    harga = parseFloat(harga.replace( /^\Rp./,"")) * 1000;
     qty--;
     $.ajax({
         url: '../carts/'+id,
@@ -105,7 +106,8 @@ function minus(id){
 
 function plus(id){
     qty= $('#qty-'+id).text();
-    var harga = $('#harga-'+id).text();
+    var harga =  $('#harga-'+id).text();
+    harga = parseFloat(harga.replace( /^\Rp./,"")) * 1000;
     qty++;
     $.ajax({
         url: '../carts/'+id,
@@ -149,6 +151,7 @@ function deleteData(id){
                     position: 'top-end',
                     title: 'Deleted Successfully !',
                     timer: 3000,
+                    showConfirmButton: false
                 })
             }
         }

@@ -195,6 +195,7 @@ function shoppingCart(){
         dataType: 'json',
         success: function(response){
             $('#shoping-cart').text(response['total']);
+            
         }
     })
 }
@@ -213,6 +214,14 @@ function addCart(sku){
         dataType: 'json',
         success: function(response){
             shoppingCart();
+            Swal.fire({
+                icon: 'success',
+                toast: true,
+                position: 'top-end',
+                title: 'Add Cart successfully !',
+                timer: 3000,
+                showConfirmButton: false
+            })
         }
     })
 }
