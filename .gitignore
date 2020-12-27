@@ -120,6 +120,6 @@ _modules/*
 # # Visual Studio Code
 .vscode/
 
-# /results/
-# /phpunit*.xml
-# /.phpunit.*.cache
+/results/
+/phpunit*.xml
+/.phpunit.*.cache
