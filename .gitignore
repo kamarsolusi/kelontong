@@ -49,6 +49,7 @@
 # # Temporary Files
 # #-------------------------
 writable/cache/*
+writable/cache/71_groups
 !writable/cache/index.html
 
 writable/logs/*
