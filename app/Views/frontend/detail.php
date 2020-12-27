@@ -60,10 +60,12 @@
                     </div>
                 </div>
                 <div class="mt-4">
-                    <p class="detail-price-real"><?= 'Rp . ' . number_format($product['harga'],'2',',','.') ?></p>
-                    <h1 class="h1 detail-price"><?= 'Rp . ' . number_format($product['harga_baru'],'2',',','.') ?></h1>
                     <?php if($product['harga_baru'] < $product['harga']) : ?>
-                        <span class="detail-sale">Hemat <?= number_format(($product['harga_baru'] - $product['harga']) / $product['harga_baru'] * 100, '0') ?> %</span>
+                        <p class="detail-price-real"><?= 'Rp . ' . number_format($product['harga'],'2',',','.') ?></p>
+                        <h1 class="h1 detail-price"><?= 'Rp . ' . number_format($product['harga_baru'],'2',',','.') ?></h1>
+                        <span class="detail-sale">Hemat <?= number_format(($product['harga'] - $product['harga_baru'] ) / $product['harga_baru'] * 100, '0') ?> %</span>
+                    <?php else: ?>
+                        <h1 class="h1 detail-price"><?= 'Rp . ' . number_format($product['harga_baru'],'2',',','.') ?></h1>
                     <?php endif; ?>
                     <div class="row mt-4">
                         <div class="col-3 title-opsi">Kondisi</div>
@@ -272,7 +274,7 @@
                                     <?php if($value['harga_baru'] < $value['harga']): ?>
                                         <span class="diskon">
                                             <div class="label-diskon bg-danger">
-                                            <?= number_format(($value['harga']-$value['harga_baru'] ) / $value['harga_baru'] * 100, '0'); ?>%
+                                            <?= number_format(($value['harga'] - $value['harga_baru'] ) / $value['harga_baru'] * 100, '0'); ?>%
                                             </div>
                                         </span>
                                     <?php endif; ?>
