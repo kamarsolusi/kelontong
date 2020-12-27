@@ -47,7 +47,7 @@ class Home extends BaseController
 		if(empty($product)){
 			return redirect()->to(base_url());
 		}
-		$productTerkait = $this->product_model->join('pictures', 'pictures.product_id = products.product_id')->where('category_id', $product['category_id'])->where('product_status', 'ACTIVE')->groupBy('products.name')->findAll();
+		$productTerkait = $this->product_model->join('pictures', 'pictures.product_id = products.product_id')->where('category_id', $product['category_id'])->where('product_status', 'ACTIVE')->groupBy('products.name')->orderBy('products.product_id', 'RANDOM')->findAll(4,0);
 		$picture = $this->picture_model->where('pictures.product_id', $product['product_id'])->findAll();
 
 		$data = [
