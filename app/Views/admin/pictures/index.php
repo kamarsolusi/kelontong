@@ -59,6 +59,9 @@
                 
             </div>
             <!-- /.card-body -->
+            <div class="card-footer">
+                <a href="<?= base_url('admin/products') ?>" class="btn btn-primary">Done !</a>
+            </div>
         </div>
         <!-- /.card -->
     </div>

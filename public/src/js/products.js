@@ -37,7 +37,7 @@ $(document).ready(function () {
                 render: function (a) {
                     return (
                         `
-                        <a target="_blank" href="`+base+`/admin/products/images/`+a+`" class="btn btn-secondary"><i class="fas fa-images"></i> Picture</a>
+                        <a href="`+base+`/admin/products/images/`+a+`" class="btn btn-secondary"><i class="fas fa-images"></i> Picture</a>
                         <a data-toggle="modal" onclick="submit(` +a +`)" class="btn btn-success" data-target="#myModal" ><i class="fas fa-edit"></i>Edit</a> 
                         <a class="btn btn-danger" onclick="deleteData(` +a +`)"><i class="fas fa-trash-alt"></i>Hapus</a>
                         `
