@@ -95,5 +95,4 @@
 </div>
 <?= $this->endSection() ?>
 <?= view('themes/body') ?>
-<script src="<?= base_url() ?>/src/js/products.js"></script>
 <?= view('themes/admin/footer') ?>

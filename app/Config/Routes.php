@@ -80,6 +80,13 @@ $routes->get('/admin/users/(:num)', 'Admin\Users::detail/$1');
 $routes->put('/admin/users/(:num)', 'Admin\Users::update/$1');
 $routes->delete('/admin/users/(:num)', 'Admin\Users::delete/$1');
 
+// carts
+$routes->get('/carts', 'Frontend\Carts::index', ['filter' => 'role:user,admin']);
+$routes->get('/carts/index', 'Frontend\Carts::index', ['filter' => 'role:user,admin']);
+$routes->get('/carts/show', 'Frontend\Carts::show', ['filter' => 'role:user,admin']);
+$routes->post('/carts/(:num)', 'Frontend\Carts::plus/$1', ['filter' => 'role:user,admin']);
+$routes->delete('/carts/(:num)', 'Frontend\Carts::delete/$1', ['filter' => 'role:user,admin']);
+
 // Api 
 $routes->group('api',function($routes){
 

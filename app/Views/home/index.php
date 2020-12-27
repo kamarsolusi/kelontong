@@ -29,65 +29,21 @@
       <div class="col-md-12">
         <h2 class="h2 text-gray-900 mb-4 font-weight-bold">Kategori Pilihan</h2>
         <div class="owl-carousel" id="owl-carousel-kategori">
-          <div class="item">
-            <div class="icon-card">
-              <a href="#" class="link-kateogri">
-                <img src="<?= base_url() ?>/img/kategori/buah.png" class="img-kategori" alt="">
-                <h6>Buah</h6>
-              </a>
+          <?php foreach($categories as $key => $value): ?>
+            <div class="item">
+              <div class="icon-card">
+                <a href="<?= base_url('categories/'.strtolower($value['category_name'])) ?>" class="link-kateogri">
+                  <img src="<?= base_url('/upload/category/'.$value['category_image']) ?>" class="img-kategori" alt="">
+                  <h6><?= $value['category_name'] ?></h6>
+                </a>
+              </div>
             </div>
-          </div>
+            <?php if($key > 5){break;} ?>
+          <?php endforeach; ?>
+          
           <div class="item">
             <div class="icon-card">
-              <a href="#" class="link-kateogri">
-                <img src="<?= base_url() ?>/img/kategori/sayuran.png" class="img-kategori" alt="">
-                <h6>Sayuran</h6>
-              </a>
-            </div>
-          </div>
-          <div class="item">
-            <div class="icon-card">
-              <a href="#" class="link-kateogri">
-                <img src="<?= base_url() ?>/img/kategori/beras.png" class="img-kategori" alt="">
-                <h6>Beras</h6>
-              </a>
-            </div>
-          </div>
-          <div class="item">
-            <div class="icon-card">
-              <a href="#" class="link-kateogri">
-                <img src="<?= base_url() ?>/img/kategori/gula.png" class="img-kategori" alt="">
-                <h6>Gula</h6>
-              </a>
-            </div>
-          </div>
-          <div class="item">
-            <div class="icon-card">
-              <a href="#" class="link-kateogri">
-                <img src="<?= base_url() ?>/img/kategori/minuman.png" class="img-kategori" alt="">
-                <h6>Minuman</h6>
-              </a>
-            </div>
-          </div>
-          <div class="item">
-            <div class="icon-card">
-              <a href="#" class="link-kateogri">
-                <img src="<?= base_url() ?>/img/kategori/bumbu.png" class="img-kategori" alt="">
-                <h6>Bumbu</h6>
-              </a>
-            </div>
-          </div>
-          <div class="item">
-            <div class="icon-card">
-              <a href="#" class="link-kateogri">
-                <img src="<?= base_url() ?>/img/kategori/mie.png" class="img-kategori" alt="">
-                <h6>Mie Instant</h6>
-              </a>
-            </div>
-          </div>
-          <div class="item">
-            <div class="icon-card">
-              <a href="#" class="link-kateogri">
+              <a href="" class="link-kateogri" id="kategori-lain">
                 <img src="<?= base_url() ?>/img/kategori/kategori-lain.png" class="img-kategori" alt="">
                 <h6>Kategori Lain</h6>
               </a>
@@ -134,7 +90,7 @@
                       <i class="far fa-star"></i>
                       4.5
                     </div>
-                    <a href="#" class="btn btn-sm btn-buy mt-2"><i class="fas fa-shopping-cart"></i> Beli</a>
+                    <a href="#" class="btn btn-sm btn-buy mt-2" ><i class="fas fa-shopping-cart"></i> Beli</a>
                   </div>
                   <div class="progress mt-3">
                     <div class="progress-bar bg-danger" role="progressbar" style="width: 70%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
@@ -280,11 +236,11 @@
                   </div>
                 </span>
               <?php endif; ?>
-              <span class="like">
+              <a class="like" onclick="addCart(<?= $value['sku']?>)">
                 <div class="label-like">
                   <i class="far fa-heart"></i>
                 </div>
-              </span>
+              </a>
               <div class="img-wrap">
                 <img class="card-img" src="<?= $value['picture_name'] == NULL? base_url('upload/products/no_image.png') : base_url('upload/products/'.$value['picture_name']) ?>" alt="<?= $value['picture_name'] ?>">
               </div>
@@ -367,6 +323,35 @@
     </div>
   </div>
 
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Kategori Lainnya</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" id="kategory-body">
+          <div class="row">
+            <?php foreach($categories as $key => $value): ?>
+              <div class="col-12 col-sm-6 col-md-2 mt-5">
+                <div class="card">
+                  <img class="card-img-top" src="<?= base_url('upload/category/' . $value['category_image']) ?>" alt="<?= $value['category_image'] ?>">
+                  <div class="card-body text-center">
+                    <a href="<?= base_url('categories/'.strtolower($value['category_name'])) ?>" class="btn btn-sm btn-primary">
+                      <?= $value['category_name'] ?>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            <?php endforeach; ?>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <?= view('themes/front/footer') ?>
 </body>
 

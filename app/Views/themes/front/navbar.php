@@ -19,9 +19,9 @@
         <ul class="navbar-nav ml-auto">
             <?php if (logged_in()) : ?>
                 <li class="nav-item dropdown no-arrow mx-1 mr-3 mt-2 mb-2">
-                    <a href="#" class="btn btn-cart dropdown-toggle" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a href="<?= base_url('carts') ?>" class="btn btn-cart" aria-haspopup="true" aria-expanded="false">
                         <i class=" fas fa-shopping-cart"></i>
-                        <span class="badge badge-danger badge-counter">5</span>
+                        <span class="badge badge-danger badge-counter" id="shoping-cart">5</span>
                     </a>
                 </li>
                 <li class="nav-item mr-3 mt-2 mb-2 pt-2 nav-space">
@@ -30,8 +30,8 @@
                 <!-- User -->
                 <li class="nav-item dropdown no-arrow mt-2 mb-2">
                     <a href="#" class="btn btn-sm btn-user logged-name pt-2 dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <span class="mr-1 d-none d-lg-inline "> <?= user()->username ?></span>
-                        <img src=" assets/img/default-user.png" alt="" width="25" class="rounded-circle">
+                        <span class="mr-1 d-none d-lg-inline " id="username"><?= user()->username ?></span>
+                        <img src="<?= base_url() ?>/img/default-user.png" alt="" width="25" class="rounded-circle">
                     </a>
                     <!-- Dropdown - User Information -->
                     <div class="dropdown-menu dropdown-menu-right shadow" aria-labelledby="userDropdown">

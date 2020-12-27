@@ -1,0 +1,135 @@
+<?php
+
+namespace App\Controllers\Frontend;
+
+use App\Controllers\BaseController;
+use App\Models\Users_model;
+use App\Models\Products_model;
+use App\Models\Carts_model;
+use App\Models\Banner_model;
+
+class Carts extends BaseController
+{
+    protected $session;
+    protected $user_model;
+    protected $product_model;
+    protected $cart_model;
+    protected $banner_model;
+
+    public function __construct()
+    {
+        $this->banner_model = new Banner_model();
+        $this->cart_model = new Carts_model();
+        $this->user_model = new Users_model();
+        $this->product_model = new Products_model();
+        $this->session = \Config\Services::session();
+        $this->session->start();
+    }
+
+    public function index(){
+        $banner = $this->banner_model->findAll();
+        $data =[
+            'title'     => 'Carts',
+            'banner'    => $banner
+        ];
+        return view('frontend/cart', $data);
+    }
+    public function show()
+    {
+        if(!empty(user()->username)){
+            $username = user()->username;
+        }
+        $user = $this->user_model->select('id')->where('username', $username)->get()->getRowArray();
+        $cart = $this->cart_model->select('cart_id, products.name, carts.qty, products.harga_baru ')->where('user_id', $user['id'])->join('products', 'products.product_id = carts.product_id')->findAll();
+
+        $total = count($cart);
+
+        if(empty($total)){
+            $data = [
+                'total' => $total,
+                'results'   => ''
+            ];
+        }else{
+            $data = [
+                'total'     => $total,
+                'results' => $cart 
+            ];
+        }
+
+        return json_encode($data);
+    }
+
+    public function add()
+    {
+        $sku = $this->request->getPost('sku');
+        $product_id = $this->product_model->select('product_id')->where('sku', $sku)->get()->getRowArray();
+        $username = $this->request->getPost('username');
+        $user = $this->user_model->select('id')->where('username', $username)->get()->getRowArray();
+        $qty = 1;
+
+        
+        if(!empty($this->cart_model->where('product_id', $product_id)->where('user_id', $user['id'])->get()->getResultArray())){
+            $cartId = $this->cart_model->select('cart_id, qty')->where('product_id', $product_id)->where('user_id', $user['id'])->get()->getRowArray();
+            $cartData = [
+                'user_id'       => $user['id'],
+                'product_id'    => $product_id['product_id'],
+                'qty'           => $cartId['qty'] + 1,
+            ];
+            $save = $this->cart_model->updateCart($cartData, $cartId['cart_id']);
+
+        }else{
+
+            $cartData = [
+                'user_id'       => $user['id'],
+                'product_id'    => $product_id['product_id'],
+                'qty'           => $qty,
+            ];
+            $save = $this->cart_model->insertCart($cartData);
+        }
+
+        if($save){
+            $data['response'] = 200;
+        }else{
+            $data['response'] = 500;
+        }
+
+
+        return json_encode($data);
+    }
+
+    public function plus($id){
+        $qty = $this->request->getPost('qty');
+        $data = [
+            'qty' => $qty
+        ];
+
+        $update = $this->cart_model->updateCart($data,$id);
+        if($update){
+            $response = [
+                'status'    => 200
+            ];
+        }else{
+            $response = [
+                'status'    => 500
+            ];
+        }
+
+        return json_encode($response);
+        
+    }
+
+    public function delete($id=null){
+        $deleteCart = $this->cart_model->delete($id);
+        if($deleteCart){
+            $reponse = [
+                'status' => 200,
+            ];
+        }else{
+            $reponse = [
+                'status'    => 500,
+            ];
+        }
+
+        return json_encode($reponse);
+    }
+}

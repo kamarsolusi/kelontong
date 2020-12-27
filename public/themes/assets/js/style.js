@@ -185,12 +185,44 @@ function carouselTerbaru(){
         }
     })
 }
+var base_url = window.location.origin;
+function shoppingCart(){
+    var username = $('#username').text();
+    $.ajax({
+        url: base_url + '/frontend/carts/show',
+        method: 'get',
+        data: 'username=' + username,
+        dataType: 'json',
+        success: function(response){
+            $('#shoping-cart').text(response['total']);
+        }
+    })
+}
+
+$('#kategori-lain').on('click', function(){
+    
+    $('#myModal').modal('show');
+})
+
+function addCart(sku){
+    var username = $('#username').text();
+    $.ajax({
+        url: base_url + '/frontend/carts/add',
+        method: 'post',
+        data: 'sku='+sku+'&username='+ username,
+        dataType: 'json',
+        success: function(response){
+            shoppingCart();
+        }
+    })
+}
 
 $(document).ready(function(){
     carouselBanner();
     carouselKategori();
     carouselTerbaru();
     countdownSale();
+    shoppingCart();
     limitTitle();
     likeProduct();
 })

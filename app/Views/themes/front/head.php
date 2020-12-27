@@ -1,4 +1,5 @@
 <head>
+    <?php $request = \Config\Services::request(); ?>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="<?= base_url('img/LogoKelontong.png') ?>" type="image/x-icon">
@@ -18,6 +19,12 @@
     <script src="<?= base_url() ?>/themes/assets/js/owl.carousel.js" rel="stylesheet"></script>
     <script src="<?= base_url() ?>/themes/assets/js/owl.carousel.min.js" rel="stylesheet"></script>
     <script src="<?= base_url() ?>/themes/assets/js/style.js" rel="stylesheet"></script>
+    
+    <?php if($request->uri->getSegment(1) == 'carts'): ?>
+        <!-- DataTables -->
+    <link rel="stylesheet" href="<?= base_url() ?>/themes/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+
+    <?php endif; ?>
 
     <?= $this->renderSection('custom_css') ?>
 </head>

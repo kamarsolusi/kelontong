@@ -21,6 +21,7 @@
                     <thead>
                         <tr>
                             <th></th>
+                            <th>Icon</th>
                             <th>Category</th>
                             <th>Status</th>
                             <th class="text-center">Action</th>
@@ -43,12 +44,13 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="myModalTitle">Tambah Data</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="button-close close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form>
-                <div class="modal-body">
+            <div class="modal-body">
+                <form action="<?= base_url('admin/categories/add') ?>" class="dropzone" id="my-dropzone" style="border: 0;">
+                    <?php csrf_field(); ?>
                     <input type="hidden" name="category_id" id="category_id">
                     <div class="form-group">
                         <label for="category_name">Category Name</label>
@@ -63,11 +65,17 @@
                         </select>
                     </div>
 
+           
+                        <div class="dz-message border" style="text-align: center;">
+                            <i class="fas fa-cloud-upload-alt text-primary fa-5x"></i> 
+                            <p>Klik disini atau drop file disini</p> 
+                        </div>
+
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <a onclick="tambahData()" class="btn btn-primary " id="btn-tambah">Tambah Data</a>
-                    <a onclick="updateData()" class="btn btn-primary " id="btn-ubah">Ubah</a>
+                    <button type="button" class="btn btn-secondary button-close" data-dismiss="modal">Close</button>
+                    <a class="btn btn-primary " id="btn-tambah">Tambah Data</a>
+                    <a class="btn btn-primary " id="btn-ubah">Ubah</a>
                 </div>
             </form>
         </div>
@@ -75,5 +83,4 @@
 </div>
 <?= $this->endSection() ?>
 <?= view('themes/body') ?>
-<script src="<?= base_url() ?>/src/js/categories.js"></script>
 <?= view('themes/admin/footer') ?>

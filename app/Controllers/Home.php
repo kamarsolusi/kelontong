@@ -3,6 +3,7 @@ use App\Models\Products_model;
 use App\Models\Pictures_model;
 use App\Models\Categories_model;
 use App\Models\Banner_model;
+use App\Models\Carts_model;
 
 class Home extends BaseController
 {
@@ -10,9 +11,11 @@ class Home extends BaseController
 	protected $picture_model;
 	protected $category_model;
 	protected $banner_model;
+	protected $cart_model;
 
 	public function __construct()
 	{
+		$this->cart_model = new Carts_model();
 		$this->banner_model = new Banner_model();
 		$this->product_model = new Products_model();
 		$this->picture_model = new Pictures_model();
@@ -21,15 +24,18 @@ class Home extends BaseController
 	public function index()
 	{
 		$banner = $this->banner_model->findAll();
-		$produkLaris = $this->product_model->join('pictures', 'pictures.product_id = products.product_id', 'left')->where('product_status', 'ACTIVE')->groupBy('products.name')->orderBy('products.product_id', 'RANDOM')->findAll(16,0);
+		$produkLaris = $this->product_model->select('products.product_id, products.sku, products.name, products.product_slug, products.category_id, products.harga, products.harga_baru, products.stok, products.product_status, pictures.picture_id, pictures.picture_name, pictures.token')->join('pictures', 'pictures.product_id = products.product_id', 'left')->where('product_status', 'ACTIVE')->groupBy('products.name')->orderBy('products.product_id', 'RANDOM')->findAll(16,0);
 		$produkBaru = $this->product_model->join('pictures', 'pictures.product_id = products.product_id')->where('product_status', 'ACTIVE')->groupBy('products.name')->orderBy('products.product_id', 'DESC')->findAll(4,0);
-		
-		$data['title'] = 'Selamat Datang di Website Kelontongku';
+		$categories = $this->category_model->where('category_status', 'ACTIVE')->findAll();
+
 		$data = [
+			'title'			=> 'Selamat Datang di Website Kelontongku',
 			'banner'		=> $banner,
 			'produkLaris'	=> $produkLaris,
 			'produkBaru'	=> $produkBaru,
+			'categories'	=> $categories,
 		];
+
 		return view('home/index', $data);
 	}
 
