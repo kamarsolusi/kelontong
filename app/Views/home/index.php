@@ -43,7 +43,7 @@
           
           <div class="item">
             <div class="icon-card">
-              <a href="" class="link-kateogri" id="kategori-lain">
+              <a href="" class="link-kateogri" data-toggle="modal" data-target="#myModal" id="kategori-lain">
                 <img src="<?= base_url() ?>/img/kategori/kategori-lain.png" class="img-kategori" alt="">
                 <h6>Kategori Lain</h6>
               </a>
@@ -337,14 +337,16 @@
           <div class="row">
             <?php foreach($categories as $key => $value): ?>
               <div class="col-12 col-sm-6 col-md-2 mt-5">
-                <div class="card">
-                  <img class="card-img-top" src="<?= base_url('upload/category/' . $value['category_image']) ?>" alt="<?= $value['category_image'] ?>">
-                  <div class="card-body text-center">
-                    <a href="<?= base_url('categories/'.strtolower($value['category_name'])) ?>" class="btn btn-sm btn-primary">
-                      <?= $value['category_name'] ?>
-                    </a>
+                <a href="<?= base_url('categories/'.strtolower($value['category_name'])) ?>" style="white-space: normal;">
+                  <div class="card">
+                    <img class="card-img-top w-100" src="<?= base_url('upload/category/' . $value['category_image']) ?>" alt="<?= $value['category_image'] ?>">
+                    <div class="card-body">
+                      <small>
+                        <?= $value['category_name'] ?>
+                      </small>    
+                    </div>
                   </div>
-                </div>
+                </a>
               </div>
             <?php endforeach; ?>
           </div>
