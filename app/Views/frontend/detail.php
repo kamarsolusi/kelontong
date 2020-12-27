@@ -272,7 +272,7 @@
                                     <?php if($value['harga_baru'] < $value['harga']): ?>
                                         <span class="diskon">
                                             <div class="label-diskon bg-danger">
-                                            <?= number_format(($value['harga_baru'] - $value['harga']) / $value['harga_baru'] * 100, '0'); ?> %
+                                            <?= number_format(($value['harga']-$value['harga_baru'] ) / $value['harga_baru'] * 100, '0'); ?>%
                                             </div>
                                         </span>
                                     <?php endif; ?>
