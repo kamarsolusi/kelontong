@@ -11,6 +11,7 @@
     <link href="<?= base_url() ?>/themes/assets/css/owl.carousel.min.css" rel="stylesheet">
     <link href="<?= base_url() ?>/themes/assets/css/owl.theme.default.css" rel="stylesheet">
     <link href="<?= base_url() ?>/themes/assets/css/lightslider.css" rel="stylesheet">
+    <link href="<?= base_url() ?>/themes/assets/css/floating-labels.css" rel="stylesheet">
     <link href="<?= base_url() ?>/themes/assets/css/main.css" rel="stylesheet">
 
     <script src="<?= base_url() ?>/themes/assets/js/jquery.min.js" rel="stylesheet"></script>
