@@ -133,29 +133,6 @@ function limitTitle(){
     }
 }
 
-function likeProduct() {
-    $('.label-like').click(function() {
-
-
-        // ($("a").not($(this))).removeClass("btn-pnl-viz");
-        // $(this).toggleClass("fas fa-heart");
-        const icon = $("i", this);
-
-        // if (icon[0].classList[0].value == 'far') {
-        //     icon[0].classList[0].remove('far');
-        //     icon[0].classList[0].add('fas');
-        // } else {
-        //     icon[0].classList[0].remove('fas');
-        //     icon[0].classList[0].add('far');
-        // }
-        // $("i", this).toggleClass("bg-danger");
-        console.log(icon[0].classList[0]);
-    
-    }); 
-    
-//   x.classList.toggle("fas fa-heart");
-}
-
 function carouselTerbaru(){
     $('#owl-carousel-terbaru').owlCarousel({
         loop: false,
@@ -253,6 +230,59 @@ function countJumlah(){
     });
 }
 
+function convertToRupiah(angka)
+{
+	var rupiah = '';		
+	var angkarev = angka.toString().split('').reverse().join('');
+	for(var i = 0; i < angkarev.length; i++) if(i%3 == 0) rupiah += angkarev.substr(i,3)+'.';
+	return 'Rp '+rupiah.split('',rupiah.length-1).reverse().join('');
+}
+
+function convertToAngka(rupiah)
+{
+	return parseInt(rupiah.replace(/,.*|[^0-9]/g, ''), 10);
+}
+
+function countJumlahCart(){
+    $('.minus-cart').click(function (e) {
+        var $input = $(this).parent().find('.input-jumlah');
+        var count = parseInt($input.val()) - 1;
+        count = count < 1 ? 1 : count;
+        $input.val(count);
+        $input.change();
+        totalPriceCart();
+        return false;
+    });
+    $('.plus-cart').click(function (e) {
+        var $input = $(this).parent().find('.input-jumlah');
+        $input.val(parseInt($input.val()) + 1);
+        $input.change();
+        totalPriceCart();
+        return false;
+    });
+}
+
+function totalPriceCart(){
+    let total = 0;
+    let totalQty = 0;
+    let hargaTotal = "";
+    let harga = $('.final-price');
+    let qty = $('.input-jumlah');
+    let priceTotal = $('.price-total');
+    let totalBeli = $('#total-beli');
+    
+
+    for (let i = 0; i < harga.length; i++) {
+        temp = convertToAngka(harga[i].innerText)*qty[i].value;
+        total += temp;
+        totalQty += parseInt(qty[i].value);
+    }
+
+    hargaTotal = convertToRupiah(total);
+    priceTotal[0].innerHTML = hargaTotal
+    totalBeli[0].innerHTML = totalQty
+}
+
 $(document).ready(function(){
     carouselBanner();
     carouselKategori();
@@ -272,4 +302,15 @@ $(document).keydown(function (event){
     }else if (event.ctrlKey && event.shiftKey && event.keyCode == 73) { // Prevent Ctrl+Shift+I        
         return false;
     }
+    countJumlahCart()
+    totalPriceCart();
+    
+    const floatField = $('#form-control');
+    const floatContainer = $('#form-group');
+    floatField.addEventListener('focus', () => {
+        floatContainer.classList.add('active');
+    });
+    floatField.addEventListener('blur', () => {
+        floatContainer.classList.remove('active');
+    });
 })
