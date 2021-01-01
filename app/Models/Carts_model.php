@@ -4,9 +4,9 @@ use CodeIgniter\Model;
 class Carts_model extends Model{
     protected $table = 'carts';
     protected $primaryKey = 'cart_id';
-    // protected $allowedField = [
-    //     'firstname', 'lastname', 'profile_picture', 'username', 'active', 'created_at', 'updated_at', 'deleted_at',
-    // ];
+    protected $allowedFields = [
+        'cart_id','user_id','product_id','qty','catatan'
+    ];
 
     public function getCart($id = false){
         if($id === false){

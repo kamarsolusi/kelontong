@@ -21,66 +21,49 @@ function totalBeli(){
 $(document).ready(function(){
     
     if($('#logged_in').val()){
-        console.log("a");
+        $.ajax({
+            url: window.location.origin + '/carts/show',
+            method: 'get',
+            dataType: 'json',
+            success: function(response){
+                $.each(response['results'], function(key, value){
+                    console.log(value);
+                    $('#keranjang').append(`
+                        <div class="cart-shop">
+                            <img src="assets/img/anggur.jpg" alt="" class="img-shop">
+                            <div class="product-name">
+                                <a href="#" class="title-shop">Anggur Impor 1 Kg</a>
+                                <div class="price-shop">
+                                    <h6 class="slash-price">Rp 100.000</h6>
+                                    <h6 class="final-price">Rp 60.000</h6>
+                                </div>
+                            </div>
+                            <div class="cart-other">
+                                <div class="note">
+                                    <!-- <h4 class="button-note">Tulis Catatan</h4> -->
+                                    <div class="input-group">
+                                        <input type="text" class="form-control form-note" placeholder="Tulis Catatan (Optional)">
+                                    </div>
+                                </div>
+                                <div class="cart-qty">
+                                    <span class="button-delete">
+                                        <i class="fas fa-trash"></i>
+                                    </span>
+                                    <div class="number-cart">
+                                        <span class="minus-cart">-</span>
+                                        <input type="number" value="1" class="input-jumlah" />
+                                        <span class="plus-cart">+</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `);
+                })
+            }
+        })
     }else{
         console.log("b");
     }
-    table = $("#cart-body").DataTable({
-        ajax: { url: "../carts/show", dataSrc:'results' ,dataType: "json", method: "GET" },
-        responsive: !0,
-        bInfo: !1,
-        paging: false,
-        lengthChange: false,
-        ordering: false,
-        processing: false,
-        serverSide: false,
-        retrieve: !0,
-        language: { processing: "Sedang memuat data..", decimal: ",", thousands: "." },
-        columns: [
-            {
-                data: null,
-                sortable: !1,
-                render: function (a, b, c, d) {
-                    return d.row + 1;
-                },
-            },
-            { data: "name" },
-            { 
-                data: "qty" ,
-                mRender: function(data,type,row){
-                    var disable = data == 1? 'disabled' : '';
-                    return `<a onclick='minus(`+row.cart_id+`)' class='btn btn-danger text-light btn-sm `+disable+`' id='minus-`+row.cart_id+`'> - </a>
-                     <a id='qty-`+row.cart_id+`' class='text-light btn btn-primary'>` +data+`</a> 
-                     <a  onclick='plus(`+row.cart_id+`)' class='btn btn-success text-light btn-sm'> + </a>`
-                }
-            },
-            { 
-                data: "harga_baru",
-                mRender: function(data, type, row, meta){
-                    return `<p id='harga-`+row.cart_id+`'>Rp. `+meta.settings.fnFormatNumber(row.harga_baru)+`</p>`
-                }
-            },
-            { 
-                data: "harga_baru",
-                mRender: function(data, type, row, meta){             
-                    return "<b class='sub-total' id='sub-total-"+row.cart_id+"' >Rp. "+  meta.settings.fnFormatNumber(row.harga_baru * row.qty) + "</b>";
-                },
-            },
-            {
-                data: "cart_id",
-                render: function (data) {
-                    return (
-                        `
-                        <a class="btn btn-danger text-light" onclick="deleteData(` +data +`)"><i class="fas fa-trash-alt"></i> Hapus</a>
-                        `
-                    );
-                },
-            },
-        ],
-        initComplete:function(setting, json){
-            totalBeli();
-        }
-    });
 
 })
 

@@ -95,7 +95,19 @@ $routes->get('/carts', 'Frontend\Carts::index', ['filter' => 'role:user,admin'])
 $routes->get('/carts/index', 'Frontend\Carts::index', ['filter' => 'role:user,admin']);
 $routes->get('/carts/show', 'Frontend\Carts::show', ['filter' => 'role:user,admin']);
 $routes->post('/carts/(:num)', 'Frontend\Carts::plus/$1', ['filter' => 'role:user,admin']);
+$routes->post('/carts/catatan/(:num)', 'Frontend\Carts::updateCatatan/$1');
 $routes->delete('/carts/(:num)', 'Frontend\Carts::delete/$1', ['filter' => 'role:user,admin']);
+$routes->delete('/carts', 'Frontend\Carts::delete', ['filter' => 'role:user,admin']);
+
+// Ordre
+$routes->get('/order', 'Frontend\Transactions::index', ['filter' => 'role:user,admin']);
+$routes->get('/order/index', 'Frontend\Transactions::index', ['filter' => 'role:user,admin']);
+$routes->get('/order/(:any)', 'Frontend\Transactions::index/$1', ['filter' => 'role:user,admin']);
+
+// Raja Ongkir
+$routes->get('/rajaongkir/(:any)/(:any)', 'RajaOngkir::rajaongkir/$1/$2');
+$routes->get('/rajaongkir/(:any)', 'RajaOngkir::rajaongkir/$1');
+$routes->post('/ongkir', 'RajaOngkir::ongkir');
 
 // Api 
 $routes->group('api',function($routes){

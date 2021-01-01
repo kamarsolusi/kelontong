@@ -32,7 +32,7 @@ class Carts extends BaseController
             'title'     => 'Carts',
             'banner'    => $banner
         ];
-        return view('frontend/cart', $data);
+        return view('frontend/cart-order', $data);
     }
     public function show()
     {
@@ -40,7 +40,7 @@ class Carts extends BaseController
             $username = user()->username;
         }
         $user = $this->user_model->select('id')->where('username', $username)->get()->getRowArray();
-        $cart = $this->cart_model->select('cart_id, products.name, carts.qty, products.harga_baru ')->where('user_id', $user['id'])->join('products', 'products.product_id = carts.product_id')->findAll();
+        $cart = $this->cart_model->select('cart_id, catatan,products.name, products.product_slug, carts.qty,products.harga, products.harga_baru, pictures.picture_name ')->where('user_id', $user['id'])->join('products', 'products.product_id = carts.product_id')->join('pictures','pictures.product_id = products.product_id', 'left')->groupBy('products.product_id')->orderBy('cart_id','DESC')->findAll();
 
         $total = count($cart);
 
@@ -119,17 +119,55 @@ class Carts extends BaseController
     }
 
     public function delete($id=null){
-        $deleteCart = $this->cart_model->delete($id);
-        if($deleteCart){
-            $reponse = [
-                'status' => 200,
-            ];
+
+        if($id){
+            $deleteCart = $this->cart_model->delete($id);
+            if($deleteCart){
+                $reponse = [
+                    'status' => 200,
+                ];
+            }else{
+                $reponse = [
+                    'status'    => 500,
+                ];
+            }
         }else{
-            $reponse = [
-                'status'    => 500,
-            ];
+            $cart = $this->cart_model->where('user_id', user()->id)->findAll();
+            foreach($cart as $key => $value){
+                $deleteCart = $this->cart_model->delete($value['cart_id']);
+            }
+
+            if($deleteCart){
+                $reponse = [
+                    'status' => 200,
+                ];
+            }else{
+                $reponse = [
+                    'status'    => 500,
+                ];
+            }
         }
 
         return json_encode($reponse);
+    }
+
+    public function updateCatatan($id){
+        $catatan = $this->request->getPost('catatan');
+        $data = [
+            'catatan' => $catatan
+        ];
+
+        $update = $this->cart_model->updateCart($data,$id);
+        if($update){
+            $response = [
+                'status'    => 200
+            ];
+        }else{
+            $response = [
+                'status'    => 500
+            ];
+        }
+
+        return json_encode($response);
     }
 }

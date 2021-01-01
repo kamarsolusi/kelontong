@@ -243,20 +243,79 @@ function convertToAngka(rupiah)
 	return parseInt(rupiah.replace(/,.*|[^0-9]/g, ''), 10);
 }
 
+function changeQtyDb(cart_id, qty){
+    $.ajax({
+        url: '../carts/'+cart_id,
+        data: 'qty='+qty,
+        method: 'post',
+        dataType: 'json',
+        success: function(response){
+        }
+    })
+}
+
+function deleteCart(id=null){
+    if(id){
+        $.ajax({
+            url: '../carts/' + id,
+            method: 'delete',
+            dataType: 'json',
+            success: function(response){
+                if(response['status']==200){
+                    showCart();
+                    shoppingCart();
+                    Swal.fire({
+                        toast: true,
+                        icon: 'success',
+                        position: 'top-end',
+                        title: 'Deleted Successfully !',
+                        timer: 3000,
+                        showConfirmButton: false
+                    })
+                }
+            }
+        })
+    }else{
+        $.ajax({
+            url: '../carts/',
+            method: 'delete',
+            dataType: 'json',
+            success: function(response){
+                if(response['status']==200){
+                    showCart();
+                    shoppingCart();
+                    Swal.fire({
+                        toast: true,
+                        icon: 'success',
+                        position: 'top-end',
+                        title: 'Deleted Successfully !',
+                        timer: 3000,
+                        showConfirmButton: false
+                    })
+                }
+            }
+        })
+    }
+}
+
 function countJumlahCart(){
     $('.minus-cart').click(function (e) {
+        var cart_id = $(this).parent().find('.cart-id').val();
         var $input = $(this).parent().find('.input-jumlah');
         var count = parseInt($input.val()) - 1;
         count = count < 1 ? 1 : count;
         $input.val(count);
         $input.change();
+        changeQtyDb(cart_id, $input.val());
         totalPriceCart();
         return false;
     });
     $('.plus-cart').click(function (e) {
+        var cart_id = $(this).parent().find('.cart-id').val();
         var $input = $(this).parent().find('.input-jumlah');
         $input.val(parseInt($input.val()) + 1);
         $input.change();
+        changeQtyDb(cart_id, $input.val());
         totalPriceCart();
         return false;
     });
@@ -283,34 +342,116 @@ function totalPriceCart(){
     totalBeli[0].innerHTML = totalQty
 }
 
+function showCart(){
+    var keranjangHead = $('#keranjang-head').clone();
+    $('#keranjang').empty();
+    $('#keranjang').append(keranjangHead);
+    if($('#logged_in').val()){
+        $.ajax({
+            url: window.location.origin + '/carts/show',
+            method: 'get',
+            dataType: 'json',
+            success: function(response){
+                $.each(response['results'], function(key, value){
+                    if(value['picture_name']==null){
+                        value['picture_name'] = 'no_image.png'
+                    }
+                    $('#keranjang').append(`
+                        <div class="cart-shop">
+                            <img src="`+window.location.origin + '/upload/products/' + value['picture_name'] +`" alt="" class="img-shop">
+                            <div class="product-name">
+                                <a href="`+window.location.origin + '/detail/' + value['product_slug']+`" class="title-shop">`+value['name']+`</a>
+                                <div class="price-shop">
+                                    `+ (value['harga_baru'] < value['harga']? `
+                                    <h6 class="slash-price">Rp. `+ Intl.NumberFormat('id').format(value['harga'])+`</h6>
+                                    <h6 class="final-price">Rp. `+ Intl.NumberFormat('id').format(value['harga_baru'])+`</h6>
+                                    ` : `
+                                    <h6 class="final-price">Rp. `+ Intl.NumberFormat('id').format(value['harga_baru'])+`</h6>
+                                    `) +`
+                                </div>
+                            </div>
+                            <div class="cart-other">
+                                <div class="note">
+                                    <!-- <h4 class="button-note">Tulis Catatan</h4> -->
+                                    <div class="input-group">
+                                        <input type="text" oninput="addCatatan(`+value['cart_id']+`)" class="form-control form-note" value="`+ (value['catatan']==null? '': value['catatan'])+`" id="`+value['cart_id']+`" placeholder="Tulis Catatan (Optional)">
+                                    </div>
+                                </div>
+                                <div class="cart-qty">
+                                    <span class="button-delete" onclick='deleteCart(`+value['cart_id']+`)'>
+                                        <i class="fas fa-trash"></i>
+                                    </span>
+                                    <div class="number-cart">
+                                        <span class="minus-cart">-</span>
+                                        <input type="hidden" value="`+value['cart_id']+`" class="cart-id"/>
+                                        <input type="number" value="`+value['qty']+`" class="input-jumlah" />
+                                        <span class="plus-cart">+</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `);
+                })
+                countJumlah();   
+                countJumlahCart();
+                totalPriceCart();
+                // addCatatan();
+            
+            }
+        })
+    }else{
+        console.log("b");
+    }
+}
+function addCatatan(id){
+    var catatan = $('#'+id).val();
+    // var catatan = $(this).val();
+    // var id = $(this).attr('id');
+    $.ajax({
+        url: window.location.origin + '/carts/catatan/' + id,
+        type: 'post',
+        data: 'catatan=' + catatan,
+        dataType: 'json',
+        success: function(response){
+            console.log(response);
+        }
+    })
+}
+
 $(document).ready(function(){
     carouselBanner();
     carouselKategori();
     carouselTerbaru();
-    countdownSale();
+    if(window.location.pathname == ''){
+        countdownSale();
+    }
+    if(window.location.pathname == '/carts'){
+        showCart();
+    }
+    // showCart();
     shoppingCart();
     limitTitle();
-    likeProduct();
-    countJumlah();
+    // // likeProduct();
+    // countJumlah();   
+    // countJumlahCart();
+    // totalPriceCart();
 
-
+    // const floatField = $('#form-control');
+    // const floatContainer = $('#form-group');
+    // floatField.addEventListener('focus', () => {
+    //     floatContainer.classList.add('active');
+    // });
+    // floatField.addEventListener('blur', () => {
+    //     floatContainer.classList.remove('active');
+    // });
 })
 
 $(document).keydown(function (event){
-    if(event.keyCode == 123){
-        return false;
-    }else if (event.ctrlKey && event.shiftKey && event.keyCode == 73) { // Prevent Ctrl+Shift+I        
-        return false;
-    }
-    countJumlahCart()
-    totalPriceCart();
+    // if(event.keyCode == 123){
+    //     return false;
+    // }else if (event.ctrlKey && event.shiftKey && event.keyCode == 73) { // Prevent Ctrl+Shift+I        
+    //     return false;
+    // }
     
-    const floatField = $('#form-control');
-    const floatContainer = $('#form-group');
-    floatField.addEventListener('focus', () => {
-        floatContainer.classList.add('active');
-    });
-    floatField.addEventListener('blur', () => {
-        floatContainer.classList.remove('active');
-    });
+    
 })
