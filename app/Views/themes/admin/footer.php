@@ -16,7 +16,7 @@
 <?php if($request->uri->getSegment(2)=='categories'): ?>
     <script src="<?= base_url() ?>/src/js/categories.js"></script>
 <?php elseif($request->uri->getSegment(2)=='products'): ?>
-    <script src="<?= base_url() ?>/src/js/products.min.js"></script>
+    <script src="<?= base_url() ?>/src/js/products.js"></script>
 <?php endif; ?>
 </body>
 

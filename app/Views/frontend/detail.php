@@ -52,12 +52,12 @@
                     <div class="info-product mt-2">
                         <span><i class="fas fa-shopping-basket"></i> 0 Produk Terjual</span>
                     </div>
-                    <div class="info-product mt-2 mr-3 ml-3">
+                    <!-- <div class="info-product mt-2 mr-3 ml-3">
                         <i class="fas fa-ellipsis-v"></i>
-                    </div>
-                    <div class="info-product mt-2">
+                    </div> -->
+                    <!-- <div class="info-product mt-2">
                         <span><i class="far fa-eye"></i> 100 Produk Dilihat</span>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="mt-4">
                     <?php if($product['harga_baru'] < $product['harga']) : ?>
@@ -73,11 +73,11 @@
                     </div>
                     <div class="row mt-3">
                         <div class="col-3 title-opsi">Berat</div>
-                        <div class="col-9">200 Gram</div>
+                        <div class="col-9"><?= $product['berat'] == null? 0:$product['berat'] ?> Gram</div>
                     </div>
                     <div class="row mt-3">
                         <div class="col-3 title-opsi">Stok</div>
-                        <div class="col-9">200</div>
+                        <div class="col-9"><?= $product['stok'] ?></div>
                     </div>
                     <div class="row mt-3">
                         <div class="col-3 title-opsi">Jumlah</div>
@@ -93,7 +93,7 @@
                     <hr>
                 </div>
                 <div class="space-hr-info">
-                    <button class="btn btn-keranjang mr-2" onclick="addCart(<?= $product['sku'] ?>)"><i class="fas fa-cart-plus"></i> Masukkan Keranjang</button>
+                    <button id="btn-keranjang" class="btn btn-keranjang mr-2" onclick="addCart(<?= $product['sku'] ?>)"><i class="fas fa-cart-plus"></i> Masukkan Keranjang</button>
                     <button class="btn btn-beli">Beli Sekarang</button>
                 </div>
             </div>
@@ -123,11 +123,9 @@
                 </div>
                 <div class="mb-4">
                     <h5 class="title-info-detail">Deskripsi Produk</h5>
-                    <p class="text-info-detail">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto possimus molestias repudiandae qui dicta porro, non quia tempore? Quam, doloremque. Error esse voluptas minima ut deserunt necessitatibus aperiam magnam. Nesciunt!</p>
-                    <img src="<?= empty($pictures)? base_url('upload/products/no_image.png') : base_url('upload/products/'.$pictures[0]['picture_name']) ?>" alt="" class="img-info-detail">
-                    <p class="text-info-detail">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto possimus molestias repudiandae qui dicta porro, non quia tempore? Quam, doloremque. Error esse voluptas minima ut deserunt necessitatibus aperiam magnam. Nesciunt!</p>
-                    <p class="text-info-detail">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto possimus molestias repudiandae qui dicta porro, non quia tempore? Quam, doloremque. Error esse voluptas minima ut deserunt necessitatibus aperiam magnam. Nesciunt!</p>
-                    <p class="text-info-detail">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto possimus molestias repudiandae qui dicta porro, non quia tempore? Quam, doloremque. Error esse voluptas minima ut deserunt necessitatibus aperiam magnam. Nesciunt!</p>
+                    <p class="text-info-detail"><?= $product['detail'] ?></p>
+                    <!-- <img src="<?= empty($pictures)? base_url('upload/products/no_image.png') : base_url('upload/products/'.$pictures[0]['picture_name']) ?>" alt="" class="img-info-detail"> -->
+                    
                 </div>
             </div>
         </div>
@@ -323,6 +321,9 @@
 
     <script>
         $(document).ready(function() {
+            if(!$('#logged_in').val()){
+                $('#btn-keranjang').hide();
+            }
             $('#image-gallery').lightSlider({
                 gallery: true,
                 item: 1,

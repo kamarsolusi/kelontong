@@ -187,17 +187,19 @@ function carouselTerbaru(){
 }
 var base_url = window.location.origin;
 function shoppingCart(){
-    var username = $('#username').text();
-    $.ajax({
-        url: base_url + '/frontend/carts/show',
-        method: 'get',
-        data: 'username=' + username,
-        dataType: 'json',
-        success: function(response){
-            $('#shoping-cart').text(response['total']);
-            
-        }
-    })
+    if($('#logged_in').val()){
+        var username = $('#username').text();
+        $.ajax({
+            url: base_url + '/frontend/carts/show',
+            method: 'get',
+            data: 'username=' + username,
+            dataType: 'json',
+            success: function(response){
+                $('#shoping-cart').text(response['total']);
+                
+            }
+        })
+    }
 }
 
 $('#kategori-lain').on('click', function(){
@@ -206,24 +208,32 @@ $('#kategori-lain').on('click', function(){
 })
 
 function addCart(sku){
-    var username = $('#username').text();
-    $.ajax({
-        url: base_url + '/frontend/carts/add',
-        method: 'post',
-        data: 'sku='+sku+'&username='+ username,
-        dataType: 'json',
-        success: function(response){
-            shoppingCart();
-            Swal.fire({
-                icon: 'success',
-                toast: true,
-                position: 'top-end',
-                title: 'Add Cart successfully !',
-                timer: 3000,
-                showConfirmButton: false
-            })
-        }
-    })
+    if($('#logged_in').val()){
+
+        var username = $('#username').text();
+        $.ajax({
+            url: base_url + '/frontend/carts/add',
+            method: 'post',
+            data: 'sku='+sku+'&username='+ username,
+            dataType: 'json',
+            success: function(response){
+                shoppingCart();
+                Swal.fire({
+                    icon: 'success',
+                    toast: true,
+                    position: 'top-end',
+                    title: 'Add Cart successfully !',
+                    timer: 3000,
+                    showConfirmButton: false
+                })
+            }
+        })
+    }else{
+        Swal.fire({
+            icon: 'error',
+            title: 'Mohon login terlebih dahulu untuk menambahkan item ke keranjang',
+        })
+    }
 }
 
 function countJumlah(){
@@ -252,4 +262,14 @@ $(document).ready(function(){
     limitTitle();
     likeProduct();
     countJumlah();
+
+
+})
+
+$(document).keydown(function (event){
+    if(event.keyCode == 123){
+        return false;
+    }else if (event.ctrlKey && event.shiftKey && event.keyCode == 73) { // Prevent Ctrl+Shift+I        
+        return false;
+    }
 })

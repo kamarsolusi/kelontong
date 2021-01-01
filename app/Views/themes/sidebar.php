@@ -85,6 +85,15 @@ $uri = $request->uri->getSegment(2) ?>
                         </p>
                     </a>
                 </li>
+                <li class="nav-header">Customize</li>
+                <li class="nav-item">
+                    <a href="<?= base_url('/admin/options') ?>" class="nav-link <?= $uri == 'products' ? 'active' : '' ?>">
+                        <i class="nav-icon fas fa-cogs"></i>
+                        <p>
+                            Options
+                        </p>
+                    </a>
+                </li>
                 <li class="nav-header">AKUN</li>
                 <li class="nav-item">
                     <a href="<?= base_url('logout') ?>" class="nav-link">

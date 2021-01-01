@@ -26,11 +26,12 @@
                             <th>Category</th>
                             <th>Harga</th>
                             <th>Stok</th>
+                            <th>Berat (gram)</th>
                             <th>Status</th>
                             <th class="text-center">Action</th>
                         </tr>
                     </thead>
-                    <tbody id="table-body">
+                    <tbody  id="table-body">
 
                     </tbody>
                 </table>
@@ -55,34 +56,53 @@
                 <div class="modal-body">
                     <input type="hidden" name="product_id" id="product_id">
                     <div class="form-group">
-                        <label for="sku">SKU</label>
-                        <input type="number" maxlength="13" class="form-control" id="sku" name="sku" placeholder="ex : 8968574634542">
-                    </div>
-                    <div class="form-group">
                         <label for="name">Nama Barang</label>
-                        <input type="text" class="form-control" id="name" name="name" placeholder="ex : Ayam Kampus">
+                        <input type="text" class="form-control" id="name" name="name" placeholder="ex : Prouct Saya">
                     </div>
-                    <div class="form-group">
-                        <label for="harga">Harga Barang</label>
-                        <input type="number" min="0" class="form-control" id="harga" name="harga" placeholder="ex : 100000">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="sku">SKU</label>
+                                <input type="number" maxlength="13" class="form-control" id="sku" name="sku" placeholder="ex : 8968574634542">
+                            </div>
+                            <div class="form-group">
+                                <label for="harga">Harga Barang</label>
+                                <input type="number" min="0" class="form-control" id="harga" name="harga" placeholder="ex : 100000">
+                            </div>
+                            <div class="form-group">
+                                <label for="category_id">Category</label>
+                                <select name="category_id" class="form-control" id="category_id"></select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="stok">Stok Barang</label>
+                                <input type="number" min="0" class="form-control" id="stok" name="stok" placeholder="ex : 15">
+                            </div>
+                            <div class="form-group">
+                                <label for="berat">Berat (gram)</label>
+                                <input name="berat" class="form-control" id="berat" min="0" placeholder="0"></input>
+                            </div>
+                            <div class="form-group">
+                                <label for="status">Status</label>
+                                <select name="status" class="form-control" id="status">
+                                    <option value="">Pilih Status</option>
+                                    <option value="ACTIVE">ACTIVE</option>
+                                    <option value="INACTIVE">INACTIVE</option>
+                                </select>
+                            </div>
+                        </div>
+                        
                     </div>
-                    <div class="form-group">
-                        <label for="stok">Stok Barang</label>
-                        <input type="number" min="0" class="form-control" id="stok" name="stok" placeholder="ex : 15">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="detail">Detail Barang</label>
+                                <textarea  class="form-control" id="detail" rows="5" name="detail" placeholder="ex : Prouct Saya"></textarea>
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="category_id">Category</label>
-                        <select name="category_id" class="form-control" id="category_id"></select>
-                    </div>
-                    <div class="form-group">
-                        <label for="status">Status</label>
-                        <select name="status" class="form-control" id="status">
-                            <option value="">Pilih Status</option>
-                            <option value="ACTIVE">ACTIVE</option>
-                            <option value="INACTIVE">INACTIVE</option>
-                        </select>
-                    </div>
-
+                    
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

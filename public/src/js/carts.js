@@ -17,7 +17,14 @@ function totalBeli(){
     $('#grand-total').text('Rp. ' + Intl.NumberFormat('id').format(grandTotal));
     pajak(grandTotal);
 }
+
 $(document).ready(function(){
+    
+    if($('#logged_in').val()){
+        console.log("a");
+    }else{
+        console.log("b");
+    }
     table = $("#cart-body").DataTable({
         ajax: { url: "../carts/show", dataSrc:'results' ,dataType: "json", method: "GET" },
         responsive: !0,
@@ -76,6 +83,7 @@ $(document).ready(function(){
     });
 
 })
+
 
 
 function minus(id){ 

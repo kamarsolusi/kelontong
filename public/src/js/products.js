@@ -27,9 +27,19 @@ $(document).ready(function () {
             { data: "harga_baru", render: $.fn.dataTable.render.number(",", ".", 2, "Rp ") },
             { data: "stok" },
             {
+                data: 'berat',
+                mRender: function(data){
+                    if(data == null){
+                        return 0 + ' gram';
+                    }else{
+                        return data + ' gram';
+                    }
+                }
+            },
+            {
                 data: "product_status",
                 mRender: function (a) {
-                    return "ACTIVE" == a ? `<a class='btn btn-info'><i class="fas fa-check-circle mr-2"></i>` + a + `</a>` : `<a class='btn btn-danger'><i class="fas fa-times-circle mr-2"></i>` + a + `</a>`;
+                    return "ACTIVE" == a ? `<a class='btn btn-info btn-sm'><i class="fas fa-check-circle mr-2"></i>` + a + `</a>` : `<a class='btn btn-danger'><i class="fas fa-times-circle mr-2"></i>` + a + `</a>`;
                 },
             },
             {
@@ -37,9 +47,9 @@ $(document).ready(function () {
                 render: function (a) {
                     return (
                         `
-                        <a href="`+base+`/admin/products/images/`+a+`" class="btn btn-secondary"><i class="fas fa-images"></i> Picture</a>
-                        <a data-toggle="modal" onclick="submit(` +a +`)" class="btn btn-success" data-target="#myModal" ><i class="fas fa-edit"></i>Edit</a> 
-                        <a class="btn btn-danger" onclick="deleteData(` +a +`)"><i class="fas fa-trash-alt"></i>Hapus</a>
+                        <a href="`+base+`/admin/products/images/`+a+`" class="btn btn-secondary btn-sm"><i class="fas fa-images"></i><span><br>Picture</span></a>
+                        <a data-toggle="modal" onclick="submit(` +a +`)" class="btn btn-success btn-sm" data-target="#myModal" ><i class="fas fa-edit"></i><span><br>Edit</span></a> 
+                        <a class="btn btn-danger btn-sm" onclick="deleteData(` +a +`)"><i class="fas fa-trash-alt"></i><span><br>Hapus</span></a>
                         `
                     );
                 },
@@ -56,6 +66,8 @@ function submit(a) {
         $("#harga").val(""),
         $("#stok").val(""),
         $("#status").val(""),
+        $('#berat').val(''),
+        $('#detail').val(''),
         "tambah" == a
             ? ($("#myModalTitle").text("Tambah Data"),
               $("#btn-tambah").show(),
@@ -98,7 +110,7 @@ function submit(a) {
                           );
                       }),
                           $.each(a.product, function (a, b) {
-                              $("#product_id").val(b.product_id), $("#sku").val(b.sku), $("#name").val(b.name), $("#category_id").val(b.category_id), $("#harga").val(b.harga_baru), $("#stok").val(b.stok), $("#status").val(b.product_status);
+                              $("#product_id").val(b.product_id), $("#sku").val(b.sku), $("#name").val(b.name), $("#category_id").val(b.category_id), $("#harga").val(b.harga_baru), $("#stok").val(b.stok), $('#berat').val(b.berat == null? 0: b.berat),$("#status").val(b.product_status),$('#detail').val(b.detail);
                           });
                   },
                   error: function (a) {
@@ -113,11 +125,13 @@ function updateData() {
         d = $("#category_id").val(),
         e = $("#harga").val(),
         f = $("#stok").val(),
-        g = $("#status").val();
+        g = $("#status").val(),
+        h = $('#berat').val(),
+        i = $('#detail').val(); 
     $.ajax({
         url: "../admin/products/update/" + a,
         type: "post",
-        data: "sku=" + b + "&name=" + c + "&category_id=" + d + "&harga=" + e + "&stok=" + f + "&status=" + g,
+        data: "sku=" + b + "&name=" + c + "&category_id=" + d + "&harga=" + e + "&stok=" + f + "&status=" + g + '&berat=' + h + '&detail=' + i,
         dataType: "json",
         success: function () {
             $("#myModal").modal("hide"), table.ajax.reload(), Swal.fire({ toast: !0, position: "top-end", showConfirmButton: !1, timer: 3e3, icon: "success", title: "Update Data Successfully" });
@@ -133,11 +147,14 @@ function tambahData() {
         c = $("#category_id").val(),
         d = $("#harga").val(),
         e = $("#stok").val(),
-        f = $("#status").val();
+        f = $("#status").val(),
+        g = $('#berat').val(),
+        h = $('#detail').val();
+
     $.ajax({
         url: "../admin/products/add",
         type: "post",
-        data: "sku=" + a + "&name=" + b + "&category_id=" + c + "&harga=" + d + "&stok=" + e + "&status=" + f,
+        data: "sku=" + a + "&name=" + b + "&category_id=" + c + "&harga=" + d + "&stok=" + e + "&status=" + f + "&berat=" + g + "&detail=" + h,
         dataType: "json",
         success: function (a) {
             200 == a.status && (table.ajax.reload(), $("#myModal").modal("hide"), Swal.fire({ toast: !0, position: "top-end", showConfirmButton: !1, timer: 3e3, icon: "success", title: "Data Inserted Successfully" }));

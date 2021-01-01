@@ -54,6 +54,15 @@ $routes->group('admin', ['filter' => 'role:admin'], function($routes){
 	// Pictures
 	$routes->delete('images/(:any)', 'Admin\Pictures::delete/$1');
 	
+	// Toko Detail
+	$routes->get('options/', 'Admin\Toko_detail::index');
+	$routes->get('options/index', 'Admin\Toko_detail::index');
+	$routes->get('options/show', 'Admin\Toko_detail::show');
+	$routes->post('options/store', 'Admin\Toko_detail::simpan');
+	$routes->post('options/store/(:num)', 'Admin\Toko_detail::simpan/$1');
+	$routes->get('options/rajaongkir/(:any)/(:any)', 'Admin\Toko_detail::rajaongkir/$1/$2');
+	$routes->get('options/rajaongkir/(:any)', 'Admin\Toko_detail::rajaongkir/$1');
+	
 	// Users
 	$routes->get('users', 'Admin\Users::index');
 	$routes->get('users/index', 'Admin\Users::index');

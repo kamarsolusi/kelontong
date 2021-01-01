@@ -18,6 +18,7 @@
         <!-- Sebelum Login -->
         <ul class="navbar-nav ml-auto">
             <?php if (logged_in()) : ?>
+                <input type="hidden" name="logged_in" id="logged_in" value="<?= logged_in() ?>">
                 <li class="nav-item dropdown no-arrow mx-1 mr-3 mt-2 mb-2">
                     <a href="<?= base_url('carts') ?>" class="btn btn-cart" aria-haspopup="true" aria-expanded="false">
                         <i class=" fas fa-shopping-cart"></i>

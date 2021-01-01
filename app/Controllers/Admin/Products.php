@@ -7,14 +7,17 @@ use App\Controllers\BaseController;
 use App\Models\Categories_model;
 use App\Models\Products_model;
 use App\Models\Pictures_model;
+use App\Models\Detail_products_model;
 
 class Products extends BaseController
 {
     protected $product_model;
     protected $picture_model;
+    protected $detail_products_model;
     public function __construct()
     {
         helper(['form']);
+        $this->detail_products_model = new Detail_products_model();
         $this->product_model = new Products_model();
         $this->picture_model = new Pictures_model();
     }
@@ -25,16 +28,16 @@ class Products extends BaseController
     }
 
     public function show(){
-        $model = new Products_model();
+        $products = $this->product_model->join('categories','categories.category_id = products.category_id')->join('detail_products', 'detail_products.product_id = products.product_id', 'left')->findAll();
         
-        $data['results'] = $model->getSpecified();
-
+        $data['results'] = $products;
+        
         return json_encode($data);
-
     }
 
     public function add(){
         $model = new Products_model();
+
         $sku = $this->request->getPost('sku');
         $name = $this->request->getPost('name');
         $productSlug = str_replace(' ', '-', $name);
@@ -42,6 +45,9 @@ class Products extends BaseController
         $harga = $this->request->getPost('harga');
         $stok = $this->request->getPost('stok');
         $status = $this->request->getPost('status');
+        $berat = $this->request->getPost('berat');
+        $detail = nl2br($this->request->getVar('detail')) ;
+        var_dump($detail);
 
         $data = [
             'sku'           => $sku,
@@ -56,6 +62,14 @@ class Products extends BaseController
 
         $simpan = $model->insertProducts($data);
         if($simpan){
+            $productId = $this->product_model->select('product_id')->where('sku', $sku)->get->getRowArray();
+            $dataBerat = [
+                'product_id'    => $productId,
+                'berat'         => $berat,
+                'detail'        => $detail
+            ];
+
+            $this->detail_products_model->insert($dataBerat);
             $msg = ['message' => 'Product Created Successfully'];
             $response = [
                 'status'    => 200,
@@ -67,17 +81,15 @@ class Products extends BaseController
     }
 
     public function edit($id = null){
-        $model = new Products_model();
-        $get[] = $model->getProducts($id);
 
+        $product = $this->product_model->select('*, products.product_id')->join('detail_products','detail_products.product_id = products.product_id', 'left')->where('sku', $id)->get()->getResultArray();
         $modelCategory = new Categories_model();
         $getCategory = $modelCategory->where('category_status', 'ACTIVE')->findall();
 
         $data = [
-            'product'   => $get,
+            'product'   => $product,
             'category'  => $getCategory,
         ];
-
         if($data){
             return json_encode($data);
         }
@@ -95,6 +107,9 @@ class Products extends BaseController
         $hargaBaru = $this->request->getPost('harga');
         $stok = $this->request->getPost('stok');
         $status = $this->request->getPost('status');
+        $berat = $this->request->getPost('berat');
+        $detail = nl2br($this->request->getPost('detail'));
+        
 
         $data = [
             'sku'           => $sku,
@@ -104,13 +119,30 @@ class Products extends BaseController
             'harga'         => $hargaLama['harga_baru'],
             'harga_baru'    => $hargaBaru,
             'stok'          => $stok,
-            'product_status'        => $status,
+            'product_status'=> $status,
         ];
         
         if($id){
-
+            
             $simpan = $model->updateProduct($data, $id);
             if($simpan){
+                $detailProduct = $this->detail_products_model->select('id')->where('product_id', $id)->get()->getRowArray();
+
+                if(!empty($detailProduct)){
+                    $dataDetail = [
+                        'berat'     => $berat,
+                        'detail'    => $detail
+                    ];
+                    $this->detail_products_model->update($detailProduct['id'], $dataDetail);
+                }else{
+                    $dataDetail = [
+                        'product_id'    => $id,
+                        'berat'         => $berat,
+                        'detail'        => $detail
+                    ];
+                    $this->detail_products_model->insert($dataDetail);
+                }
+                
                 $msg = ['message' => 'Product Created Successfully'];
                 $response = [
                     'status'    => 200,
