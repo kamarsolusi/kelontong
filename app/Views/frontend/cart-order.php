@@ -9,7 +9,7 @@
     <?= view('themes/front/navbar') ?>
 
     <div class="container space-carousel">
-        <div class="row space-cart">
+        <div class="row space-cart" id="keranjang-kosong">
             <!-- Keranjang Belanja Kosong -->
             <!-- <div class="col-sm-12 col-md-12">
                 <div class="box-cart">
@@ -29,7 +29,7 @@
                 </div>
                 <!-- item cart -->
             </div>
-            <div class="col-sm-12 col-md-4">
+            <div class="col-sm-12 col-md-4" id="ringkasan">
                 <div class="card-order">
                     <!-- <div class="card-voucher">
                         <div class="input-group">

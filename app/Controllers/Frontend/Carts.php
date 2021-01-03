@@ -58,27 +58,28 @@ class Carts extends BaseController
 
         return json_encode($data);
     }
+  
 
     public function add()
     {
         $sku = $this->request->getPost('sku');
-        $product_id = $this->product_model->select('product_id')->where('sku', $sku)->get()->getRowArray();
+        $product_id = $this->product_model->select('product_id,stok')->where('sku', $sku)->get()->getRowArray();
         $username = $this->request->getPost('username');
         $user = $this->user_model->select('id')->where('username', $username)->get()->getRowArray();
         $qty = 1;
 
         
-        if(!empty($this->cart_model->where('product_id', $product_id)->where('user_id', $user['id'])->get()->getResultArray())){
-            $cartId = $this->cart_model->select('cart_id, qty')->where('product_id', $product_id)->where('user_id', $user['id'])->get()->getRowArray();
+        if(!empty($this->cart_model->where('product_id', $product_id['product_id'])->where('user_id', $user['id'])->get()->getResultArray())){
+            $cartId = $this->cart_model->select('cart_id, qty')->where('product_id', $product_id['product_id'])->where('user_id', $user['id'])->get()->getRowArray();
             $cartData = [
                 'user_id'       => $user['id'],
                 'product_id'    => $product_id['product_id'],
                 'qty'           => $cartId['qty'] + 1,
             ];
             $save = $this->cart_model->updateCart($cartData, $cartId['cart_id']);
-
+            
         }else{
-
+            
             $cartData = [
                 'user_id'       => $user['id'],
                 'product_id'    => $product_id['product_id'],
@@ -99,19 +100,30 @@ class Carts extends BaseController
 
     public function plus($id){
         $qty = $this->request->getPost('qty');
-        $data = [
-            'qty' => $qty
-        ];
-
-        $update = $this->cart_model->updateCart($data,$id);
-        if($update){
+        $cartProductId = $this->cart_model->select('product_id')->where('cart_id', $id)->get()->getRowArray();
+        $productStok = $this->product_model->select('product_id,stok')->where('product_id', $cartProductId['product_id'])->get()->getRowArray();
+        
+        if($qty > $productStok['stok']){
             $response = [
-                'status'    => 200
+                'status'    => 500,
+                'message'   => 'Out of Stock !'
             ];
         }else{
-            $response = [
-                'status'    => 500
+
+            $data = [
+                'qty' => $qty
             ];
+            
+            $update = $this->cart_model->updateCart($data,$id);
+            if($update){
+                $response = [
+                    'status'    => 200
+                ];
+            }else{
+                $response = [
+                    'status'    => 500
+                ];
+            }
         }
 
         return json_encode($response);

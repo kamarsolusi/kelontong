@@ -47,7 +47,6 @@ class Products extends BaseController
         $status = $this->request->getPost('status');
         $berat = $this->request->getPost('berat');
         $detail = nl2br($this->request->getVar('detail')) ;
-        var_dump($detail);
 
         $data = [
             'sku'           => $sku,
@@ -62,9 +61,9 @@ class Products extends BaseController
 
         $simpan = $model->insertProducts($data);
         if($simpan){
-            $productId = $this->product_model->select('product_id')->where('sku', $sku)->get->getRowArray();
+            $productId = $this->product_model->select('product_id')->where('sku', $sku)->get()->getRowArray();
             $dataBerat = [
-                'product_id'    => $productId,
+                'product_id'    => $productId['product_id'],
                 'berat'         => $berat,
                 'detail'        => $detail
             ];

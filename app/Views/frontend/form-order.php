@@ -13,12 +13,12 @@
             <div class="col-sm-12 col-md-8">
                 <div class="card-form-order">
                     <div class="card-form-head">
-                        <h3 class="title-form">Detail Transaksi</h3>
+                        <h3 class="title-form">Detail Transaksi <?= $transaction_number['transaction_number'] ?></h3>
                     </div>
                     <div class="form-order">
                         <?php foreach($product as $key => $value): ?>
                             <div class="card-list-order">
-                                <img src="<?= base_url('upload/products/'. ($value['picture_name']==null? 'no_image.png':$value['picture_name'])) ?>" alt="" class="img-list-order">
+                                <img src="<?= base_url('upload/products/'. (empty($value['picture_name'])? 'no_image.png':$value['picture_name'])) ?>" alt="" class="img-list-order">
                                 <h4 class="name-list-order"><?= $value['name'] ?></h4>
                                 <div class="list-order">
                                     <div>
@@ -82,7 +82,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="inputProvinsi" style="padding-left: 5px;">Provinsi</label>
-                                        <select id="inputProvinsi" class="form-control">
+                                        <select id="inputProvinsi" class="form-control" required>
                                             <option>Pilih Provinsi</option>
                                         </select>
                                     </div>
@@ -90,7 +90,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="inputKabupaten" style="padding-left: 5px;">Kabupaten/Kota</label>
-                                        <select id="inputKabupaten" class="form-control">
+                                        <select id="inputKabupaten" class="form-control" required>
                                             <option>Pilih Kabupaten</option>
                                         </select>
                                     </div>
@@ -121,7 +121,7 @@
                                 <div class="col-md-6">
                                     <div class="form-label-group">
                                         <!-- <label for="inputKurir">Kurir</label> -->
-                                        <select id="inputKurir" class="form-control">
+                                        <select id="inputKurir" class="form-control" required>
                                             <option value="">Pilih Kurir</option>
                                             <option value="jne">JNE</option>
                                             <option value="pos">POS</option>
@@ -143,7 +143,7 @@
                             <div class="form-row">
                                 <div class="col-md-4">
                                     <label class="label-pay">
-                                        <input type="radio" name="radioname" value="Dana" />
+                                        <input type="radio" name="radioname" id="radioname" value="Dana" required/>
                                         <div class="div-pay">
                                             <div class="name-pay">Dana</div>
                                             <img src="assets/img/icon-dana.png" alt="" class="img-pay">
@@ -152,7 +152,7 @@
                                 </div>
                                 <div class="col-md-4">
                                     <label class="label-pay">
-                                        <input type="radio" name="radioname" value="Gopay" />
+                                        <input type="radio" name="radioname" value="Gopay" required/>
                                         <div class="div-pay">
                                             <div class="name-pay">Gopay</div>
                                             <img src="assets/img/icon-gopay.png" alt="" class="img-pay">
@@ -161,7 +161,7 @@
                                 </div>
                                 <div class="col-md-4">
                                     <label class="label-pay">
-                                        <input type="radio" name="radioname" value="Ovo" />
+                                        <input type="radio" name="radioname" value="Ovo" required/>
                                         <div class="div-pay">
                                             <div class="name-pay">Ovo</div>
                                             <img src="assets/img/icon-ovo.png" alt="" class="img-pay">
@@ -222,6 +222,7 @@
             countTotalBelanja();
             countTotalBerat();
             listProvinsi();   
+            addOrder();
             $('#inputProvinsi').on('change',function(){
                 listKabupaten($('#inputProvinsi').val());
             })     
@@ -245,21 +246,81 @@
 
         function ongkosKirim(kurir){
             $('#inputService').empty();
-            $('#inputService').append('<option>Pilih Service</option>')
+            $('#inputService').append('<option>Pilih Service</option>');
+            if(berat == 0){
+                console.log(true);
+                berat = 1000;
+            };
             $.ajax({
                 url: window.location.origin + '/ongkir',
                 data: 'weight='+berat+'&courier='+kurir+'&destination=' + $('#inputKabupaten').val(),
                 method: 'post',
                 dataType: 'json',
                 success: function(response){
-                    console.log(response);
                     $.each(response['rajaongkir']['results'][0]['costs'], function(key,value){
                         $('#inputService').append(`
                             <option value='`+value['cost'][0]['value']+`' >`+value['service'] + ' '+ value['cost'][0]['etd']+`</option>
                         `)
-                        // console.log(value['service']);
                     })
                 }
+            })
+        }
+
+       
+        function addOrder(){
+            $('.btn-order').on('click', function(){
+                var slug = $('.name-list-order');
+                var product_slug = [];
+                $.each(slug, function(key,value){
+                    product_slug.push(value.textContent.replace(/\s+/g, '-'));
+                })
+                var alamat = $('#inputAlamat').val();
+                var penerima = $('#inputNama').val();
+                var email = $('#inputEmail').val();
+                var no_telphone = $('#inputNoHp').val();
+                var provinsi = $('#inputProvinsi option:selected').text();
+                var kabupaten = $('#inputKabupaten option:selected').text();
+                var kecamatan = $('#inputKecamatan').val();
+                var kelurahan = $('#inputDesa').val();
+                var kode_pos = $('#inputKode').val();
+                var kurir = $('#inputKurir option:selected').text();
+                var service = $('#inputService option:selected').text();
+                var metode_pembayaran = $("#radioname").val();
+                var subTotal = parseFloat($('#total-belanja').text().replace( /^\Rp./,"")) * 1000;
+                var grandTotal = parseFloat($('#total-tagihan').text().replace( /^\Rp./,"")) * 1000;
+                var ongkir = parseFloat($('#ongkir').text().replace( /^\Rp./,"")) * 1000;
+                
+                var data = new FormData();
+                data.append('product_slug',product_slug);
+                data.append('alamat',alamat);
+                data.append('penerima',penerima);
+                data.append('email',email);
+                data.append('no_telphone',no_telphone);
+                data.append('provinsi',provinsi);
+                data.append('kabupaten',kabupaten);
+                data.append('kecamatan',kecamatan);
+                data.append('kelurahan',kelurahan);
+                data.append('kode_pos',kode_pos);
+                data.append('kurir',kurir);
+                data.append('service',service);
+                data.append('metode_pembayaran',metode_pembayaran);
+                data.append('subTotal',subTotal);
+                data.append('grandTotal',grandTotal);
+                data.append('ongkir',ongkir);
+                
+                $.ajax({
+                    url: window.location.origin + '/order',
+                    method: 'post',
+                    data: data,
+                    dataType: 'json',
+                    processData: false,
+                    contentType: false,
+                    success: function(response){
+                        console.log(response);
+                    }
+                })
+
+                location.href = window.location.origin;
             })
         }
 
@@ -279,9 +340,7 @@
         }
 
         function listKabupaten(province_id){
-            var pilih = $('#inputKabupaten').clone();
             $('#inputKabupaten').empty();
-            $('#inputKabupaten').append(pilih);
             $.ajax({
                 url: window.location.origin + '/rajaongkir/city/'+ province_id,
                 method: 'get',

@@ -243,13 +243,25 @@ function convertToAngka(rupiah)
 	return parseInt(rupiah.replace(/,.*|[^0-9]/g, ''), 10);
 }
 
-function changeQtyDb(cart_id, qty){
+function changeQtyDb(cart_id, qty,i=null){
     $.ajax({
         url: '../carts/'+cart_id,
         data: 'qty='+qty,
         method: 'post',
         dataType: 'json',
         success: function(response){
+            if(response['message']=="Out of Stock !"){
+                $('.input-jumlah').eq(i).val(tempQty);
+                totalPriceCart();
+                Swal.fire({
+                    toast: true,
+                    icon: 'info',
+                    position: 'top-end',
+                    title: response['message'],
+                    timer: 3000,
+                    showConfirmButton: false
+                })
+            }
         }
     })
 }
@@ -313,12 +325,26 @@ function countJumlahCart(){
     $('.plus-cart').click(function (e) {
         var cart_id = $(this).parent().find('.cart-id').val();
         var $input = $(this).parent().find('.input-jumlah');
+        tempQty = parseInt($input.val());
         $input.val(parseInt($input.val()) + 1);
+        var i = $('.input-jumlah').index($(this).parent().find('.input-jumlah'));
+        changeQtyDb(cart_id, $input.val(), i);
         $input.change();
-        changeQtyDb(cart_id, $input.val());
         totalPriceCart();
         return false;
     });
+    $('.input-jumlah').on('input', function(e){
+        var cart_id = $(this).parent().find('.cart-id').val();
+        var $input = $(this);
+        $input.val(parseInt($input.val()));
+        tempQty = parseInt($input.val());
+        var i = $('.input-jumlah').index($(this).parent().find('.input-jumlah'));
+        changeQtyDb(cart_id, $input.val(), i);
+        $input.change();
+        totalPriceCart();
+        return false;
+    })
+
 }
 
 function totalPriceCart(){
@@ -352,57 +378,74 @@ function showCart(){
             method: 'get',
             dataType: 'json',
             success: function(response){
-                $.each(response['results'], function(key, value){
-                    if(value['picture_name']==null){
-                        value['picture_name'] = 'no_image.png'
-                    }
-                    $('#keranjang').append(`
-                        <div class="cart-shop">
-                            <img src="`+window.location.origin + '/upload/products/' + value['picture_name'] +`" alt="" class="img-shop">
-                            <div class="product-name">
-                                <a href="`+window.location.origin + '/detail/' + value['product_slug']+`" class="title-shop">`+value['name']+`</a>
-                                <div class="price-shop">
-                                    `+ (value['harga_baru'] < value['harga']? `
-                                    <h6 class="slash-price">Rp. `+ Intl.NumberFormat('id').format(value['harga'])+`</h6>
-                                    <h6 class="final-price">Rp. `+ Intl.NumberFormat('id').format(value['harga_baru'])+`</h6>
-                                    ` : `
-                                    <h6 class="final-price">Rp. `+ Intl.NumberFormat('id').format(value['harga_baru'])+`</h6>
-                                    `) +`
-                                </div>
-                            </div>
-                            <div class="cart-other">
-                                <div class="note">
-                                    <!-- <h4 class="button-note">Tulis Catatan</h4> -->
-                                    <div class="input-group">
-                                        <input type="text" oninput="addCatatan(`+value['cart_id']+`)" class="form-control form-note" value="`+ (value['catatan']==null? '': value['catatan'])+`" id="`+value['cart_id']+`" placeholder="Tulis Catatan (Optional)">
-                                    </div>
-                                </div>
-                                <div class="cart-qty">
-                                    <span class="button-delete" onclick='deleteCart(`+value['cart_id']+`)'>
-                                        <i class="fas fa-trash"></i>
-                                    </span>
-                                    <div class="number-cart">
-                                        <span class="minus-cart">-</span>
-                                        <input type="hidden" value="`+value['cart_id']+`" class="cart-id"/>
-                                        <input type="number" value="`+value['qty']+`" class="input-jumlah" />
-                                        <span class="plus-cart">+</span>
-                                    </div>
+                if(response['total']==0){
+                    $('#keranjang-kosong').append(`
+                        <div class="col-sm-12 col-md-12">
+                            <div class="box-cart">
+                                <div class="text-center">
+                                    <img src="`+window.location.origin+`/themes/assets/img/empty_cart.svg" alt="" class="img-empty-cart">
+                                    <h3 class="text-heading">Wah, keranjang belanjamu kosong</h3>
+                                    <p class="text-desc">Daripada dianggurin, mending isi dengan barang-barang kebutuhanmu. Yuk, cek sekarang!</p>
+                                    <a href="`+window.location.origin+`" class="btn btn-empty">Mulai Belanja</a>
                                 </div>
                             </div>
                         </div>
                     `);
-                })
-                countJumlah();   
-                countJumlahCart();
-                totalPriceCart();
-                // addCatatan();
-            
+                    $('#keranjang').hide();
+                    $('#ringkasan').hide();
+                }else{
+                    $.each(response['results'], function(key, value){
+                        if(value['picture_name']==null){
+                            value['picture_name'] = 'no_image.png'
+                        }
+                        $('#keranjang').append(`
+                            <div class="cart-shop">
+                                <img src="`+window.location.origin + '/upload/products/' + value['picture_name'] +`" alt="" class="img-shop">
+                                <div class="product-name">
+                                    <a href="`+window.location.origin + '/detail/' + value['product_slug']+`" class="title-shop">`+value['name']+`</a>
+                                    <div class="price-shop">
+                                        `+ (value['harga_baru'] < value['harga']? `
+                                        <h6 class="slash-price">Rp. `+ Intl.NumberFormat('id').format(value['harga'])+`</h6>
+                                        <h6 class="final-price">Rp. `+ Intl.NumberFormat('id').format(value['harga_baru'])+`</h6>
+                                        ` : `
+                                        <h6 class="final-price">Rp. `+ Intl.NumberFormat('id').format(value['harga_baru'])+`</h6>
+                                        `) +`
+                                    </div>
+                                </div>
+                                <div class="cart-other">
+                                    <div class="note">
+                                        <!-- <h4 class="button-note">Tulis Catatan</h4> -->
+                                        <div class="input-group">
+                                            <input type="text" oninput="addCatatan(`+value['cart_id']+`)" class="form-control form-note" value="`+ (value['catatan']==null? '': value['catatan'])+`" id="`+value['cart_id']+`" placeholder="Tulis Catatan (Optional)">
+                                        </div>
+                                    </div>
+                                    <div class="cart-qty">
+                                        <span class="button-delete" onclick='deleteCart(`+value['cart_id']+`)'>
+                                            <i class="fas fa-trash"></i>
+                                        </span>
+                                        <div class="number-cart">
+                                            <span class="minus-cart">-</span>
+                                            <input type="hidden" value="`+value['cart_id']+`" class="cart-id"/>
+                                            <input type="number" value="`+value['qty']+`" class="input-jumlah" />
+                                            <span class="plus-cart">+</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        `);
+                    })
+                    countJumlah();   
+                    countJumlahCart();
+                    totalPriceCart();
+                    // addCatatan();
+                }
             }
         })
     }else{
         console.log("b");
     }
 }
+
 function addCatatan(id){
     var catatan = $('#'+id).val();
     // var catatan = $(this).val();
@@ -419,6 +462,7 @@ function addCatatan(id){
 }
 
 $(document).ready(function(){
+    var tempQty = 0;
     carouselBanner();
     carouselKategori();
     carouselTerbaru();

@@ -78,7 +78,7 @@ $uri = $request->uri->getSegment(2) ?>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link <?= $uri == 'transactions' ? 'active' : '' ?>">
+                    <a href="<?= base_url('/admin/transactions') ?>" class="nav-link <?= $uri == 'transactions' ? 'active' : '' ?>">
                         <i class="nav-icon far fa-clipboard"></i>
                         <p>
                             Transaction

@@ -151,7 +151,7 @@
                       <i class="far fa-star"></i>
                       4.5
                     </div>
-                    <a href="#" class="btn btn-sm btn-buy mt-2"><i class="fas fa-shopping-cart"></i> Beli</a>
+                    <a href="<?= base_url('order/'.$value['product_slug']) ?>" class="btn btn-sm btn-buy mt-2"><i class="fas fa-shopping-cart"></i> Beli</a>
                   </div>
                 </div>
               </a>
@@ -204,7 +204,7 @@
                     <i class="far fa-star"></i>
                     4.5
                   </div>
-                  <a href="#" class="btn btn-sm btn-buy mt-2"><i class="fas fa-shopping-cart"></i> Beli</a>
+                  <a href="<?= base_url('order/'.$value['product_slug']) ?>" class="btn btn-sm btn-buy mt-2"><i class="fas fa-shopping-cart"></i> Beli</a>
                 </div>
               </div>
             </a>

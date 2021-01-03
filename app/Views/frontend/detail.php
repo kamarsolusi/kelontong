@@ -94,7 +94,7 @@
                 </div>
                 <div class="space-hr-info">
                     <button id="btn-keranjang" class="btn btn-keranjang mr-2" onclick="addCart(<?= $product['sku'] ?>)"><i class="fas fa-cart-plus"></i> Masukkan Keranjang</button>
-                    <button class="btn btn-beli">Beli Sekarang</button>
+                    <button class="btn btn-beli" onclick="order('<?= $product['product_slug'] ?>')">Beli Sekarang</button>
                 </div>
             </div>
         </div>
@@ -323,6 +323,8 @@
         $(document).ready(function() {
             if(!$('#logged_in').val()){
                 $('#btn-keranjang').hide();
+            }else{
+                $('')
             }
             $('#image-gallery').lightSlider({
                 gallery: true,
@@ -338,6 +340,11 @@
                 }
             });
         })
+
+        function order(product_slug){
+            console.log(product_slug);
+            location.href = window.location.origin + '/order/' + product_slug;
+        }
     </script>
 </body>
 

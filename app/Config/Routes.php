@@ -63,6 +63,15 @@ $routes->group('admin', ['filter' => 'role:admin'], function($routes){
 	$routes->get('options/rajaongkir/(:any)/(:any)', 'Admin\Toko_detail::rajaongkir/$1/$2');
 	$routes->get('options/rajaongkir/(:any)', 'Admin\Toko_detail::rajaongkir/$1');
 	
+	// Transaction
+	$routes->get('transactions', 'Admin\Transactions::index');
+	$routes->get('transactions/index', 'Admin\Transactions::index');
+	$routes->get('transactions/show', 'Admin\Transactions::show');
+	$routes->get('transactions/detail/(:any)', 'Admin\Transactions::detail/$1');
+	$routes->get('transactions/edit/(:any)', 'Admin\Transactions::edit/$1');
+	$routes->put('transactions/edit/(:any)', 'Admin\Transactions::update/$1');
+	// $routes->post('transactions/update/(:any)', 'Admin\Transactions::update/$1');
+
 	// Users
 	$routes->get('users', 'Admin\Users::index');
 	$routes->get('users/index', 'Admin\Users::index');
@@ -99,10 +108,13 @@ $routes->post('/carts/catatan/(:num)', 'Frontend\Carts::updateCatatan/$1');
 $routes->delete('/carts/(:num)', 'Frontend\Carts::delete/$1', ['filter' => 'role:user,admin']);
 $routes->delete('/carts', 'Frontend\Carts::delete', ['filter' => 'role:user,admin']);
 
-// Ordre
+// Order
 $routes->get('/order', 'Frontend\Transactions::index', ['filter' => 'role:user,admin']);
 $routes->get('/order/index', 'Frontend\Transactions::index', ['filter' => 'role:user,admin']);
 $routes->get('/order/(:any)', 'Frontend\Transactions::index/$1', ['filter' => 'role:user,admin']);
+$routes->post('/order', 'Frontend\Transactions::addTransaction');
+
+
 
 // Raja Ongkir
 $routes->get('/rajaongkir/(:any)/(:any)', 'RajaOngkir::rajaongkir/$1/$2');

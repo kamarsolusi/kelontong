@@ -46,7 +46,7 @@ class Home extends BaseController
 	}
 
 	public function detail($product_slug){
-		$product = $this->product_model->join('categories', 'categories.category_id = products.category_id')->join('detail_products', 'detail_products.product_id = products.product_id', 'left')->where('product_slug', $product_slug)->where('product_status', 'ACTIVE')->get()->getRowArray();
+		$product = $this->product_model->select('*, products.product_id')->join('categories', 'categories.category_id = products.category_id')->join('detail_products', 'detail_products.product_id = products.product_id', 'left')->where('product_slug', $product_slug)->where('product_status', 'ACTIVE')->get()->getRowArray();
 		if(empty($product)){
 			return redirect()->to(base_url());
 		}
