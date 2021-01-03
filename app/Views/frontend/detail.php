@@ -129,7 +129,7 @@
                 </div>
             </div>
         </div>
-        <div class="row mt-4">
+        <div class="row mt-4" id="ulasan-brg">
             <div class="col-md-5">
                 <h3 class="title-info">Ulasan Barang</h3>
             </div>
@@ -321,6 +321,7 @@
 
     <script>
         $(document).ready(function() {
+            $('#ulasan-brg').hide();
             if(!$('#logged_in').val()){
                 $('#btn-keranjang').hide();
             }else{
