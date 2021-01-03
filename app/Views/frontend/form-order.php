@@ -99,14 +99,20 @@
                             <div class="form-row">
                                 <div class="col-md-4">
                                     <div class="form-label-group">
-                                        <input type="text" id="inputKecamatan" class="form-control" placeholder="Kecamatan" required>
-                                        <label for="inputKecamatan">Kecamatan</label>
+                                        <!-- <input type="text" id="inputKecamatan" class="form-control" placeholder="Kecamatan" required> -->
+                                        <!-- <label for="inputKecamatan">Kecamatan</label> -->
+                                        <select id="inputKecamatan" class="form-control" required>
+                                            <option>Pilih Kecamatan</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-label-group">
-                                        <input type="text" id="inputDesa" class="form-control" placeholder="Desa/Kelurahan" required>
-                                        <label for="inputDesa">Desa/Kelurahan</label>
+                                        <!-- <input type="text" id="inputDesa" class="form-control" placeholder="Desa/Kelurahan" required>
+                                        <label for="inputDesa">Desa/Kelurahan</label> -->
+                                        <select id="inputDesa" class="form-control" required>
+                                            <option>Pilih Desa</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
@@ -134,7 +140,11 @@
                                         
                                         <!-- <label for="inputDesa"></label> -->
                                         <select id="inputService" class="form-control" required>
-                                            <option value="jne">Pilih Service</option>
+                                            <option value="">Pilih Service</option>
+                                            <option value="10000">1 Hari</option>
+                                            <option value="12000">3 Hari</option>
+                                            <option value="13000">9 Jam</option>
+                                            <option value="15000">>3 Hari</option>
                                         </select>
                                     </div>
                                 </div>
@@ -226,9 +236,15 @@
             $('#inputProvinsi').on('change',function(){
                 listKabupaten($('#inputProvinsi').val());
             })     
-            $('#inputKurir').on('change', function(){
-                ongkosKirim($('#inputKurir').val());
-            })   
+            $('#inputKabupaten').on('change', function(){
+                listKecamatan($('#inputKabupaten').val());
+            })
+            $('#inputKecamatan').on('change', function(){
+                listDesa($('#inputKecamatan').val());
+            })
+            // $('#inputKurir').on('change', function(){
+            //     ongkosKirim($('#inputKurir').val());
+            // })   
             $('#inputService').on('change', function(){
                 var ongkir = $(this).val();
                 if($(this).val()){
@@ -244,27 +260,59 @@
             })
         })
 
-        function ongkosKirim(kurir){
-            $('#inputService').empty();
-            $('#inputService').append('<option>Pilih Service</option>');
-            if(berat == 0){
-                console.log(true);
-                berat = 1000;
-            };
+        function listKecamatan(id_kabupaten){
+            $('#inputKecamatan').empty();
             $.ajax({
-                url: window.location.origin + '/ongkir',
-                data: 'weight='+berat+'&courier='+kurir+'&destination=' + $('#inputKabupaten').val(),
-                method: 'post',
+                url: "https://dev.farizdotid.com/api/daerahindonesia/kecamatan?id_kota="+id_kabupaten,
+                method: 'get',
                 dataType: 'json',
                 success: function(response){
-                    $.each(response['rajaongkir']['results'][0]['costs'], function(key,value){
-                        $('#inputService').append(`
-                            <option value='`+value['cost'][0]['value']+`' >`+value['service'] + ' '+ value['cost'][0]['etd']+`</option>
-                        `)
+                    $.each(response['kecamatan'], function(key,value){
+                        $('#inputKecamatan').append(`
+                            <option value='`+value['id']+`'>`+value['nama']+`</option>
+                        `);
                     })
                 }
             })
         }
+
+        function listDesa(id_kecamatan){
+            $('#inputDesa').empty();
+            $.ajax({
+                url: "https://dev.farizdotid.com/api/daerahindonesia/kelurahan?id_kecamatan="+id_kecamatan,
+                method: 'get',
+                dataType: 'json',
+                success: function(response){
+                    $.each(response['kelurahan'], function(key,value){
+                        $('#inputDesa').append(`
+                            <option value='`+value['id']+`'>`+value['nama']+`</option>
+                        `);
+                    })
+                }
+            })
+        }
+
+        // function ongkosKirim(kurir){
+        //     $('#inputService').empty();
+        //     $('#inputService').append('<option>Pilih Service</option>');
+        //     if(berat == 0){
+        //         console.log(true);
+        //         berat = 1000;
+        //     };
+        //     $.ajax({
+        //         url: window.location.origin + '/ongkir',
+        //         data: 'weight='+berat+'&courier='+kurir+'&destination=' + $('#inputKabupaten').val(),
+        //         method: 'post',
+        //         dataType: 'json',
+        //         success: function(response){
+        //             $.each(response['rajaongkir']['results'][0]['costs'], function(key,value){
+        //                 $('#inputService').append(`
+        //                     <option value='`+value['cost'][0]['value']+`' >`+value['service'] + ' '+ value['cost'][0]['etd']+`</option>
+        //                 `)
+        //             })
+        //         }
+        //     })
+        // }
 
        
         function addOrder(){
@@ -280,8 +328,8 @@
                 var no_telphone = $('#inputNoHp').val();
                 var provinsi = $('#inputProvinsi option:selected').text();
                 var kabupaten = $('#inputKabupaten option:selected').text();
-                var kecamatan = $('#inputKecamatan').val();
-                var kelurahan = $('#inputDesa').val();
+                var kecamatan = $('#inputKecamatan option:selected').text();
+                var kelurahan = $('#inputDesa option:selected').text();
                 var kode_pos = $('#inputKode').val();
                 var kurir = $('#inputKurir option:selected').text();
                 var service = $('#inputService option:selected').text();
@@ -326,15 +374,20 @@
 
         function listProvinsi(){
             $.ajax({
-                url: window.location.origin + '/rajaongkir/province',
+                url: "https://dev.farizdotid.com/api/daerahindonesia/provinsi",
                 method: 'get',
                 dataType: 'json',
                 success: function(response){
-                    $.each(response['rajaongkir']['results'], function(key,value){
+                    $.each(response['provinsi'], function(key, value){
                         $('#inputProvinsi').append(`
-                            <option value='`+value['province_id']+`'>`+value['province']+`</option>
+                            <option value='`+value['id']+`'>`+value['nama']+`</option>
                         `);
                     })
+                    // $.each(response['rajaongkir']['results'], function(key,value){
+                    //     $('#inputProvinsi').append(`
+                    //         <option value='`+value['province_id']+`'>`+value['province']+`</option>
+                    //     `);
+                    // })
                 }
             })
         }
@@ -342,16 +395,21 @@
         function listKabupaten(province_id){
             $('#inputKabupaten').empty();
             $.ajax({
-                url: window.location.origin + '/rajaongkir/city/'+ province_id,
+                url: "https://dev.farizdotid.com/api/daerahindonesia/kota?id_provinsi="+province_id,
                 method: 'get',
                 dataType: 'json',
                 success: function(response){
-                    $.each(response['rajaongkir']['results'], function(key,value){
+                    $.each(response['kota_kabupaten'], function(key,value){
                         $('#inputKabupaten').append(`
-                            <option value='`+value['city_id']+`'>`+value['city_name']+`</option>
+                            <option value='`+value['id']+`'>`+value['nama']+`</option>
                         `);
-
                     })
+                    // $.each(response['rajaongkir']['results'], function(key,value){
+                    //     $('#inputKabupaten').append(`
+                    //         <option value='`+value['city_id']+`'>`+value['city_name']+`</option>
+                    //     `);
+
+                    // })
                 }
             })
         }
