@@ -42,12 +42,12 @@
                                 <i class="fas fa-user-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                 Dashboard
                             </a>
-                            <a class="dropdown-item" href="<?= base_url('transactions') ?>">
+                            <a class="dropdown-item" href="<?= base_url('profile') ?>">
                                 <i class="fas fa-clipboard fa-sm fa-fw mr-2 text-gray-400"></i>
                                 Pesanan
                             </a>
                         <?php else: ?>
-                        <a class="dropdown-item" href="<?= base_url('transactions') ?>">
+                        <a class="dropdown-item" href="<?= base_url('profile') ?>">
                             <i class="fas fa-clipboard fa-sm fa-fw mr-2 text-gray-400"></i>
                             Pesanan
                         </a>

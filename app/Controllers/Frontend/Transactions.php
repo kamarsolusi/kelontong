@@ -162,10 +162,15 @@ class Transactions extends BaseController
 
     public function show(){
         $transaction = $this->transaction_model->where('user_id', user()->id)->findAll();
+        $detailTransaction = [];
+        foreach($transaction as $key => $value){
+            $detailTransaction = $this->detail_transactions_model->join('products','products.product_id = detail_transactions.product_id')->join('pictures','pictures.product_id = products.product_id','left')->where('transaction_id', $value['transaction_id'])->findAll();
+        }
         $data = [
-            'transaction'   => $transaction
+            'transaction'   => $transaction,
+            'detailTransaction' => $detailTransaction,
         ];
-        return view('frontend/transaction', $data);
+        return view('frontend/profile', $data);
     }
 
 

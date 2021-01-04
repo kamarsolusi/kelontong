@@ -36,6 +36,7 @@ $routes->get('/detail/(:any)', 'Home::detail/$1');
 $routes->get('/admin', 'Admin\Dashboard::index', ['filter' => 'role:admin']);
 $routes->get('/categories/(:any)', 'Home::showCategories/$1');
 
+
 // Categories
 $routes->group('admin', ['filter' => 'role:admin'], function($routes){
 	// Dashboard
@@ -117,6 +118,7 @@ $routes->get('/order/(:any)', 'Frontend\Transactions::index/$1', ['filter' => 'r
 $routes->post('/order', 'Frontend\Transactions::addTransaction', ['filter'	=> 'role:user,admin']);
 $routes->post('/order/success', 'Frontend\Transactions::success', ['filter'	=> 'role:user,admin']);
 
+$routes->get('/profile', 'Frontend\Transactions::show', ['filter' => 'role:user,admin']);
 
 
 // Raja Ongkir
