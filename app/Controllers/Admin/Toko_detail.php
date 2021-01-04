@@ -35,13 +35,19 @@ class Toko_detail extends BaseController
             $provinsi = $this->request->getPost('provinsi');
             $kota = $this->request->getPost('kota');
             $alamat = $this->request->getPost('alamat');
+            $kecamatan = $this->request->getVar('kecamatan');
+            $kelurahan = $this->request->getVar('kelurahan');
+            $kode_pos = $this->request->getVar('kode_pos');
 
             $data = [   
                 'name'      => $nama,
                 'telphone'  => $telphone,
                 'provinsi'  => $provinsi,
                 'kota'      => $kota,
-                'alamat'    => $alamat
+                'alamat'    => $alamat,
+                'kecamatan'    => $kecamatan,
+                'kelurahan'    => $kelurahan,
+                'kode_pos'    => $kode_pos,
             ];
 
             if($this->toko_detail_model->insert($data)){
@@ -56,13 +62,19 @@ class Toko_detail extends BaseController
             $provinsi = $this->request->getPost('provinsi');
             $kota = $this->request->getPost('kota');
             $alamat = $this->request->getPost('alamat');
+            $kecamatan = $this->request->getVar('kecamatan');
+            $kelurahan = $this->request->getVar('kelurahan');
+            $kode_pos = $this->request->getVar('kode_pos');
 
             $data = [   
                 'nama'      => $nama,
                 'telphone'  => $telphone,
                 'provinsi'  => $provinsi,
                 'kota'      => $kota,
-                'alamat'    => $alamat
+                'alamat'    => $alamat,
+                'kecamatan'    => $kecamatan,
+                'kelurahan'    => $kelurahan,
+                'kode_pos'    => $kode_pos,
             ];
 
             if($this->toko_detail_model->update($id,$data)){

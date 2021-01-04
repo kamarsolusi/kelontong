@@ -126,7 +126,7 @@
                     data: 'transaction_id',
                     render: function(data, type, row){
                         return `
-                        <a href="`+window.location.origin+`/admin/transactions/detail/`+data+`" class="btn btn-sm btn-danger"><i class="fas fa-search mr-2"></i>Detail</a>
+                        <a href="`+window.location.origin+`/admin/transactions/detail/`+row.transaction_number+`" class="btn btn-sm btn-danger"><i class="fas fa-search mr-2"></i>Detail</a>
                         <a data-toggle="modal" onclick="submit(`+data+`)" class="btn btn-sm btn-success" data-target="#myModal" ><i class="fas fa-edit mr-2"></i>Edit Status</a> 
                         <a class="btn btn-sm btn-danger" onclick="deleteData(`+data+`)"><i class="fas fa-trash-alt mr-2"></i>Hapus</a>
                         `

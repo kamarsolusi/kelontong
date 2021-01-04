@@ -81,6 +81,12 @@
                                 <option value="">Pilih Provinsi</option>
                             </select>
                         </div>
+                        <div class="form-group">
+                            <label class="text-muted font-weight-normal" for="">Kecamatan</label>
+                            <select class="font-weight-normal form-control" id="kecamatan" value="">
+                                <option value="">Pilih Kecamatan</option>
+                            </select>
+                        </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
@@ -89,11 +95,23 @@
                                 <option value="">Pilih Kota / Kabupaten</option>
                             </select>
                         </div>
+                        <div class="form-group">
+                            <label class="text-muted font-weight-normal" for="">Kelurahan</label>
+                            <select class="form-control font-weight-normal" id="kelurahan" value="">
+                                <option value="">Pilih Kelurahan</option>
+                            </select>
+                        </div>
                     </div>
-                    <div class="col-md-12">
+                    <div class="col-md-6">
                         <div class="form-group">
                             <label class="text-muted font-weight-normal" for="">Alamat Lengkap</label>
-                            <textarea class="form-control font-weight-normal" id="full-alamat"  placeholder="Alamat"></textarea>
+                            <input class="form-control font-weight-normal" id="full-alamat"  placeholder="Alamat">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="text-muted font-weight-normal" for="">Kode Pos</label>
+                            <input class="form-control font-weight-normal" id="kode-pos"  placeholder="Alamat">
                         </div>
                     </div>
                 </div>                  
@@ -159,13 +177,13 @@
     function loadProvinsi(){
         $('#provinsi').empty();
         $.ajax({
-            url: base + '/admin/options/rajaongkir/province',
+            url: "https://dev.farizdotid.com/api/daerahindonesia/provinsi",
             method: 'get',
             dataType: 'json',
             success: function(response){
-                $.each(response['rajaongkir']['results'], function(key,value){
+                $.each(response['provinsi'], function(key,value){
                     $('#provinsi').append(`
-                        <option value='`+value['province_id']+`'>`+value['province']+`</option>
+                        <option value='`+value['id']+`'>`+value['nama']+`</option>
                     `)
                 });
             
@@ -180,13 +198,13 @@
         $('#kota').empty();
         var id_province = $('#provinsi').val();
         $.ajax({
-            url: base + '/admin/options/rajaongkir/city/' + id_province,
+            url: 'https://dev.farizdotid.com/api/daerahindonesia/kota?id_provinsi=' + id_province,
             method: 'get',
             dataType: 'json',
             success: function(response){
-                $.each(response['rajaongkir']['results'], function(key,value){
+                $.each(response['kota_kabupaten'], function(key,value){
                     $('#kota').append(`
-                        <option value='`+value['city_id']+`'>`+value['city_name']+`</option>
+                        <option value='`+value['id']+`'>`+value['nama']+`</option>
                     `)
                 });
             },
@@ -199,8 +217,50 @@
     $('#provinsi').on('change', function(){
         loadKota();
     })
+    $('#kota').on('change', function(){
+        loadKecamatan($('#kota option:selected').val());
+    })
+    $('#kecamatan').on('change', function(){
+        loadKelurahan($('#kecamatan option:selected').val());
+    })
 
-   
+    function loadKelurahan(id_kecamatan){
+        $('#kelurahan').empty();
+        $.ajax({
+            url: 'https://dev.farizdotid.com/api/daerahindonesia/kelurahan?id_kecamatan=' + id_kecamatan,
+            method: 'get',
+            dataType: 'json',
+            success: function(response){
+                $.each(response['kelurahan'], function(key,value){
+                    $('#kelurahan').append(`
+                        <option value='`+value['id']+`'>`+value['nama']+`</option>
+                    `)
+                });
+            },
+            error: function(error){
+                console.log(error);
+            }
+        })
+    }
+
+   function loadKecamatan(id_kabupaten){
+        $('#kecamatan').empty();
+        $.ajax({
+            url: 'https://dev.farizdotid.com/api/daerahindonesia/kecamatan?id_kota=' + id_kabupaten,
+            method: 'get',
+            dataType: 'json',
+            success: function(response){
+                $.each(response['kecamatan'], function(key,value){
+                    $('#kecamatan').append(`
+                        <option value='`+value['id']+`'>`+value['nama']+`</option>
+                    `)
+                });
+            },
+            error: function(error){
+                console.log(error);
+            }
+        })
+   }
 
     function edit(id){
         $('#edit').hide();
@@ -247,18 +307,20 @@
         $('#simpan').on('click', function(){
             var name = $('#nama-toko').text();
             nomor = $('#nomor').val();
-            var provinsi = $('#provinsi').val();
-            var kota = $('#kota').val();
+            var provinsi = $('#provinsi option:selected').text();
+            var kota = $('#kota option:selected').text();
             var alamat = $('#full-alamat').val(); 
             var id = $('#old_id').val();
+            var kecamatan = $('#kecamatan option:selected').text();
+            var kelurahan = $('#kelurahan option:selected').text();
+            var kode_pos = $('#kode-pos').val();
 
-            console.log(name);
             if(id == null){
                 $.ajax({
                     url: base + '/admin/options/store',
                     method: 'post',
                     dataType: 'json',
-                    data: 'nama='+ name +'&telphone='+nomor+'&provinsi='+provinsi+'&kota='+kota+'&alamat=' + alamat,
+                    data: 'nama='+ name +'&telphone='+nomor+'&provinsi='+provinsi+'&kota='+kota+'&alamat=' + alamat+'&kecamatan='+kecamatan+'&kelurahan='+kelurahan+'&kode_pos='+kode_pos,
                     success: function(response){
                         console.log(response);
                     }
@@ -268,7 +330,7 @@
                 url: base + '/admin/options/store/' + id,
                     method: 'post',
                     dataType: 'json',
-                    data: 'nama='+name+'&telphone='+nomor+'&provinsi='+provinsi+'&kota='+kota+'&alamat=' + alamat,
+                    data: 'nama='+ name +'&telphone='+nomor+'&provinsi='+provinsi+'&kota='+kota+'&alamat=' + alamat+'&kecamatan='+kecamatan+'&kelurahan='+kelurahan+'&kode_pos='+kode_pos,
                     success: function(response){
                         console.log(response);
                     }
