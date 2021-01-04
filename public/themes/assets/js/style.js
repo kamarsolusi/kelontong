@@ -383,7 +383,7 @@ function showCart(){
                         <div class="col-sm-12 col-md-12">
                             <div class="box-cart">
                                 <div class="text-center">
-                                    <img src="`+window.location.origin+`/themes/assets/img/empty_cart.svg" alt="" class="img-empty-cart">
+                                    <img src="`+window.location.origin+`/img/empty_cart.svg" alt="" class="img-empty-cart">
                                     <h3 class="text-heading">Wah, keranjang belanjamu kosong</h3>
                                     <p class="text-desc">Daripada dianggurin, mending isi dengan barang-barang kebutuhanmu. Yuk, cek sekarang!</p>
                                     <a href="`+window.location.origin+`" class="btn btn-empty">Mulai Belanja</a>
