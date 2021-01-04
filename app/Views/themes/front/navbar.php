@@ -34,6 +34,7 @@
                         <span class="mr-1 d-none d-lg-inline " id="username"><?= user()->username ?></span>
                         <img src="<?= base_url() ?>/img/default-user.png" alt="" width="25" class="rounded-circle">
                     </a>
+                    
                     <!-- Dropdown - User Information -->
                     <div class="dropdown-menu dropdown-menu-right shadow" aria-labelledby="userDropdown">
                         <?php if (in_groups('admin')) : ?>
@@ -41,6 +42,15 @@
                                 <i class="fas fa-user-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                 Dashboard
                             </a>
+                            <a class="dropdown-item" href="<?= base_url('transactions') ?>">
+                                <i class="fas fa-clipboard fa-sm fa-fw mr-2 text-gray-400"></i>
+                                Pesanan
+                            </a>
+                        <?php else: ?>
+                        <a class="dropdown-item" href="<?= base_url('transactions') ?>">
+                            <i class="fas fa-clipboard fa-sm fa-fw mr-2 text-gray-400"></i>
+                            Pesanan
+                        </a>
                         <?php endif; ?>
                         <a class="dropdown-item" href="<?= base_url('logout') ?>">
                             <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>

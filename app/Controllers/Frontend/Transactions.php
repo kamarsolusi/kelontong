@@ -79,11 +79,7 @@ class Transactions extends BaseController
         return view('frontend/form-order', $data);
     }
 
-    public function showCart($slug=null){
-
-    }
-
-
+   
     public function addTransaction(){
         $transactionNumber = $this->transaction_model->select('transaction_number')->orderBy('transaction_id','DESC')->get()->getRowArray();
 
@@ -155,5 +151,25 @@ class Transactions extends BaseController
             ];
             $this->product_model->updateProduct($data, $qtyProduct['product_id']);
         }
+
+        $response = [
+            'status'    => 200,
+            'transaction_number'    => $transactionNumber['transaction_number']
+        ];
+        
+        return json_encode($response);
+    }
+
+    public function show(){
+        $transaction = $this->transaction_model->where('user_id', user()->id)->findAll();
+        $data = [
+            'transaction'   => $transaction
+        ];
+        return view('frontend/transaction', $data);
+    }
+
+
+    public function success(){
+        
     }
 }

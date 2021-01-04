@@ -154,6 +154,27 @@
         })
     }
 
+    function deleteData(transaction_id){
+        $.ajax({
+            url: window.location.origin + '/admin/transactions/' + transaction_id,
+            method: 'delete',
+            dataType: 'json',
+            success: function(response){
+                if(response['status']==200){
+                    table.ajax.reload();
+                    Swal.fire({
+                        iccon: 'success',
+                        position: 'top-end',
+                        toast: true,
+                        title: 'Transaction Deleted Successfully !',
+                        showConfirmButton: false,
+                        timer: 3000
+                    })
+                }
+            }
+        })
+    }
+
 
     function updateData() {
         var id = $('#transaction_id').val();
@@ -171,6 +192,7 @@
                     table.ajax.reload();
 
                     Swal.fire({
+                        icon: 'success',
                         toast: true,
                         position: 'top-end',
                         showConfirmButton: false,
@@ -181,6 +203,7 @@
                 }else {
                     table.ajax.reload();
                     Swal.fire({
+                        icon: 'error',
                         toast:true,
                         position: 'top-end',
                         showConfirmButton:false,

@@ -365,10 +365,11 @@
                     contentType: false,
                     success: function(response){
                         console.log(response);
+                        location.href = window.location.origin + '/order/success'
                     }
                 })
 
-                location.href = window.location.origin;
+                // location.href = window.location.origin;
             })
         }
 

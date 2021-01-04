@@ -34,6 +34,7 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'Home::index');
 $routes->get('/detail/(:any)', 'Home::detail/$1');
 $routes->get('/admin', 'Admin\Dashboard::index', ['filter' => 'role:admin']);
+$routes->get('/categories/(:any)', 'Home::showCategories/$1');
 
 // Categories
 $routes->group('admin', ['filter' => 'role:admin'], function($routes){
@@ -70,6 +71,7 @@ $routes->group('admin', ['filter' => 'role:admin'], function($routes){
 	$routes->get('transactions/detail/(:any)', 'Admin\Transactions::detail/$1');
 	$routes->get('transactions/edit/(:any)', 'Admin\Transactions::edit/$1');
 	$routes->put('transactions/edit/(:any)', 'Admin\Transactions::update/$1');
+	$routes->delete('transactions/(:num)', 'Admin\Transactions::delete/$1');
 	// $routes->post('transactions/update/(:any)', 'Admin\Transactions::update/$1');
 
 	// Users
@@ -112,7 +114,8 @@ $routes->delete('/carts', 'Frontend\Carts::delete', ['filter' => 'role:user,admi
 $routes->get('/order', 'Frontend\Transactions::index', ['filter' => 'role:user,admin']);
 $routes->get('/order/index', 'Frontend\Transactions::index', ['filter' => 'role:user,admin']);
 $routes->get('/order/(:any)', 'Frontend\Transactions::index/$1', ['filter' => 'role:user,admin']);
-$routes->post('/order', 'Frontend\Transactions::addTransaction');
+$routes->post('/order', 'Frontend\Transactions::addTransaction', ['filter'	=> 'role:user,admin']);
+$routes->post('/order/success', 'Frontend\Transactions::success', ['filter'	=> 'role:user,admin']);
 
 
 

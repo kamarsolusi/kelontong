@@ -95,4 +95,18 @@ class Transactions extends BaseController
         return json_encode($response);
         
     }
+
+    public function delete($transaction_id){
+        if($this->transaction_model->delete($transaction_id)){
+            $response = [
+                'status'    => 200
+            ];
+        }else{
+            $response = [
+                'status'    => 500
+            ];
+        }
+
+        return json_encode($response);
+    }
 }
