@@ -63,7 +63,7 @@ class Home extends BaseController
 	}
 
 	public function showCategories($category_name){
-		$products = $this->product_model->join('categories', 'products.category_id = categories.category_id')->join('pictures','pictures.product_id = products.product_id', 'left')->where('category_name', $category_name)->where('product_status', 'ACTIVE')->where('category_status', 'ACTIVE')->findAll();
+		$products = $this->product_model->join('categories', 'products.category_id = categories.category_id')->join('pictures','pictures.product_id = products.product_id', 'left')->where('category_name', $category_name)->where('product_status', 'ACTIVE')->where('category_status', 'ACTIVE')->groupBy('products.product_id')->findAll();
 		$banner = $this->banner_model->findAll();
 		$categories = $this->category_model->where('category_status', 'ACTIVE')->findAll();
 
