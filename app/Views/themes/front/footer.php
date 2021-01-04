@@ -68,7 +68,7 @@
             </div>
         </div>
         <footer class="mt-5">
-            <p class="copyright">Copyright © Kelontong 2020</p>
+            <p class="copyright">Copyright © Kelontong 2021</p>
         </footer>
     </div>
 </div>
