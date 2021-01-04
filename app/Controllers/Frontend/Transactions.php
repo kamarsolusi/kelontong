@@ -164,7 +164,7 @@ class Transactions extends BaseController
         $transaction = $this->transaction_model->where('user_id', user()->id)->findAll();
         $detailTransaction = [];
         foreach($transaction as $key => $value){
-            $detailTransaction = $this->detail_transactions_model->join('products','products.product_id = detail_transactions.product_id')->join('pictures','pictures.product_id = products.product_id','left')->where('transaction_id', $value['transaction_id'])->findAll();
+            $detailTransaction = $this->detail_transactions_model->join('products','products.product_id = detail_transactions.product_id')->join('pictures','pictures.product_id = products.product_id','left')->groupBy('products.product_id')->where('transaction_id', $value['transaction_id'])->findAll();
         }
         $data = [
             'transaction'   => $transaction,
