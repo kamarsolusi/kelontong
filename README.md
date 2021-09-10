@@ -1,7 +1,7 @@
 # Setup For This Project
 
 ## Project Link
-To see this project you can acces the link [kelontong.pasarjatinom.com](https://kelontong.xyz "Kelontong")
+To see this project you can acces the link [Link](https://kelontong.xyz "Kelontong")
 ---
 ## Database Config
 The database config that used in this hosting :
